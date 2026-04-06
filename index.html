@@ -84,17 +84,20 @@ body::before {
    ═══════════════════════════════════════════════ */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+  transform: translateY(30px) scale(0.98);
+  filter: blur(4px);
+  transition: opacity 1.2s var(--ease-out-expo), transform 1.2s var(--ease-out-expo), filter 1.2s var(--ease-out-expo);
+  will-change: transform, opacity, filter;
 }
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+  filter: blur(0);
 }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-1 { transition-delay: 0.15s; }
+.reveal-delay-2 { transition-delay: 0.3s; }
+.reveal-delay-3 { transition-delay: 0.45s; }
+.reveal-delay-4 { transition-delay: 0.6s; }
 
 /* ═══════════════════════════════════════════════
    FIXED SIDE NAV
@@ -272,6 +275,63 @@ body::before {
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50% { transform: translateX(-50%) translateY(10px); }
 }
+
+/* ═══════════════════════════════════════════════
+   HERO SCROLL OPENING (卷轴开启)
+   ═══════════════════════════════════════════════ */
+.hero-opening-top,
+.hero-opening-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50%;
+  z-index: 10;
+  pointer-events: none;
+  will-change: transform;
+  transition: transform 2s var(--ease-out-expo), opacity 0.6s ease 1.8s;
+}
+.hero-opening-top {
+  top: 0;
+  background: linear-gradient(180deg, var(--ink-black) 60%, rgba(10,10,12,0.97));
+}
+.hero-opening-bottom {
+  bottom: 0;
+  background: linear-gradient(0deg, var(--ink-black) 60%, rgba(10,10,12,0.97));
+}
+.hero.scroll-opened .hero-opening-top {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.hero.scroll-opened .hero-opening-bottom {
+  transform: translateY(100%);
+  opacity: 0;
+}
+.hero-opening-seam {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  right: 8%;
+  height: 2px;
+  transform: translateY(-50%);
+  z-index: 11;
+  pointer-events: none;
+}
+.hero-opening-seam::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, var(--gold) 20%, var(--gold-bright) 50%, var(--gold) 80%, transparent 100%);
+  box-shadow: 0 0 20px rgba(200,164,92,0.4), 0 0 60px rgba(200,164,92,0.15);
+  transition: opacity 1.2s ease 0.6s;
+}
+.hero.scroll-opened .hero-opening-seam::before {
+  opacity: 0;
+}
+.hero .reveal { transition-delay: 0.8s; }
+.hero .reveal-delay-1 { transition-delay: 1s; }
+.hero .reveal-delay-2 { transition-delay: 1.2s; }
+.hero .reveal-delay-3 { transition-delay: 1.4s; }
 
 /* ═══════════════════════════════════════════════
    OVERVIEW TIMELINE (horizontal bar)
@@ -788,10 +848,177 @@ body::before {
 .theme-prc .sub-dynasty::before { background: #c83c3c; }
 
 /* ═══════════════════════════════════════════════
+   SCROLL ROLLERS (卷轴杆)
+   ═══════════════════════════════════════════════ */
+.scroll-roller {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 18px;
+  z-index: 9990;
+  pointer-events: none;
+  background: linear-gradient(180deg,
+    #1a0e04 0%, #3a2515 10%, #6a4a28 22%,
+    #9a7a3a 36%, #c8a45c 46%, #e8c86a 50%,
+    #c8a45c 54%, #9a7a3a 64%, #6a4a28 78%,
+    #3a2515 90%, #1a0e04 100%
+  );
+}
+.scroll-roller--top {
+  top: 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.7), 0 1px 3px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(232,200,106,0.2);
+}
+.scroll-roller--bottom {
+  bottom: 0;
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.7), 0 -1px 3px rgba(0,0,0,0.5),
+    inset 0 -1px 0 rgba(232,200,106,0.2);
+}
+.scroll-roller::before,
+.scroll-roller::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  width: 28px;
+  height: 28px;
+  border-radius: 2px;
+  background: linear-gradient(135deg,
+    #2a1a0a 0%, #5a3a18 25%, #c8a45c 50%, #5a3a18 75%, #2a1a0a 100%
+  );
+  border: 1px solid rgba(200,164,92,0.2);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+.scroll-roller::before { left: 20px; }
+.scroll-roller::after { right: 20px; }
+
+/* ═══════════════════════════════════════════════
+   SCROLL EDGE FADE & PAPER CURL
+   ═══════════════════════════════════════════════ */
+.scroll-fade {
+  position: fixed;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 9988;
+}
+.scroll-fade--top {
+  top: 18px;
+  height: 80px;
+  background: linear-gradient(180deg, var(--ink-black) 0%, rgba(10,10,12,0.7) 35%, transparent 100%);
+}
+.scroll-fade--bottom {
+  bottom: 18px;
+  height: 80px;
+  background: linear-gradient(0deg, var(--ink-black) 0%, rgba(10,10,12,0.7) 35%, transparent 100%);
+}
+.scroll-curl {
+  position: fixed;
+  left: 60px;
+  right: 60px;
+  height: 6px;
+  pointer-events: none;
+  z-index: 9989;
+}
+.scroll-curl--top {
+  top: 16px;
+  background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(245,240,232,0.06) 0%, transparent 100%);
+}
+.scroll-curl--bottom {
+  bottom: 16px;
+  background: radial-gradient(ellipse 60% 100% at 50% 100%, rgba(245,240,232,0.06) 0%, transparent 100%);
+}
+
+/* ═══════════════════════════════════════════════
+   DYNASTY NAME INK WIPE (毛笔横扫)
+   ═══════════════════════════════════════════════ */
+.dynasty-header .dynasty-name {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.8s var(--ease-out-expo) 0.2s;
+}
+.dynasty-header.visible .dynasty-name {
+  clip-path: inset(0 0 0 0);
+}
+
+/* ═══════════════════════════════════════════════
+   SCROLL PROGRESS THREAD (纵贯丝线)
+   ═══════════════════════════════════════════════ */
+.scroll-thread {
+  position: fixed;
+  left: 20px;
+  top: 10%;
+  width: 1px;
+  height: 80%;
+  z-index: 100;
+  pointer-events: none;
+}
+.scroll-thread::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(200,164,92,0.06);
+  border-radius: 1px;
+}
+.thread-fill {
+  position: absolute;
+  top: 0;
+  left: -0.5px;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--gold) 0%, var(--gold-dim) 60%, rgba(154,123,58,0.3) 100%);
+  transform-origin: top center;
+  transform: scaleY(0);
+  border-radius: 1px;
+  box-shadow: 0 0 6px rgba(200,164,92,0.3);
+}
+
+/* ═══════════════════════════════════════════════
+   SECTION MIST (水墨云气)
+   ═══════════════════════════════════════════════ */
+.dynasty-section::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background:
+    radial-gradient(ellipse 50% 80% at 20% 80%, rgba(200,164,92,0.02) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 70% at 80% 70%, rgba(200,164,92,0.015) 0%, transparent 70%),
+    radial-gradient(ellipse 90% 100% at 50% 100%, rgba(10,10,12,0.4) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ═══════════════════════════════════════════════
+   PARALLAX
+   ═══════════════════════════════════════════════ */
+[data-parallax] {
+  will-change: transform;
+}
+
+/* ═══════════════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .scroll-thread { opacity: 0.3; }
+}
 @media (max-width: 768px) {
   .side-nav { display: none; }
+  .scroll-roller, .scroll-fade, .scroll-curl { display: none; }
+  .scroll-thread { display: none; }
+  .reveal {
+    filter: none;
+    transform: translateY(20px);
+    transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+    will-change: auto;
+  }
+  .reveal.visible { transform: translateY(0); }
+  .dynasty-header .dynasty-name {
+    clip-path: none;
+    transition: none;
+  }
+  .dynasty-section::after { display: none; }
   .dynasty-section { padding: 60px 16px; }
   .sub-dynasty { padding: 24px 20px; }
   .founder-block { padding: 20px; }
@@ -842,9 +1069,13 @@ body::before {
      ║  HERO                                    ║
      ╚═══════════════════════════════════════════╝ -->
 <section class="hero" id="hero">
-  <div class="hero-bg-char">权</div>
-  <div class="hero-bg-char">史</div>
-  <div class="hero-bg-char">鼎</div>
+  <div class="hero-bg-char" data-parallax="0.15">权</div>
+  <div class="hero-bg-char" data-parallax="0.1">史</div>
+  <div class="hero-bg-char" data-parallax="0.2">鼎</div>
+
+  <div class="hero-opening-top"></div>
+  <div class="hero-opening-bottom"></div>
+  <div class="hero-opening-seam"></div>
 
   <div class="hero-ornament"></div>
   <div class="hero-subtitle reveal">天 子 · 藩 镇 · 皇 权 演 变 史</div>
@@ -903,8 +1134,11 @@ body::before {
       <div class="timeline-segment" style="flex:2.8; background: linear-gradient(135deg, #5a2a2a, #8a4a4a);" onclick="document.getElementById('sec-qingdyn').scrollIntoView({behavior:'smooth'})">
         <span class="seg-label">清</span>
       </div>
-      <div class="timeline-segment" style="flex:1; background: linear-gradient(135deg, #2a5a6a, #4a7a8a);" onclick="document.getElementById('sec-republic').scrollIntoView({behavior:'smooth'})">
+      <div class="timeline-segment" style="flex:0.4; background: linear-gradient(135deg, #2a5a6a, #4a7a8a);" onclick="document.getElementById('sec-republic').scrollIntoView({behavior:'smooth'})">
         <span class="seg-label">民国</span>
+      </div>
+      <div class="timeline-segment" style="flex:1.5; background: linear-gradient(135deg, #8a2828, #c83c3c);" onclick="document.getElementById('sec-prc').scrollIntoView({behavior:'smooth'})">
+        <span class="seg-label">共和国</span>
       </div>
     </div>
     <div class="timeline-bar-dates">
@@ -917,6 +1151,7 @@ body::before {
       <span>1279</span>
       <span>1644</span>
       <span>1912</span>
+      <span>1949</span>
     </div>
   </div>
 </section>
@@ -2121,41 +2356,73 @@ body::before {
   <p style="margin-top:4px; color:var(--gold-dim);">整理依据：公开历史资料</p>
 </footer>
 
+<!-- Scroll Rollers & Effects -->
+<div class="scroll-roller scroll-roller--top"></div>
+<div class="scroll-roller scroll-roller--bottom"></div>
+<div class="scroll-fade scroll-fade--top"></div>
+<div class="scroll-fade scroll-fade--bottom"></div>
+<div class="scroll-curl scroll-curl--top"></div>
+<div class="scroll-curl scroll-curl--bottom"></div>
+<div class="scroll-thread" id="scrollThread">
+  <div class="thread-fill"></div>
+</div>
+
 <!-- ═══════════════════════════════════════════
      JAVASCRIPT
      ═══════════════════════════════════════════ -->
 <script>
 (function() {
+  const isMobile = window.innerWidth <= 768;
+
   const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  reveals.forEach(el => observer.observe(el));
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  reveals.forEach(el => revealObs.observe(el));
 
   const navLinks = document.querySelectorAll('.side-nav a');
-  const sections = [];
+  const navSections = [];
   navLinks.forEach(link => {
-    const id = link.getAttribute('href').slice(1);
-    const sec = document.getElementById(id);
-    if (sec) sections.push({ el: sec, link: link });
+    const sec = document.getElementById(link.getAttribute('href').slice(1));
+    if (sec) navSections.push({ el: sec, link });
   });
-
   function updateNav() {
-    const scrollY = window.scrollY + window.innerHeight / 3;
-    let current = sections[0];
-    sections.forEach(s => {
-      if (s.el.offsetTop <= scrollY) current = s;
-    });
+    const sy = window.scrollY + window.innerHeight / 3;
+    let current = navSections[0];
+    navSections.forEach(s => { if (s.el.offsetTop <= sy) current = s; });
     navLinks.forEach(l => l.classList.remove('active'));
     if (current) current.link.classList.add('active');
   }
 
-  window.addEventListener('scroll', updateNav, { passive: true });
-  updateNav();
+  const hero = document.getElementById('hero');
+  if (hero) setTimeout(() => hero.classList.add('scroll-opened'), 600);
+
+  const parallaxEls = document.querySelectorAll('[data-parallax]');
+  const threadFill = document.querySelector('.thread-fill');
+  let ticking = false;
+
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const sy = window.scrollY;
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      updateNav();
+      if (threadFill && maxScroll > 0) {
+        threadFill.style.transform = `scaleY(${Math.min(sy / maxScroll, 1)})`;
+      }
+      if (!isMobile) {
+        parallaxEls.forEach(el => {
+          const rate = parseFloat(el.dataset.parallax) || 0.15;
+          el.style.transform = `translateY(${sy * rate}px)`;
+        });
+      }
+      ticking = false;
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 })();
 </script>
 </body>

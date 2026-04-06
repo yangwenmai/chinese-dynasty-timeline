@@ -1,0 +1,37 @@
+---
+description: 鼎革千年项目基础规则
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+# 鼎革千年 · 项目规则
+
+## 项目概述
+
+「鼎革千年」是一个纯静态单页网站，以长卷轴形式展现中国上下五千年的朝代更迭、权力结构与制度变迁。
+
+## 技术栈
+
+- 纯 HTML + CSS + JS，零依赖，零构建工具
+- 单文件架构：所有内容在 `index.html` 中
+- 字体依赖 Google Fonts：Ma Shan Zheng（书法）、ZCOOL XiaoWei（标题）、Noto Serif SC（正文）
+
+## 编码规范
+
+- 所有文案使用简体中文
+- 中文引号统一使用「」（直角引号），不使用 "" 或 ""
+- JS 字符串中包含中文引号时，外层用反引号（模板字符串）或单引号，避免 ASCII 双引号冲突
+- CSS 变量定义在 `:root` 中，新增颜色必须遵循现有命名体系（ink-、gold-、vermillion- 等）
+- 新增朝代章节必须遵循现有 HTML 结构模式（section > section-inner > section-divider + dynasty-header + sub-dynasty）
+
+## 内容规范
+
+- 每个朝代章节必须包含：开国皇帝/领袖叙述（founder-block）、皇帝列表（emperor-table + emp-tag 标签）、权力结构洞察（insight-box）
+- 皇帝表格标签使用统一 class：`death`（病亡）、`murdered`（被杀）、`abdicate`（禅让/被废/投降）、`usurp`（篡位/称帝）、`good`（治世/盛世/中兴）
+- 历史内容力求准确，有争议之处须标注「存疑」
+- 年份格式：公元前用「前XXX」，公元后直接写年份
+
+## 设计约束
+
+- 参见 `.cursor/rules/design-system.mdc` 了解完整的视觉设计体系

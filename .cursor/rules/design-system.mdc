@@ -1,0 +1,215 @@
+---
+description: 鼎革千年设计风格体系与约束
+globs:
+  - "**/*.html"
+  - "**/*.css"
+alwaysApply: false
+---
+
+# 鼎革千年 · 设计风格体系
+
+> 整体设计哲学：**墨卷长轴** —— 以深色为底、金石为骨、宣纸为韵，模拟一幅徐徐展开的历史长卷。
+
+---
+
+## 一、色彩体系
+
+### 1.1 墨底色阶（Ink Scale）
+
+从纯黑到微灰，构成页面的纵深层次，**禁止使用纯白 `#fff` 作为大面积背景**。
+
+| 变量             | 色值       | 用途                     |
+| ---------------- | ---------- | ------------------------ |
+| `--ink-black`    | `#0a0a0c`  | 页面主背景               |
+| `--ink-deep`     | `#111116`  | 渐变过渡、滚动条轨道     |
+| `--ink-dark`     | `#1a1a22`  | 卡片/区块默认背景        |
+| `--ink-medium`   | `#2a2a35`  | 表格行 hover、次级容器   |
+| `--ink-light`    | `#3a3a48`  | 导航圆点、时间轴基线     |
+| `--ink-faint`    | `#50505f`  | 导航圆点边框、辅助分割线 |
+
+### 1.2 点缀色
+
+| 变量                   | 色值       | 语义                       |
+| ---------------------- | ---------- | -------------------------- |
+| `--gold` / bright/dim  | `#c8a45c`  | **主强调色**，权力、制度   |
+| `--vermillion` / 变体  | `#c83c3c`  | 警示、覆灭、洞察高亮      |
+| `--jade` / bright      | `#4a8a6a`  | 正面标签（治世/盛世）      |
+| `--cyan-ink`           | `#4a7a8a`  | 辅助分类（北朝、宋代等）   |
+| `--purple-ink`         | `#6a4a7a`  | 辅助分类（篡位、晋代等）   |
+
+### 1.3 文字色
+
+| 变量               | 色值       | 用途           |
+| ------------------ | ---------- | -------------- |
+| `--text-primary`   | `#e8e0d0`  | 正文主色（暖白） |
+| `--text-secondary` | `#b0a898`  | 说明、列表文字   |
+| `--text-dim`       | `#787068`  | 注释、年份、辅助  |
+
+### 1.4 宣纸色（仅用于特殊元素）
+
+| 变量            | 色值       | 用途                 |
+| --------------- | ---------- | -------------------- |
+| `--paper`       | `#f5f0e8`  | 极少量亮色对比元素   |
+| `--paper-warm`  | `#ede5d5`  | 暖纸底               |
+| `--paper-dark`  | `#d4cabb`  | 纸色暗调             |
+
+### 1.5 约束
+
+- 所有新增色彩必须通过 CSS 变量定义在 `:root` 中，禁止硬编码 hex
+- 半透明叠加一律使用 `rgba()`，不使用 hex + opacity
+- 朝代主题色通过 `.theme-xxx .dynasty-name` 和 `.theme-xxx .sub-dynasty::before` 注入，每个新朝代需定义专属 theme class
+
+---
+
+## 二、字体体系
+
+| 变量              | 字体族                                 | 使用场景            |
+| ----------------- | -------------------------------------- | ------------------- |
+| `--font-display`  | `'Ma Shan Zheng', cursive`             | 主标题（书法体）     |
+| `--font-heading`  | `'ZCOOL XiaoWei', serif`              | 章节标题、卡片标题   |
+| `--font-body`     | `'Noto Serif SC', 'Songti SC', serif` | 正文、表格、导航     |
+
+### 字号约束
+
+- 主标题使用 `clamp(48px, 10vw, 120px)` 响应式缩放
+- 朝代标题使用 `clamp(42px, 8vw, 80px)`
+- 正文基准 `14-15px`，表格 `13-13.5px`，标签 `10-11px`
+- 所有中文标题必须带 `letter-spacing`（标题 2-8px，正文标签 1-4px）
+
+### 字重约束
+
+- 正文使用 `font-weight: 300`（轻盈感）
+- 强调使用 `font-weight: 500`（金色关键词 `<strong>` 配合 `color: var(--gold)`）
+- 禁止使用 `font-weight: 700/900` 于正文段落
+
+---
+
+## 三、布局体系
+
+### 3.1 页面结构
+
+```
+[Hero 全屏首屏] → [总览时间轴条] → [朝代章节 ×N] → [全局总结] → [页脚]
+```
+
+- 内容区最大宽度 `960px`，水平居中（`max-width: 960px; margin: 0 auto`）
+- 章节内边距 `100px 20px`（移动端缩减至 `60px 16px`）
+- 右侧固定悬浮导航（圆点+标签），768px 以下隐藏
+
+### 3.2 朝代章节内部结构（必须遵循）
+
+```
+<section class="dynasty-section theme-xxx" id="sec-xxx">
+  <div class="section-inner">
+    <div class="section-divider">...</div>
+    <div class="dynasty-header">
+      <div class="dynasty-era">朝代小标签</div>
+      <h2 class="dynasty-name">朝代名</h2>
+      <div class="dynasty-years">年份区间</div>
+      <p class="dynasty-desc">简介</p>
+    </div>
+    <section class="sub-dynasty">
+      <div class="founder-block">...</div>
+      <div class="emperor-table-wrap">...</div>
+      <div class="insight-box">...</div>
+    </section>
+  </div>
+</section>
+```
+
+### 3.3 组件约束
+
+| 组件           | 背景色                          | 边框                                  |
+| -------------- | ------------------------------- | ------------------------------------- |
+| sub-dynasty    | `rgba(255,255,255,0.02)`       | `1px solid rgba(255,255,255,0.04)`   |
+| founder-block  | `rgba(200,164,92,0.04)`       | `1px solid rgba(200,164,92,0.1)`     |
+| insight-box    | `rgba(200,60,60,0.04)`        | `border-left: 3px solid --vermillion` |
+| summary-card   | `rgba(255,255,255,0.02)`       | `1px solid rgba(255,255,255,0.05)`   |
+
+- 所有圆角统一使用 `border-radius: 4px`，禁止大圆角（>8px）
+- sub-dynasty 左侧竖线粗 `3px`，颜色由朝代 theme 决定
+
+---
+
+## 四、动效约束
+
+### 4.1 缓动函数
+
+| 变量                 | 值                               | 用途         |
+| -------------------- | -------------------------------- | ------------ |
+| `--ease-out-expo`    | `cubic-bezier(0.16, 1, 0.3, 1)` | 滚动进入动画 |
+| `--ease-out-quart`   | `cubic-bezier(0.25, 1, 0.5, 1)` | 备用缓动     |
+
+### 4.2 滚动进入
+
+- 使用 `.reveal` class 搭配 `IntersectionObserver`
+- 初始状态：`opacity: 0; transform: translateY(40px)`
+- 可见状态：`opacity: 1; transform: translateY(0)`
+- 过渡时长：`0.8s`
+- 支持延迟 class `.reveal-delay-1` ~ `.reveal-delay-4`（间隔 0.1s）
+
+### 4.3 约束
+
+- 禁止使用 `@keyframes` 做循环闪烁/抖动（hero scroll-hint 的浮动除外）
+- 所有 hover 过渡统一 `0.2s-0.3s ease`
+- 禁止使用 CSS `animation` 做复杂路径动画
+
+---
+
+## 五、纹理与装饰
+
+### 5.1 噪点纹理
+
+- 使用 `body::before` 叠加 SVG fractalNoise 纹理
+- 固定定位、`pointer-events: none`、`opacity: 0.03`
+- 禁止调高噪点透明度超过 `0.05`
+
+### 5.2 装饰线
+
+- 分割线：`linear-gradient(90deg, transparent, var(--gold-dim), transparent)`
+- 菱形点缀：中间插入 `◆` 字符，`font-size: 8px`
+- Hero 区域使用多层 `radial-gradient` 营造微光氛围
+- 背景大字使用 `--font-display`，`opacity: 0.03`，纯装饰
+
+### 5.3 约束
+
+- 装饰元素必须 `pointer-events: none; user-select: none`
+- 装饰透明度不超过 `0.06`，避免干扰正文阅读
+- 禁止引入外部图片资源（保持纯代码渲染）
+
+---
+
+## 六、皇帝标签（emp-tag）配色规范
+
+| class      | 语义       | 背景色                          | 文字色        |
+| ---------- | ---------- | ------------------------------- | ------------- |
+| `death`    | 病亡/自然死亡 | `rgba(200,60,60,0.15)`        | `#e07070`     |
+| `murdered` | 被杀/遇害   | `rgba(200,60,60,0.25)`        | `#ff6060`     |
+| `abdicate` | 禅让/退位/投降 | `rgba(200,164,92,0.15)`     | `var(--gold)` |
+| `usurp`    | 篡位/称帝   | `rgba(106,74,122,0.2)`        | `#b080d0`     |
+| `good`     | 治世/盛世/中兴 | `rgba(74,138,106,0.15)`     | `var(--jade-bright)` |
+
+- 新增标签类型须遵循现有配色体系（低饱和半透明背景 + 对应高亮文字色）
+- 标签字号固定 `10px`，内边距 `2px 8px`
+
+---
+
+## 七、响应式断点
+
+| 断点       | 变化                                         |
+| ---------- | -------------------------------------------- |
+| ≤768px     | 隐藏侧边导航、缩减内边距、表格字号调小       |
+| ≤480px     | Hero 标题缩至 42px、insight-box 内边距缩减   |
+
+- 禁止在 768px 以上隐藏任何内容
+- 移动端表格使用 `overflow-x: auto` 横向滚动，禁止截断
+
+---
+
+## 八、设计原则总结
+
+1. **克制**：深色为主、点缀为辅，避免大面积亮色；装饰低透明度
+2. **层次**：通过 ink 色阶 + 微透明背景营造纵深，而非阴影
+3. **书卷气**：书法体做标题、宋体做正文、加宽字距增加庄重感
+4. **一致**：所有模块遵循相同的 HTML 结构与 CSS 类名规范
+5. **纯净**：零依赖、零图片、零构建，纯代码实现所有视觉效果

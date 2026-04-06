@@ -1,0 +1,2162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鼎革千年 · 中国历代权力更迭脉络</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════
+   CSS CUSTOM PROPERTIES
+   ═══════════════════════════════════════════════ */
+:root {
+  --ink-black: #0a0a0c;
+  --ink-deep: #111116;
+  --ink-dark: #1a1a22;
+  --ink-medium: #2a2a35;
+  --ink-light: #3a3a48;
+  --ink-faint: #50505f;
+  --paper: #f5f0e8;
+  --paper-warm: #ede5d5;
+  --paper-dark: #d4cabb;
+  --gold: #c8a45c;
+  --gold-bright: #e8c86a;
+  --gold-dim: #9a7b3a;
+  --vermillion: #c83c3c;
+  --vermillion-bright: #e84848;
+  --vermillion-dim: #8a2828;
+  --jade: #4a8a6a;
+  --jade-bright: #5aaa7a;
+  --cyan-ink: #4a7a8a;
+  --purple-ink: #6a4a7a;
+  --text-primary: #e8e0d0;
+  --text-secondary: #b0a898;
+  --text-dim: #787068;
+  --font-display: 'Ma Shan Zheng', cursive;
+  --font-heading: 'ZCOOL XiaoWei', serif;
+  --font-body: 'Noto Serif SC', 'Songti SC', serif;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ═══════════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-dim) var(--ink-deep);
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--ink-black);
+  color: var(--text-primary);
+  line-height: 1.8;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--ink-deep); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+
+/* ═══════════════════════════════════════════════
+   NOISE TEXTURE OVERLAY
+   ═══════════════════════════════════════════════ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* ═══════════════════════════════════════════════
+   SCROLL ANIMATION
+   ═══════════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ═══════════════════════════════════════════════
+   FIXED SIDE NAV
+   ═══════════════════════════════════════════════ */
+.side-nav {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+}
+.side-nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text-dim);
+  transition: all 0.3s ease;
+}
+.side-nav a:hover,
+.side-nav a.active {
+  color: var(--gold);
+}
+.side-nav .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ink-light);
+  border: 1px solid var(--ink-faint);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+.side-nav a:hover .dot,
+.side-nav a.active .dot {
+  background: var(--gold);
+  border-color: var(--gold);
+  box-shadow: 0 0 8px rgba(200, 164, 92, 0.4);
+}
+.side-nav .label {
+  font-size: 11px;
+  font-family: var(--font-body);
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.side-nav a:hover .label,
+.side-nav a.active .label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ═══════════════════════════════════════════════
+   HERO SECTION
+   ═══════════════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 40px 20px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 40%, rgba(200, 164, 92, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 80% 60% at 30% 70%, rgba(200, 60, 60, 0.03) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 70% 30%, rgba(74, 122, 138, 0.03) 0%, transparent 60%);
+}
+
+.hero-bg-char {
+  position: absolute;
+  font-family: var(--font-display);
+  color: rgba(200, 164, 92, 0.03);
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+.hero-bg-char:nth-child(1) { font-size: 35vw; top: 5%; left: -5%; }
+.hero-bg-char:nth-child(2) { font-size: 28vw; bottom: 5%; right: -5%; }
+.hero-bg-char:nth-child(3) { font-size: 20vw; top: 15%; right: 10%; }
+
+.hero-ornament {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto 30px;
+  position: relative;
+}
+.hero-ornament::before {
+  content: '◆';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--gold);
+  font-size: 8px;
+  background: var(--ink-black);
+  padding: 0 12px;
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 14px;
+  letter-spacing: 6px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 10vw, 120px);
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 10px;
+  position: relative;
+}
+.hero-title span {
+  display: block;
+}
+
+.hero-title-sub {
+  font-family: var(--font-heading);
+  font-size: clamp(16px, 3vw, 28px);
+  color: var(--text-secondary);
+  font-weight: 300;
+  margin-bottom: 40px;
+  letter-spacing: 4px;
+}
+
+.hero-meta {
+  font-size: 13px;
+  color: var(--text-dim);
+  letter-spacing: 2px;
+}
+.hero-meta span {
+  color: var(--gold-dim);
+}
+
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-dim);
+  font-size: 12px;
+  letter-spacing: 2px;
+  animation: float 2.5s ease-in-out infinite;
+}
+.hero-scroll-hint .line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gold-dim), transparent);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+/* ═══════════════════════════════════════════════
+   OVERVIEW TIMELINE (horizontal bar)
+   ═══════════════════════════════════════════════ */
+.overview-bar {
+  padding: 60px 40px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.overview-bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--ink-black) 0%, var(--ink-deep) 50%, var(--ink-black) 100%);
+}
+
+.overview-title {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  color: var(--gold);
+  letter-spacing: 8px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.timeline-bar-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.timeline-bar-axis {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--ink-light), transparent);
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeline-bar-segments {
+  display: flex;
+  height: 36px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.timeline-segment {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-right: 1px solid rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+.timeline-segment:hover {
+  filter: brightness(1.3);
+}
+.timeline-segment .seg-label {
+  font-size: 11px;
+  font-family: var(--font-body);
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 1px;
+  white-space: nowrap;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  font-weight: 500;
+}
+.timeline-segment .seg-label-small {
+  display: none;
+  font-size: 9px;
+}
+
+.timeline-bar-dates {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-dim);
+  letter-spacing: 1px;
+  margin-top: 8px;
+}
+
+/* ═══════════════════════════════════════════════
+   SECTION CONTAINERS
+   ═══════════════════════════════════════════════ */
+.dynasty-section {
+  position: relative;
+  padding: 100px 20px;
+  overflow: hidden;
+}
+.dynasty-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+}
+
+.section-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Section divider */
+.section-divider {
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+}
+.section-divider::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+.section-divider .num {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  color: var(--gold-dim);
+  letter-spacing: 4px;
+}
+
+/* Dynasty header */
+.dynasty-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.dynasty-era {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--gold);
+  letter-spacing: 6px;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+.dynasty-name {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 8vw, 80px);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.dynasty-years {
+  font-size: 16px;
+  color: var(--text-secondary);
+  letter-spacing: 3px;
+  font-weight: 200;
+}
+.dynasty-desc {
+  max-width: 700px;
+  margin: 24px auto 0;
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 2;
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════════
+   SUB-DYNASTY BLOCKS
+   ═══════════════════════════════════════════════ */
+.sub-dynasty {
+  margin-bottom: 60px;
+  padding: 40px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 4px;
+  position: relative;
+}
+.sub-dynasty::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  border-radius: 2px;
+}
+
+.sub-dynasty-title {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  margin-bottom: 6px;
+  letter-spacing: 2px;
+}
+.sub-dynasty-years {
+  font-size: 14px;
+  color: var(--text-dim);
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+/* Founder block */
+.founder-block {
+  background: rgba(200, 164, 92, 0.04);
+  border: 1px solid rgba(200, 164, 92, 0.1);
+  border-radius: 4px;
+  padding: 24px 28px;
+  margin-bottom: 30px;
+}
+.founder-label {
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.founder-name {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+.founder-detail {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.9;
+}
+.founder-detail strong {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════
+   EMPEROR TABLE
+   ═══════════════════════════════════════════════ */
+.emperor-table-wrap {
+  overflow-x: auto;
+  margin: 20px 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ink-light) transparent;
+}
+.emperor-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  min-width: 600px;
+}
+.emperor-table thead th {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(200, 164, 92, 0.2);
+  white-space: nowrap;
+}
+.emperor-table tbody td {
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--text-secondary);
+  vertical-align: top;
+  line-height: 1.7;
+}
+.emperor-table tbody tr {
+  transition: background 0.2s ease;
+}
+.emperor-table tbody tr:hover {
+  background: rgba(200, 164, 92, 0.04);
+}
+.emperor-table .emp-name {
+  color: var(--text-primary);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.emperor-table .emp-years {
+  white-space: nowrap;
+  color: var(--text-dim);
+  font-size: 12.5px;
+}
+.emperor-table .emp-ascend {
+  font-size: 13px;
+}
+.emperor-table .emp-end {
+  font-size: 13px;
+}
+
+.emp-tag {
+  display: inline-block;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 2px;
+  letter-spacing: 0.5px;
+  margin-left: 6px;
+  vertical-align: middle;
+  font-weight: 400;
+}
+.emp-tag.death    { background: rgba(200,60,60,0.15); color: #e07070; }
+.emp-tag.murdered { background: rgba(200,60,60,0.25); color: #ff6060; }
+.emp-tag.abdicate { background: rgba(200,164,92,0.15); color: var(--gold); }
+.emp-tag.usurp    { background: rgba(106,74,122,0.2); color: #b080d0; }
+.emp-tag.good     { background: rgba(74,138,106,0.15); color: var(--jade-bright); }
+
+/* ═══════════════════════════════════════════════
+   INSIGHT / PATTERN BOX
+   ═══════════════════════════════════════════════ */
+.insight-box {
+  margin: 30px 0;
+  padding: 24px 28px;
+  border-left: 3px solid var(--vermillion);
+  background: rgba(200, 60, 60, 0.04);
+  border-radius: 0 4px 4px 0;
+}
+.insight-box.gold-insight {
+  border-left-color: var(--gold);
+  background: rgba(200, 164, 92, 0.04);
+}
+.insight-box.jade-insight {
+  border-left-color: var(--jade);
+  background: rgba(74, 138, 106, 0.04);
+}
+.insight-title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  color: var(--vermillion-bright);
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+.insight-box.gold-insight .insight-title { color: var(--gold-bright); }
+.insight-box.jade-insight .insight-title { color: var(--jade-bright); }
+.insight-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 2;
+}
+
+/* ═══════════════════════════════════════════════
+   CAUSE-CHAIN (vertical flow)
+   ═══════════════════════════════════════════════ */
+.cause-chain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin: 40px 0;
+}
+.chain-node {
+  background: rgba(200, 164, 92, 0.06);
+  border: 1px solid rgba(200, 164, 92, 0.15);
+  padding: 14px 28px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--text-primary);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  letter-spacing: 1px;
+}
+.chain-arrow {
+  width: 1px;
+  height: 28px;
+  background: var(--gold-dim);
+  position: relative;
+}
+.chain-arrow::after {
+  content: '▼';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 8px;
+  color: var(--gold-dim);
+}
+
+/* ═══════════════════════════════════════════════
+   POWER STRUCTURE TABLE
+   ═══════════════════════════════════════════════ */
+.power-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+.power-table th {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(200, 164, 92, 0.2);
+}
+.power-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.8;
+}
+.power-table tbody tr:hover {
+  background: rgba(200, 164, 92, 0.04);
+}
+
+/* ═══════════════════════════════════════════════
+   FINAL SUMMARY
+   ═══════════════════════════════════════════════ */
+.summary-section {
+  padding: 100px 20px 120px;
+  background: linear-gradient(180deg, var(--ink-black) 0%, var(--ink-deep) 100%);
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 40px 0;
+}
+.summary-card {
+  padding: 28px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.summary-card:hover {
+  background: rgba(200, 164, 92, 0.04);
+  border-color: rgba(200, 164, 92, 0.15);
+}
+.summary-card .card-rule {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  color: var(--gold);
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+.summary-card .card-detail {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.9;
+}
+
+/* ═══════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════ */
+.page-footer {
+  text-align: center;
+  padding: 60px 20px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+.footer-ornament {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+  margin: 0 auto 20px;
+}
+.page-footer p {
+  font-size: 12px;
+  color: var(--text-dim);
+  letter-spacing: 2px;
+  line-height: 2;
+}
+
+/* ═══════════════════════════════════════════════
+   COLOR THEMES PER DYNASTY
+   ═══════════════════════════════════════════════ */
+.theme-qin .dynasty-name { color: #8a8a8a; }
+.theme-qin .sub-dynasty::before { background: #8a8a8a; }
+
+.theme-han .dynasty-name { color: #c83c3c; }
+.theme-han .sub-dynasty::before { background: #c83c3c; }
+
+.theme-three .dynasty-name { color: #4a8a6a; }
+.theme-three .sub-dynasty::before { background: #4a7a8a; }
+.theme-three .sub-dynasty.shu::before { background: #4a8a6a; }
+.theme-three .sub-dynasty.wu::before { background: #8a6a4a; }
+.theme-three .sub-dynasty.wei::before { background: #4a7a8a; }
+
+.theme-jin .dynasty-name { color: #6a4a7a; }
+.theme-jin .sub-dynasty::before { background: #6a4a7a; }
+
+.theme-nanbeichao .dynasty-name { color: #4a7a8a; }
+.theme-nanbeichao .sub-dynasty::before { background: #4a7a8a; }
+.theme-nanbeichao .sub-dynasty.north::before { background: #7a5a3a; }
+
+.theme-sui .dynasty-name { color: #8a6a4a; }
+.theme-sui .sub-dynasty::before { background: #8a6a4a; }
+
+.theme-tang .dynasty-name { color: var(--gold); }
+.theme-tang .sub-dynasty::before { background: var(--gold); }
+
+.theme-anshi .dynasty-name { color: var(--vermillion); }
+
+.theme-fivedn .dynasty-name { color: var(--vermillion-bright); }
+.theme-fivedn .sub-dynasty::before { background: var(--vermillion); }
+
+.theme-system .dynasty-name { color: var(--gold); }
+
+.theme-prequin .dynasty-name { color: #8a7a5a; }
+.theme-prequin .sub-dynasty::before { background: #8a7a5a; }
+
+.theme-song .dynasty-name { color: #5a8aaa; }
+.theme-song .sub-dynasty::before { background: #5a8aaa; }
+
+.theme-yuan .dynasty-name { color: #4a8a6a; }
+.theme-yuan .sub-dynasty::before { background: #4a8a6a; }
+
+.theme-ming .dynasty-name { color: #c8a45c; }
+.theme-ming .sub-dynasty::before { background: #c8a45c; }
+
+.theme-qingdyn .dynasty-name { color: #8a4a4a; }
+.theme-qingdyn .sub-dynasty::before { background: #8a4a4a; }
+
+.theme-republic .dynasty-name { color: #4a7a8a; }
+.theme-republic .sub-dynasty::before { background: #4a7a8a; }
+
+.theme-prc .dynasty-name { color: #c83c3c; }
+.theme-prc .sub-dynasty::before { background: #c83c3c; }
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .side-nav { display: none; }
+  .dynasty-section { padding: 60px 16px; }
+  .sub-dynasty { padding: 24px 20px; }
+  .founder-block { padding: 20px; }
+  .overview-bar { padding: 40px 16px 60px; }
+  .timeline-segment .seg-label { font-size: 9px; }
+  .summary-grid { grid-template-columns: 1fr; }
+  .emperor-table { font-size: 12.5px; }
+  .emperor-table thead th,
+  .emperor-table tbody td { padding: 8px 10px; }
+}
+
+@media (max-width: 480px) {
+  .hero-title { font-size: 42px; }
+  .hero-title-sub { font-size: 15px; }
+  .sub-dynasty-title { font-size: 20px; }
+  .timeline-bar-segments { height: 28px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  SIDE NAVIGATION                         ║
+     ╚═══════════════════════════════════════════╝ -->
+<nav class="side-nav" id="sideNav">
+  <a href="#hero"><span class="label">序</span><span class="dot"></span></a>
+  <a href="#sec-prequin"><span class="label">先秦</span><span class="dot"></span></a>
+  <a href="#sec-qin"><span class="label">秦</span><span class="dot"></span></a>
+  <a href="#sec-han"><span class="label">汉</span><span class="dot"></span></a>
+  <a href="#sec-three"><span class="label">三国</span><span class="dot"></span></a>
+  <a href="#sec-jin"><span class="label">两晋</span><span class="dot"></span></a>
+  <a href="#sec-nanbeichao"><span class="label">南北朝</span><span class="dot"></span></a>
+  <a href="#sec-sui"><span class="label">隋</span><span class="dot"></span></a>
+  <a href="#sec-tang"><span class="label">唐</span><span class="dot"></span></a>
+  <a href="#sec-anshi"><span class="label">安史之乱</span><span class="dot"></span></a>
+  <a href="#sec-fivedn"><span class="label">五代十国</span><span class="dot"></span></a>
+  <a href="#sec-song"><span class="label">宋</span><span class="dot"></span></a>
+  <a href="#sec-yuan"><span class="label">元</span><span class="dot"></span></a>
+  <a href="#sec-ming"><span class="label">明</span><span class="dot"></span></a>
+  <a href="#sec-qingdyn"><span class="label">清</span><span class="dot"></span></a>
+  <a href="#sec-republic"><span class="label">民国</span><span class="dot"></span></a>
+  <a href="#sec-prc"><span class="label">共和国</span><span class="dot"></span></a>
+  <a href="#sec-summary"><span class="label">总览</span><span class="dot"></span></a>
+</nav>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  HERO                                    ║
+     ╚═══════════════════════════════════════════╝ -->
+<section class="hero" id="hero">
+  <div class="hero-bg-char">权</div>
+  <div class="hero-bg-char">史</div>
+  <div class="hero-bg-char">鼎</div>
+
+  <div class="hero-ornament"></div>
+  <div class="hero-subtitle reveal">天 子 · 藩 镇 · 皇 权 演 变 史</div>
+  <h1 class="hero-title reveal reveal-delay-1">
+    <span>中国历代</span>
+    <span>权力更迭脉络</span>
+  </h1>
+  <p class="hero-title-sub reveal reveal-delay-2">从夏商周到共和国 · 上下五千年</p>
+  <p class="hero-meta reveal reveal-delay-3">
+    整理：<span>夜游神 🌘</span> &nbsp;·&nbsp; 鼎革千年 · 制度沿革全览
+  </p>
+
+  <div class="hero-scroll-hint">
+    <span>向下探索</span>
+    <div class="line"></div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  OVERVIEW TIMELINE BAR                   ║
+     ╚═══════════════════════════════════════════╝ -->
+<section class="overview-bar">
+  <div class="overview-title reveal">五 千 年 朝 代 纵 览</div>
+  <div class="timeline-bar-container reveal reveal-delay-1">
+    <div class="timeline-bar-segments">
+      <div class="timeline-segment" style="flex:18; background: linear-gradient(135deg, #5a4a2a, #8a7a5a);" onclick="document.getElementById('sec-prequin').scrollIntoView({behavior:'smooth'})">
+        <span class="seg-label">夏 商 周</span>
+      </div>
+      <div class="timeline-segment" style="flex:0.5; background: linear-gradient(135deg, #5a5a5a, #7a7a7a);" onclick="document.getElementById('sec-qin').scrollIntoView({behavior:'smooth'})">
+        <span class="seg-label">秦</span>
+      </div>
+      <div class="timeline-segment" style="flex:4.2; background: linear-gradient(135deg, #8a2828, #c83c3c);" onclick="document.getElementById('sec-han').scrollIntoView({behavior:'smooth'})">
+        <span class="seg-label">汉</span>
+      </div>
+      <div class="timeline-segment" style="flex:3.7; background: linear-gradient(135deg, #4a2a5a, #6a4a7a);" onclick="document.getElementById('sec-three').scrollIntoView({behavior:'smooth'})">
+        <span class="seg-label">三国两晋南北朝</span>
+      </div>
+      <div class="timeline-segment" style="flex:0.4; background: linear-gradient(135deg, #6a4a2a, #8a6a4a);" onclick="document.getElementById('sec-sui').scrollIntoView({behavior:'smooth'})">
+        <span class="seg-label">隋</span>
+      </div>
+      <div class="timeline-segment" style="flex:2.9; background: linear-gradient(135deg, #8a6a2a, #c8a45c);" onclick="document.getElementById('sec-tang').scrollIntoView({behavior:'smooth'})">
+        <span class="seg-label">唐</span>
+      </div>
+      <div class="timeline-segment" style="flex:0.5; background: linear-gradient(135deg, #8a2828, #c84040);" onclick="document.getElementById('sec-fivedn').scrollIntoView({behavior:'smooth'})">
+        <span class="seg-label">五代</span>
+      </div>
+      <div class="timeline-segment" style="flex:3.2; background: linear-gradient(135deg, #2a5a7a, #5a8aaa);" onclick="document.getElementById('sec-song').scrollIntoView({behavior:'smooth'})">
+        <span class="seg-label">宋</span>
+      </div>
+      <div class="timeline-segment" style="flex:1; background: linear-gradient(135deg, #2a5a4a, #4a8a6a);" onclick="document.getElementById('sec-yuan').scrollIntoView({behavior:'smooth'})">
+        <span class="seg-label">元</span>
+      </div>
+      <div class="timeline-segment" style="flex:2.8; background: linear-gradient(135deg, #8a6a2a, #c8a45c);" onclick="document.getElementById('sec-ming').scrollIntoView({behavior:'smooth'})">
+        <span class="seg-label">明</span>
+      </div>
+      <div class="timeline-segment" style="flex:2.8; background: linear-gradient(135deg, #5a2a2a, #8a4a4a);" onclick="document.getElementById('sec-qingdyn').scrollIntoView({behavior:'smooth'})">
+        <span class="seg-label">清</span>
+      </div>
+      <div class="timeline-segment" style="flex:1; background: linear-gradient(135deg, #2a5a6a, #4a7a8a);" onclick="document.getElementById('sec-republic').scrollIntoView({behavior:'smooth'})">
+        <span class="seg-label">民国</span>
+      </div>
+    </div>
+    <div class="timeline-bar-dates">
+      <span>前2070</span>
+      <span>前221</span>
+      <span>220</span>
+      <span>581</span>
+      <span>907</span>
+      <span>960</span>
+      <span>1279</span>
+      <span>1644</span>
+      <span>1912</span>
+    </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  〇、先秦                                  ║
+     ╚═══════════════════════════════════════════╝ -->
+<section class="dynasty-section theme-prequin" id="sec-prequin">
+  <div class="section-inner">
+    <div class="section-divider reveal"><span class="num">序</span></div>
+    <div class="dynasty-header reveal">
+      <div class="dynasty-era">文 明 之 始</div>
+      <h2 class="dynasty-name">先秦</h2>
+      <div class="dynasty-years">约前2070年 — 前221年</div>
+      <p class="dynasty-desc">从夏朝「家天下」的开端，到商朝甲骨文与青铜文明，到西周分封礼乐，再到春秋战国百家争鸣与变法图强。一千八百年间，中华文明的基因在此奠定。</p>
+    </div>
+
+    <!-- 夏 -->
+    <div class="sub-dynasty reveal">
+      <h3 class="sub-dynasty-title">夏</h3>
+      <div class="sub-dynasty-years">约前2070年 — 前1600年（约470年）</div>
+      <div class="founder-block">
+        <div class="founder-label">开 国 之 君</div>
+        <div class="founder-name">夏禹 → 启</div>
+        <div class="founder-detail">
+          <strong>禹：</strong>治水有功，舜禅让帝位于禹。禹晚年传位于子启，终结禅让制。<br>
+          <strong>启：</strong>以武力镇压有扈氏反对，确立世袭制——「公天下」变为「家天下」。
+        </div>
+      </div>
+      <div class="insight-box gold-insight">
+        <div class="insight-title">制度转折：世袭制确立</div>
+        <div class="insight-text">这是中国政治史上最根本的转变——部落联盟首领由推举产生的传统被打破，权力开始在家族内部传承。此后四千年，「家天下」成为中国政治的基本模式。</div>
+      </div>
+      <p style="font-size:14px; color:var(--text-secondary); line-height:2; margin-top:16px;">共传十四世、十七王。考古上与二里头遗址高度关联（宫殿基址、青铜器群、绿松石龙形器）。末代君主夏桀暴虐，商汤起兵灭之。</p>
+    </div>
+
+    <!-- 商 -->
+    <div class="sub-dynasty reveal">
+      <h3 class="sub-dynasty-title">商</h3>
+      <div class="sub-dynasty-years">约前1600年 — 前1046年（约554年）</div>
+      <div class="founder-block">
+        <div class="founder-label">开 国 之 君</div>
+        <div class="founder-name">商汤</div>
+        <div class="founder-detail">
+          <strong>登基：</strong>商族首领，联合周边方国讨伐夏桀，鸣条之战灭夏，建立商朝。<br>
+          <strong>核心遗产：</strong>甲骨文——中国最早的成熟文字体系；司母戊鼎——青铜冶铸巅峰。
+        </div>
+      </div>
+      <div class="emperor-table-wrap">
+        <table class="power-table">
+          <thead><tr><th>制度</th><th>内容</th><th>影响</th></tr></thead>
+          <tbody>
+            <tr><td style="color:var(--gold); font-weight:500;">内外服制</td><td>王畿为内服，方国为外服</td><td>分封制的早期形态</td></tr>
+            <tr><td style="color:var(--gold); font-weight:500;">神权政治</td><td>凡事占卜，国之大事在祀与戎</td><td>甲骨文由此产生</td></tr>
+            <tr><td style="color:var(--gold); font-weight:500;">继承制度</td><td>早期兄终弟及→后转父死子继</td><td>王位传承逐步规范化</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:14px; color:var(--text-secondary); line-height:2; margin-top:16px;">盘庚迁殷后政治中心稳定于安阳。共传十七世三十一王。纣王失政，前1046年牧野之战，周武王灭商。</p>
+    </div>
+
+    <!-- 西周 -->
+    <div class="sub-dynasty reveal">
+      <h3 class="sub-dynasty-title">西周</h3>
+      <div class="sub-dynasty-years">前1046年 — 前771年（约275年）</div>
+      <div class="founder-block">
+        <div class="founder-label">开 国 之 君</div>
+        <div class="founder-name">周武王 姬发</div>
+        <div class="founder-detail">
+          <strong>登基：</strong>周文王之子。牧野之战灭商纣，建立周朝，定都镐京（今西安附近）。<br>
+          <strong>制度奠基：</strong>周公（武王弟）辅成王，制礼作乐，建立分封制、宗法制、礼乐制——三位一体的政治框架。
+        </div>
+      </div>
+      <div class="insight-box gold-insight">
+        <div class="insight-title">制度转折：分封制 + 宗法制 + 礼乐制</div>
+        <div class="insight-text">「封建亲戚，以藩屏周」——以血缘为纽带、以礼乐为规范的统治秩序。<strong>嫡长子继承制</strong>确保权力有序传承，<strong>井田制</strong>（「方里为井，井九百亩」）维系贵族经济基础。这套体系影响中国社会数千年。</div>
+      </div>
+      <p style="font-size:14px; color:var(--text-secondary); line-height:2; margin-top:16px;">前841年国人暴动——中国有确切纪年的开始。前771年犬戎联合申侯攻破镐京，幽王被杀，西周亡。</p>
+    </div>
+
+    <!-- 东周 -->
+    <div class="sub-dynasty reveal">
+      <h3 class="sub-dynasty-title">东周（春秋战国）</h3>
+      <div class="sub-dynasty-years">前770年 — 前256年（约514年）</div>
+      <div class="founder-detail" style="padding:16px 0; color: var(--text-secondary); line-height:2;">
+        平王东迁洛邑，王室衰微。<strong style="color:var(--gold)">春秋</strong>（前770—前476）五霸争雄、尊王攘夷；<strong style="color:var(--gold)">战国</strong>（前475—前221）七雄并立、兼并图存。铁器牛耕推广带来生产力革命，各国变法运动从根本上改造了政治体制。
+      </div>
+      <div class="insight-box">
+        <div class="insight-title">制度转折：从封建到集权</div>
+        <div class="insight-text">井田制瓦解→土地私有化→前594年鲁国「初税亩」。<strong>商鞅变法</strong>（前356年）废井田、开阡陌、奖军功、行县制——系统性地打破贵族世袭体制，推行郡县制和官僚制。这是秦统一六国的制度基础。</div>
+      </div>
+      <div class="emperor-table-wrap">
+        <table class="power-table">
+          <thead><tr><th>春秋五霸</th><th>战国七雄</th><th>百家争鸣</th></tr></thead>
+          <tbody>
+            <tr><td>齐桓公、晋文公、楚庄王、吴王阖闾、越王勾践</td><td>齐楚燕韩赵魏秦</td><td>儒（孔孟）、道（老庄）、墨（墨翟）、法（韩非）、兵（孙武）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:14px; color:var(--text-secondary); line-height:2; margin-top:16px;">水利工程改变经济版图：都江堰（前256年）、郑国渠。秦以变法后的强大国力，十年间灭六国（前230—前221），统一天下。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  一、秦                                   ║
+     ╚═══════════════════════════════════════════╝ -->
+<section class="dynasty-section theme-qin" id="sec-qin">
+  <div class="section-inner">
+    <div class="section-divider reveal"><span class="num">壹</span></div>
+    <div class="dynasty-header reveal">
+      <div class="dynasty-era">第 一 帝 国</div>
+      <h2 class="dynasty-name">秦</h2>
+      <div class="dynasty-years">公元前221年 — 公元前206年</div>
+      <p class="dynasty-desc">秦始皇嬴政统一六国，建立中国历史上第一个中央集权帝制。郡县制替代分封制，书同文、车同轨、统一度量衡。</p>
+    </div>
+
+    <div class="sub-dynasty reveal">
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">
+          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="emp-name">始皇帝 嬴政</td>
+              <td class="emp-years">前221—前210</td>
+              <td class="emp-ascend">灭六国，自立为皇帝</td>
+              <td class="emp-end">病死于巡游途中沙丘 <span class="emp-tag death">病亡</span></td>
+            </tr>
+            <tr>
+              <td class="emp-name">二世 胡亥</td>
+              <td class="emp-years">前210—前207</td>
+              <td class="emp-ascend">赵高、李斯矫诏立之（逼死扶苏）</td>
+              <td class="emp-end">赵高逼胡亥自杀 <span class="emp-tag murdered">被杀</span></td>
+            </tr>
+            <tr>
+              <td class="emp-name">秦王 子婴</td>
+              <td class="emp-years">前207</td>
+              <td class="emp-ascend">杀死赵高后被立为秦王</td>
+              <td class="emp-end">项羽入咸阳，投降后被杀 <span class="emp-tag murdered">被杀</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="insight-box gold-insight reveal">
+      <div class="insight-title">权力结构洞察</div>
+      <div class="insight-text">皇帝中央集权，郡县制替代分封制。但秦速亡说明：<strong>没有制衡的绝对皇权，一旦接班出问题，整个系统立刻崩溃。</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  二、汉                                   ║
+     ╚═══════════════════════════════════════════╝ -->
+<section class="dynasty-section theme-han" id="sec-han">
+  <div class="section-inner">
+    <div class="section-divider reveal"><span class="num">贰</span></div>
+    <div class="dynasty-header reveal">
+      <div class="dynasty-era">楚 汉 相 争 与 大 汉 帝 国</div>
+      <h2 class="dynasty-name">汉</h2>
+      <div class="dynasty-years">公元前206年 — 公元220年</div>
+      <p class="dynasty-desc">项羽灭秦后分封十八诸侯，自立为西楚霸王。刘邦不满，双方争战四年。垓下之战后刘邦统一天下，建立汉朝。</p>
+    </div>
+
+    <!-- 西汉 -->
+    <div class="sub-dynasty reveal">
+      <h3 class="sub-dynasty-title">西汉</h3>
+      <div class="sub-dynasty-years">公元前202年 — 公元8年</div>
+
+      <div class="founder-block">
+        <div class="founder-label">开 国 皇 帝</div>
+        <div class="founder-name">汉高祖 刘邦</div>
+        <div class="founder-detail">
+          <strong>登基：</strong>出身泗水亭长（秦朝基层官吏），秦末起义后逐步吞并各路诸侯，垓下之战灭项羽，统一天下。<br>
+          <strong>退位：</strong>前195年，病死于长安。
+        </div>
+      </div>
+
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">
+          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <tbody>
+            <tr><td class="emp-name">高祖 刘邦</td><td class="emp-years">前202—前195</td><td>农民起义，灭项羽统一天下</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">惠帝 刘盈</td><td class="emp-years">前195—前188</td><td>刘邦嫡长子</td><td>忧郁而死（吕后专权） <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">高后 吕雉</td><td class="emp-years">前188—前180</td><td>临朝称制，实际掌权</td><td>病死，诸吕被周勃、陈平剿灭 <span class="emp-tag usurp">临朝称制</span></td></tr>
+            <tr><td class="emp-name">文帝 刘恒</td><td class="emp-years">前180—前157</td><td>周勃、陈平平定诸吕，迎立代王</td><td>病死，开创文景之治 <span class="emp-tag good">治世</span></td></tr>
+            <tr><td class="emp-name">景帝 刘启</td><td class="emp-years">前157—前141</td><td>文帝嫡长子</td><td>病死，七国之乱平定 <span class="emp-tag good">治世</span></td></tr>
+            <tr><td class="emp-name">武帝 刘彻</td><td class="emp-years">前141—前87</td><td>景帝嫡子</td><td>病死，北击匈奴，独尊儒术 <span class="emp-tag good">盛世</span></td></tr>
+            <tr><td class="emp-name">昭帝 刘弗陵</td><td class="emp-years">前87—前74</td><td>武帝幼子</td><td>病死，霍光辅政 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">宣帝 刘询</td><td class="emp-years">前74—前49</td><td>巫蛊之祸后被霍光迎立</td><td>病死，中兴之主 <span class="emp-tag good">中兴</span></td></tr>
+            <tr><td class="emp-name">元帝 刘奭</td><td class="emp-years">前49—前33</td><td>宣帝嫡子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">成帝 刘骜</td><td class="emp-years">前33—前7</td><td>元帝嫡子</td><td>病死，赵飞燕姐妹专权 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">哀帝 刘欣</td><td class="emp-years">前7—前1</td><td>成帝养子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">平帝 刘衎</td><td class="emp-years">前1—6</td><td>王莽拥立（外戚）</td><td>被王莽毒死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">孺子婴</td><td class="emp-years">6—9</td><td>王莽立为太子</td><td>王莽篡位，囚禁而死 <span class="emp-tag abdicate">篡位</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 新朝 -->
+    <div class="sub-dynasty reveal">
+      <h3 class="sub-dynasty-title">新朝</h3>
+      <div class="sub-dynasty-years">公元9年 — 23年</div>
+      <div class="founder-block">
+        <div class="founder-label">篡 位 者</div>
+        <div class="founder-name">王莽</div>
+        <div class="founder-detail">
+          <strong>登基：</strong>西汉外戚，权倾朝野，逼迫孺子婴禅让。<br>
+          <strong>退位：</strong>23年，绿林、赤眉起义军攻入长安，王莽被杀，新朝灭亡。
+        </div>
+      </div>
+    </div>
+
+    <!-- 东汉 -->
+    <div class="sub-dynasty reveal">
+      <h3 class="sub-dynasty-title">东汉</h3>
+      <div class="sub-dynasty-years">公元25年 — 220年</div>
+
+      <div class="founder-block">
+        <div class="founder-label">开 国 皇 帝</div>
+        <div class="founder-name">汉光武帝 刘秀</div>
+        <div class="founder-detail">
+          <strong>登基：</strong>汉景帝后代（旁支），西汉灭亡后起兵，昆阳之战以少胜多大破王莽军，随后统一天下，建立东汉。<br>
+          <strong>退位：</strong>57年，病死于洛阳。
+        </div>
+      </div>
+
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">
+          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <tbody>
+            <tr><td class="emp-name">光武帝 刘秀</td><td class="emp-years">25—57</td><td>起义统一天下，建立东汉</td><td>病死，开创光武中兴 <span class="emp-tag good">中兴</span></td></tr>
+            <tr><td class="emp-name">明帝 刘庄</td><td class="emp-years">57—75</td><td>光武帝嫡子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">章帝 刘炟</td><td class="emp-years">75—88</td><td>明帝嫡子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">和帝 刘肇</td><td class="emp-years">88—106</td><td>章帝嫡子</td><td>病死，外戚窦宪专权 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">殇帝 刘隆</td><td class="emp-years">106</td><td>和帝幼子（不满周岁即位）</td><td>即位208天后死亡 <span class="emp-tag death">夭折</span></td></tr>
+            <tr><td class="emp-name">安帝 刘祜</td><td class="emp-years">106—125</td><td>旁支入继</td><td>病死，外戚阎氏专权 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">顺帝 刘保</td><td class="emp-years">125—144</td><td>宦官政变拥立</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">冲帝 刘炳</td><td class="emp-years">144—145</td><td>顺帝之子（3岁即位）</td><td>病死 <span class="emp-tag death">夭折</span></td></tr>
+            <tr><td class="emp-name">质帝 刘缵</td><td class="emp-years">145—146</td><td>章帝玄孙，被梁冀拥立</td><td>被梁冀毒死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">桓帝 刘志</td><td class="emp-years">146—168</td><td>梁冀拥立</td><td>病死，宦官五侯专权 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">灵帝 刘宏</td><td class="emp-years">168—189</td><td>窦武拥立</td><td>病死，引发黄巾起义 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">少帝 刘辩</td><td class="emp-years">189</td><td>何进拥立（外戚）</td><td>被董卓废为弘农王，后被杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">献帝 刘协</td><td class="emp-years">189—220</td><td>董卓拥立</td><td>禅让给曹丕，东汉灭亡，封山阳公，善终 <span class="emp-tag abdicate">禅让</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="insight-box reveal">
+      <div class="insight-title">东汉的规律</div>
+      <div class="insight-text">东汉皇帝普遍短命或幼年即位，导致<strong>外戚和宦官交替专权</strong>。这个规律最终引发了董卓之乱和群雄割据。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  三、三国                                  ║
+     ╚═══════════════════════════════════════════╝ -->
+<section class="dynasty-section theme-three" id="sec-three">
+  <div class="section-inner">
+    <div class="section-divider reveal"><span class="num">叁</span></div>
+    <div class="dynasty-header reveal">
+      <div class="dynasty-era">天 下 三 分</div>
+      <h2 class="dynasty-name">三国</h2>
+      <div class="dynasty-years">公元220年 — 280年</div>
+    </div>
+
+    <!-- 曹魏 -->
+    <div class="sub-dynasty wei reveal">
+      <h3 class="sub-dynasty-title">曹魏</h3>
+      <div class="sub-dynasty-years">220—266年</div>
+      <div class="founder-block">
+        <div class="founder-label">开 国 皇 帝</div>
+        <div class="founder-name">魏文帝 曹丕</div>
+        <div class="founder-detail">
+          <strong>登基：</strong>曹操嫡长子，父死后继承魏王爵位。220年，逼迫汉献帝禅让，建立魏国。<br>
+          <strong>退位：</strong>226年，病死于洛阳。
+        </div>
+      </div>
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">
+          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <tbody>
+            <tr><td class="emp-name">文帝 曹丕</td><td class="emp-years">220—226</td><td>逼迫汉献帝禅让</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">明帝 曹叡</td><td class="emp-years">226—239</td><td>曹丕嫡子</td><td>病死，托孤于司马懿 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">齐王 曹芳</td><td class="emp-years">239—254</td><td>明帝养子，司马懿、曹爽辅政</td><td>司马昭废为齐王 <span class="emp-tag abdicate">被废</span></td></tr>
+            <tr><td class="emp-name">高贵乡公 曹髦</td><td class="emp-years">254—260</td><td>司马昭拥立</td><td>亲自讨伐司马昭，被成济弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">元帝 曹奂</td><td class="emp-years">260—266</td><td>司马昭拥立</td><td>禅让给司马炎，曹魏灭亡 <span class="emp-tag abdicate">禅让</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="insight-box gold-insight">
+        <div class="insight-title">关键规律</div>
+        <div class="insight-text">曹魏皇权被司马氏逐步架空。高贵乡公曹髦是唯一一个试图武力讨伐权臣的皇帝，但以失败告终。</div>
+      </div>
+    </div>
+
+    <!-- 蜀汉 -->
+    <div class="sub-dynasty shu reveal">
+      <h3 class="sub-dynasty-title">蜀汉</h3>
+      <div class="sub-dynasty-years">221—263年</div>
+      <div class="founder-block">
+        <div class="founder-label">开 国 皇 帝</div>
+        <div class="founder-name">汉昭烈帝 刘备</div>
+        <div class="founder-detail">
+          <strong>登基：</strong>汉景帝后代（旁支），以"恢复汉室"为旗帜，赤壁之战后夺取益州、汉中，221年在成都称帝。<br>
+          <strong>退位：</strong>223年，病死于白帝城，托孤于诸葛亮。
+        </div>
+      </div>
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">
+          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <tbody>
+            <tr><td class="emp-name">昭烈帝 刘备</td><td class="emp-years">221—223</td><td>起义建立蜀汉</td><td>病死，托孤诸葛亮 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">后主 刘禅</td><td class="emp-years">223—263</td><td>刘备嫡子</td><td>邓艾偷渡阴平，刘禅投降，封安乐公 <span class="emp-tag abdicate">投降</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="insight-box jade-insight">
+        <div class="insight-title">刘禅的选择</div>
+        <div class="insight-text">263年魏军兵临成都，刘禅不战而降，在洛阳"乐不思蜀"地活了8年。这是一种极端务实的政治选择——保存了蜀地百姓免于战火。</div>
+      </div>
+    </div>
+
+    <!-- 孙吴 -->
+    <div class="sub-dynasty wu reveal">
+      <h3 class="sub-dynasty-title">孙吴</h3>
+      <div class="sub-dynasty-years">229—280年</div>
+      <div class="founder-block">
+        <div class="founder-label">开 国 皇 帝</div>
+        <div class="founder-name">吴大帝 孙权</div>
+        <div class="founder-detail">
+          <strong>登基：</strong>孙坚、孙策之后，赤壁之战联合刘备击败曹操，夺取荆州。229年正式称帝。<br>
+          <strong>退位：</strong>252年，病死于建业。
+        </div>
+      </div>
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">
+          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <tbody>
+            <tr><td class="emp-name">大帝 孙权</td><td class="emp-years">229—252</td><td>继承父兄基业</td><td>病死，晚年后宫争位 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">废帝 孙亮</td><td class="emp-years">252—258</td><td>孙权嫡子</td><td>被孙綝废为会稽王 <span class="emp-tag abdicate">被废</span></td></tr>
+            <tr><td class="emp-name">景帝 孙休</td><td class="emp-years">258—264</td><td>孙綝废孙亮后拥立</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">末帝 孙皓</td><td class="emp-years">264—280</td><td>孙休死后，大臣拥立</td><td>降晋，封归命侯，善终 <span class="emp-tag abdicate">投降</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  四、两晋                                  ║
+     ╚═══════════════════════════════════════════╝ -->
+<section class="dynasty-section theme-jin" id="sec-jin">
+  <div class="section-inner">
+    <div class="section-divider reveal"><span class="num">肆</span></div>
+    <div class="dynasty-header reveal">
+      <div class="dynasty-era">司 马 天 下</div>
+      <h2 class="dynasty-name">两晋</h2>
+      <div class="dynasty-years">公元265年 — 420年</div>
+    </div>
+
+    <!-- 西晋 -->
+    <div class="sub-dynasty reveal">
+      <h3 class="sub-dynasty-title">西晋</h3>
+      <div class="sub-dynasty-years">265—316年</div>
+      <div class="founder-block">
+        <div class="founder-label">开 国 皇 帝</div>
+        <div class="founder-name">晋武帝 司马炎</div>
+        <div class="founder-detail">
+          <strong>登基：</strong>司马懿之孙，司马昭之子。265年代魏，建立西晋。280年灭吴，统一中国。<br>
+          <strong>结局：</strong>晚年决策失误，分封诸王引发八王之乱。
+        </div>
+      </div>
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">
+          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <tbody>
+            <tr><td class="emp-name">武帝 司马炎</td><td class="emp-years">266—290</td><td>司马氏代魏</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">惠帝 司马衷</td><td class="emp-years">290—306</td><td>司马炎嫡子（"何不食肉糜"）</td><td>被东海王越毒死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">怀帝 司马炽</td><td class="emp-years">307—311</td><td>惠帝弟</td><td>被刘聪俘虏并被杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">愍帝 司马邺</td><td class="emp-years">313—316</td><td>长安被围时立</td><td>出降刘聪，西晋亡 <span class="emp-tag abdicate">投降</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 东晋 -->
+    <div class="sub-dynasty reveal">
+      <h3 class="sub-dynasty-title">东晋</h3>
+      <div class="sub-dynasty-years">317—420年</div>
+      <div class="founder-block">
+        <div class="founder-label">开 国 皇 帝</div>
+        <div class="founder-name">晋元帝 司马睿</div>
+        <div class="founder-detail">
+          <strong>登基：</strong>司马懿曾孙。西晋灭亡后，在建康（南京）建立东晋。皇权从一开始就被门阀士族（王导、王敦等）架空。<br>
+          <strong>退位：</strong>322年，王敦之乱时被王敦软禁，忧愤而死。
+        </div>
+      </div>
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">
+          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <tbody>
+            <tr><td class="emp-name">元帝 司马睿</td><td class="emp-years">317—322</td><td>被王导、王敦拥立</td><td>忧愤而死，为王敦所制 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">明帝 司马绍</td><td class="emp-years">322—325</td><td>元帝子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">成帝 司马衍</td><td class="emp-years">325—342</td><td>明帝子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">康帝 司马岳</td><td class="emp-years">342—344</td><td>成帝弟</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">穆帝 司马聃</td><td class="emp-years">344—361</td><td>康帝子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">哀帝 司马丕</td><td class="emp-years">361—365</td><td>哀帝弟，桓温辅政</td><td>服食丹药中毒死 <span class="emp-tag death">中毒</span></td></tr>
+            <tr><td class="emp-name">废帝 司马奕</td><td class="emp-years">365—371</td><td>哀帝弟</td><td>被桓温废为海西公 <span class="emp-tag abdicate">被废</span></td></tr>
+            <tr><td class="emp-name">简文帝 司马昱</td><td class="emp-years">371—372</td><td>桓温拥立</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">孝武帝 司马曜</td><td class="emp-years">372—396</td><td>简文帝子</td><td>被宠妃张贵人用被子闷死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">安帝 司马德宗</td><td class="emp-years">396—418</td><td>孝武帝子</td><td>被刘裕派人缢死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">恭帝 司马德文</td><td class="emp-years">418—420</td><td>刘裕拥立</td><td>禅让给刘裕，东晋亡，被杀 <span class="emp-tag abdicate">禅让</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="insight-box reveal">
+      <div class="insight-title">东晋的规律</div>
+      <div class="insight-text">东晋皇权极度虚弱，<strong>门阀士族（王、谢、桓、庾）</strong>轮流执政。皇权最终被刘裕（北府兵将领）夺取，建立了宋，开启南朝。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  五、南北朝                                ║
+     ╚═══════════════════════════════════════════╝ -->
+<section class="dynasty-section theme-nanbeichao" id="sec-nanbeichao">
+  <div class="section-inner">
+    <div class="section-divider reveal"><span class="num">伍</span></div>
+    <div class="dynasty-header reveal">
+      <div class="dynasty-era">南 北 对 峙</div>
+      <h2 class="dynasty-name">南北朝</h2>
+      <div class="dynasty-years">公元420年 — 589年</div>
+    </div>
+
+    <!-- 南朝宋 -->
+    <div class="sub-dynasty reveal">
+      <h3 class="sub-dynasty-title">南朝·宋</h3>
+      <div class="sub-dynasty-years">420—479年</div>
+      <div class="founder-block">
+        <div class="founder-label">开 国 皇 帝</div>
+        <div class="founder-name">宋武帝 刘裕</div>
+        <div class="founder-detail">
+          <strong>登基：</strong>北府兵将领出身（军人集团），从底层士兵一路打到最高位置。先后灭桓玄、孙恩、卢循等割据势力，又北伐灭南燕、后秦。420年，逼晋恭帝禅让。<br>
+          <strong>退位：</strong>422年，病死于建康。
+        </div>
+      </div>
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">
+          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <tbody>
+            <tr><td class="emp-name">武帝 刘裕</td><td class="emp-years">420—422</td><td>北府兵将领，篡晋</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">少帝 刘义符</td><td class="emp-years">422—424</td><td>刘裕嫡子</td><td>被徐羡之、傅亮废杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">文帝 刘义隆</td><td class="emp-years">424—453</td><td>徐羡之等拥立</td><td>被太子刘劭弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">孝武帝 刘骏</td><td class="emp-years">453—464</td><td>起兵讨伐刘劭，自立</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">前废帝 刘子业</td><td class="emp-years">464—466</td><td>孝武帝子</td><td>被戴法兴等杀死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">明帝 刘彧</td><td class="emp-years">466—472</td><td>刘子业叔父，起兵自立</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">后废帝 刘昱</td><td class="emp-years">472—477</td><td>明帝子</td><td>被萧道成派人杀死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">顺帝 刘准</td><td class="emp-years">477—479</td><td>萧道成拥立</td><td>禅让给萧道成，被杀 <span class="emp-tag abdicate">禅让</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="insight-box">
+        <div class="insight-title">南朝宋的规律</div>
+        <div class="insight-text">皇位更替充满弑君和废立。宗室内部互相残杀，最终让萧道成这样的军人集团首领有机可乘。</div>
+      </div>
+    </div>
+
+    <!-- 南朝齐 -->
+    <div class="sub-dynasty reveal">
+      <h3 class="sub-dynasty-title">南朝·齐</h3>
+      <div class="sub-dynasty-years">479—502年（仅23年）</div>
+      <div class="founder-block">
+        <div class="founder-label">开 国 皇 帝</div>
+        <div class="founder-name">齐高帝 萧道成</div>
+        <div class="founder-detail">
+          <strong>登基：</strong>禁军将领出身（军人集团），拥立刘准后逼迫禅让。<br>
+          <strong>退位：</strong>482年，病死于建康。
+        </div>
+      </div>
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">
+          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <tbody>
+            <tr><td class="emp-name">高帝 萧道成</td><td class="emp-years">479—482</td><td>禁军将领，篡宋</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">武帝 萧赜</td><td class="emp-years">482—493</td><td>萧道成嫡子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">郁林王 萧昭业</td><td class="emp-years">493—494</td><td>武帝嫡孙</td><td>被萧鸾杀死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">海陵王 萧昭文</td><td class="emp-years">494</td><td>萧鸾拥立（仅数月）</td><td>被萧鸾废杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">明帝 萧鸾</td><td class="emp-years">494—498</td><td>萧道成侄，夺取帝位</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">东昏侯 萧宝卷</td><td class="emp-years">498—501</td><td>明帝子</td><td>被萧衍起兵杀死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">和帝 萧宝融</td><td class="emp-years">501—502</td><td>萧衍拥立</td><td>禅让给萧衍，被杀 <span class="emp-tag abdicate">禅让</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 南朝梁 -->
+    <div class="sub-dynasty reveal">
+      <h3 class="sub-dynasty-title">南朝·梁</h3>
+      <div class="sub-dynasty-years">502—557年</div>
+      <div class="founder-block">
+        <div class="founder-label">开 国 皇 帝</div>
+        <div class="founder-name">梁武帝 萧衍</div>
+        <div class="founder-detail">
+          <strong>登基：</strong>南齐宗室，后起兵灭齐，建立梁朝。<br>
+          <strong>结局：</strong>549年，侯景围城，饿死于台城。
+        </div>
+      </div>
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">
+          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <tbody>
+            <tr><td class="emp-name">武帝 萧衍</td><td class="emp-years">502—549</td><td>南齐宗室，篡齐</td><td>被侯景围城饿死 <span class="emp-tag murdered">饿死</span></td></tr>
+            <tr><td class="emp-name">简文帝 萧纲</td><td class="emp-years">549—551</td><td>侯景拥立</td><td>被侯景弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">孝元帝 萧绎</td><td class="emp-years">552—554</td><td>侯景死后自立</td><td>被萧詧（西梁）杀死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">敬帝 萧方智</td><td class="emp-years">555—557</td><td>陈霸先拥立</td><td>禅让给陈霸先，被杀 <span class="emp-tag abdicate">禅让</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 南朝陈 -->
+    <div class="sub-dynasty reveal">
+      <h3 class="sub-dynasty-title">南朝·陈</h3>
+      <div class="sub-dynasty-years">557—589年</div>
+      <div class="founder-block">
+        <div class="founder-label">开 国 皇 帝</div>
+        <div class="founder-name">陈武帝 陈霸先</div>
+        <div class="founder-detail">
+          <strong>登基：</strong>岭南地方实力派出身（军人），在侯景之乱中崛起，灭梁后建立陈朝。<br>
+          <strong>退位：</strong>559年，病死于建康。
+        </div>
+      </div>
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">
+          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <tbody>
+            <tr><td class="emp-name">武帝 陈霸先</td><td class="emp-years">557—559</td><td>军人集团，篡梁</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">文帝 陈蒨</td><td class="emp-years">559—566</td><td>陈霸先侄</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">废帝 陈伯宗</td><td class="emp-years">566—568</td><td>文帝嫡子</td><td>被陈顼废为临海王 <span class="emp-tag abdicate">被废</span></td></tr>
+            <tr><td class="emp-name">宣帝 陈顼</td><td class="emp-years">569—582</td><td>陈蒨弟，夺取帝位</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">后主 陈叔宝</td><td class="emp-years">583—589</td><td>宣帝子</td><td>隋军攻入建康，投降，封长城公，善终 <span class="emp-tag abdicate">投降</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="insight-box jade-insight">
+        <div class="insight-title">陈后主的意义</div>
+        <div class="insight-text">"商女不知亡国恨，隔江犹唱后庭花。"陈后主是南朝最后一个亡国之君，隋灭陈后"江南"作为政治概念被彻底整合进中原王朝。</div>
+      </div>
+    </div>
+
+    <!-- 北魏 -->
+    <div class="sub-dynasty north reveal">
+      <h3 class="sub-dynasty-title">北朝·北魏</h3>
+      <div class="sub-dynasty-years">386—534年</div>
+      <div class="founder-block">
+        <div class="founder-label">开 国 皇 帝</div>
+        <div class="founder-name">魏道武帝 拓跋珪</div>
+        <div class="founder-detail">
+          <strong>登基：</strong>鲜卑族，淝水之战后前秦崩溃，拓跋珪在牛川自称代王，逐步统一北方。<br>
+          <strong>退位：</strong>409年，被儿子拓跋绍弑杀。死于亲子之手。
+        </div>
+      </div>
+      <div class="insight-box gold-insight" style="margin-bottom:24px">
+        <div class="insight-title">孝文帝汉化（494年）</div>
+        <div class="insight-text">将都城从平城（大同）迁到洛阳，改汉姓（拓跋→元），推行汉文化。使北魏从游牧政权彻底转型为中原王朝，但也引发了六镇起义（525—535年）。</div>
+      </div>
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">
+          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <tbody>
+            <tr><td class="emp-name">道武帝 拓跋珪</td><td class="emp-years">386—409</td><td>鲜卑首领，统一北方</td><td>被子拓跋绍弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">明元帝 拓跋嗣</td><td class="emp-years">409—423</td><td>道武帝子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">太武帝 拓跋焘</td><td class="emp-years">423—452</td><td>明元帝子</td><td>被宦官宗爱弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">南安王 拓跋余</td><td class="emp-years">452</td><td>宗爱拥立</td><td>被宗爱弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">文成帝 拓跋濬</td><td class="emp-years">452—465</td><td>宗爱弑君后被诛，复位</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">献文帝 拓跋弘</td><td class="emp-years">465—471</td><td>文成帝子</td><td>禅让给孝文帝，被文明太后毒死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">孝文帝 元宏</td><td class="emp-years">471—499</td><td>献文帝子（文明太后掌权）</td><td>北伐途中病死 <span class="emp-tag good">汉化改革</span></td></tr>
+            <tr><td class="emp-name">宣武帝 元恪</td><td class="emp-years">499—515</td><td>孝文帝次子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">孝明帝 元诩</td><td class="emp-years">515—528</td><td>宣武帝嫡子（胡太后专权）</td><td>被胡太后毒死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">幼帝 元钊</td><td class="emp-years">528</td><td>胡太后立（不满月）</td><td>被尔朱荣沉入黄河 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">孝庄帝 元子攸</td><td class="emp-years">528—530</td><td>尔朱荣拥立</td><td>被尔朱兆俘获后缢死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">长广王 元晔</td><td class="emp-years">530—531</td><td>尔朱兆拥立</td><td>被尔朱兆废杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">节闵帝 元恭</td><td class="emp-years">531—532</td><td>尔朱世隆拥立</td><td>被高欢废杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">孝武帝 元修</td><td class="emp-years">532—534</td><td>高欢拥立</td><td>投奔宇文泰，被杀 <span class="emp-tag murdered">被杀</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="insight-box">
+        <div class="insight-title">北魏的规律</div>
+        <div class="insight-text">皇位更替几乎全靠军事强人（尔朱荣、高欢等）操纵，皇权完全成为军阀的傀儡。</div>
+      </div>
+    </div>
+
+    <!-- 北魏分裂 -->
+    <div class="sub-dynasty north reveal">
+      <h3 class="sub-dynasty-title">北魏分裂后</h3>
+      <div class="sub-dynasty-years">534—581年</div>
+      <div class="founder-detail" style="padding:16px 0; color: var(--text-secondary); line-height:2;">
+        <strong style="color:var(--gold)">东魏（534—550）→ 北齐（550—577）：</strong>高欢之子高洋建立，577年被北周灭。<br>
+        <strong style="color:var(--gold)">西魏（535—557）→ 北周（557—581）：</strong>宇文泰侄子宇文觉建立，581年被隋朝（杨坚）取代。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  六、隋                                   ║
+     ╚═══════════════════════════════════════════╝ -->
+<section class="dynasty-section theme-sui" id="sec-sui">
+  <div class="section-inner">
+    <div class="section-divider reveal"><span class="num">陆</span></div>
+    <div class="dynasty-header reveal">
+      <div class="dynasty-era">短 命 的 统 一</div>
+      <h2 class="dynasty-name">隋</h2>
+      <div class="dynasty-years">公元581年 — 618年</div>
+    </div>
+
+    <div class="sub-dynasty reveal">
+      <div class="founder-block">
+        <div class="founder-label">开 国 皇 帝</div>
+        <div class="founder-name">隋文帝 杨坚</div>
+        <div class="founder-detail">
+          <strong>登基：</strong>北周外戚（杨坚是北周静帝的外祖父），581年逼迫北周静帝禅让。<br>
+          <strong>退位：</strong>604年，据传被次子杨广逼迫退位后死亡（一说病逝）。
+        </div>
+      </div>
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">
+          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <tbody>
+            <tr><td class="emp-name">文帝 杨坚</td><td class="emp-years">581—604</td><td>北周外戚，篡周</td><td>被杨广逼迫死亡（存疑） <span class="emp-tag murdered">存疑</span></td></tr>
+            <tr><td class="emp-name">炀帝 杨广</td><td class="emp-years">604—618</td><td>文帝次子（弑父存疑）</td><td>江都兵变，被宇文化及缢杀 <span class="emp-tag murdered">被杀</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="insight-box reveal">
+      <div class="insight-title">杨广的败亡</div>
+      <div class="insight-text">三征高句丽、修大运河、三下江都。隋炀帝的失败不在于目标本身，而在于<strong>节奏错误</strong>——所有大事业同时推进，超出了民力的极限，最终引发全国性农民起义。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  七、唐                                   ║
+     ╚═══════════════════════════════════════════╝ -->
+<section class="dynasty-section theme-tang" id="sec-tang">
+  <div class="section-inner">
+    <div class="section-divider reveal"><span class="num">柒</span></div>
+    <div class="dynasty-header reveal">
+      <div class="dynasty-era">盛 世 大 唐</div>
+      <h2 class="dynasty-name">唐</h2>
+      <div class="dynasty-years">公元618年 — 907年</div>
+    </div>
+
+    <div class="sub-dynasty reveal">
+      <div class="founder-block">
+        <div class="founder-label">开 国 皇 帝</div>
+        <div class="founder-name">唐高祖 李渊</div>
+        <div class="founder-detail">
+          <strong>登基：</strong>隋太原留守（地方军政长官），617年趁农民起义之机起兵，618年在长安称帝，建立唐朝。<br>
+          <strong>退位：</strong>626年，玄武门之变后禅让给李世民，被尊为太上皇。635年病死于长安。
+        </div>
+      </div>
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">
+          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <tbody>
+            <tr><td class="emp-name">高祖 李渊</td><td class="emp-years">618—626</td><td>隋太原留守，起义建唐</td><td>玄武门之变后禅让给李世民 <span class="emp-tag abdicate">禅让</span></td></tr>
+            <tr><td class="emp-name">太宗 李世民</td><td class="emp-years">626—649</td><td>秦王，杀兄逼父（玄武门之变）</td><td>病死于翠微宫 <span class="emp-tag good">贞观之治</span></td></tr>
+            <tr><td class="emp-name">高宗 李治</td><td class="emp-years">649—683</td><td>太宗嫡子</td><td>病死于洛阳 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">武则天</td><td class="emp-years">684—705</td><td>唐高宗皇后，临朝称制后称帝</td><td>神龙政变后退位，同年病死 <span class="emp-tag usurp">称帝</span></td></tr>
+            <tr><td class="emp-name">中宗 李显</td><td class="emp-years">705—710</td><td>武则天病后复位</td><td>被韦后和安乐公主毒死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">睿宗 李旦</td><td class="emp-years">710—712</td><td>唐隆政变拥立</td><td>禅让给李隆基 <span class="emp-tag abdicate">禅让</span></td></tr>
+            <tr><td class="emp-name">玄宗 李隆基</td><td class="emp-years">712—756</td><td>先天政变杀太平公主后登基</td><td>安史之乱中禅让给李亨 <span class="emp-tag good">开元盛世</span></td></tr>
+            <tr><td class="emp-name">肃宗 李亨</td><td class="emp-years">756—762</td><td>玄宗逃蜀时自立为帝</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">代宗 李豫</td><td class="emp-years">762—779</td><td>肃宗嫡子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">德宗 李适</td><td class="emp-years">779—805</td><td>代宗嫡子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">顺宗 李诵</td><td class="emp-years">805</td><td>德宗嫡子（仅在位8个月）</td><td>宦官逼迫退位 <span class="emp-tag abdicate">被废</span></td></tr>
+            <tr><td class="emp-name">宪宗 李纯</td><td class="emp-years">805—820</td><td>顺宗子，元和中兴</td><td>被宦官陈弘志弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">穆宗 李恒</td><td class="emp-years">820—824</td><td>宪宗嫡子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">敬宗 李湛</td><td class="emp-years">824—826</td><td>穆宗嫡子</td><td>被宦官刘克明弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">文宗 李昂</td><td class="emp-years">826—840</td><td>敬宗弟，宦官拥立</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">武宗 李炎</td><td class="emp-years">840—846</td><td>宦官仇士良拥立</td><td>病死（服食丹药） <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">宣宗 李忱</td><td class="emp-years">846—859</td><td>装傻多年被宦官拥立</td><td>病死 <span class="emp-tag good">大中中兴</span></td></tr>
+            <tr><td class="emp-name">懿宗 李漼</td><td class="emp-years">859—873</td><td>宣宗子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">僖宗 李儇</td><td class="emp-years">873—888</td><td>懿宗子，宦官拥立</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">昭宗 李晔</td><td class="emp-years">888—904</td><td>宦官杨复恭拥立</td><td>被朱温弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">哀帝 李柷</td><td class="emp-years">904—907</td><td>朱温拥立</td><td>禅让给朱温，唐朝灭亡，被杀 <span class="emp-tag abdicate">禅让</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="insight-box gold-insight reveal">
+      <div class="insight-title">唐朝皇权更替的规律</div>
+      <div class="insight-text">
+        <strong>前期</strong>（玄武门之变→武则天→韦后→太平公主）：皇位争夺主要在宗室内部，靠政变。<br>
+        <strong>中期</strong>（玄宗→肃宗→代宗→德宗）：安史之乱后皇权削弱。<br>
+        <strong>后期</strong>：宦官专权，皇帝多被宦官拥立，甚至被宦官弑杀。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  安史之乱                                  ║
+     ╚═══════════════════════════════════════════╝ -->
+<section class="dynasty-section theme-anshi" id="sec-anshi">
+  <div class="section-inner">
+    <div class="section-divider reveal"><span class="num">捌</span></div>
+    <div class="dynasty-header reveal">
+      <div class="dynasty-era">藩 镇 割 据 的 起 点</div>
+      <h2 class="dynasty-name">安史之乱</h2>
+      <div class="dynasty-years">公元755年 — 763年</div>
+      <p class="dynasty-desc">唐朝平定安史之乱用了8年，但为了尽快结束战争，做了两个关键妥协：允许藩镇世袭化；河北三镇（魏博、成德、卢龙）保持半独立状态。这种状态持续了140多年。</p>
+    </div>
+
+    <div class="cause-chain reveal">
+      <div class="chain-node">安史之乱（755—763）</div>
+      <div class="chain-arrow"></div>
+      <div class="chain-node">唐朝被迫藩镇世袭化</div>
+      <div class="chain-arrow"></div>
+      <div class="chain-node">河北三镇割据自立（760年代）</div>
+      <div class="chain-arrow"></div>
+      <div class="chain-node">唐朝中央权威持续削弱</div>
+      <div class="chain-arrow"></div>
+      <div class="chain-node">黄巢起义（875—884）打破最后秩序</div>
+      <div class="chain-arrow"></div>
+      <div class="chain-node">朱温篡唐（907）建立后梁</div>
+      <div class="chain-arrow"></div>
+      <div class="chain-node" style="background:rgba(200,60,60,0.1); border-color:rgba(200,60,60,0.3);">五代十国开始（907）</div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  五代十国                                  ║
+     ╚═══════════════════════════════════════════╝ -->
+<section class="dynasty-section theme-fivedn" id="sec-fivedn">
+  <div class="section-inner">
+    <div class="section-divider reveal"><span class="num">玖</span></div>
+    <div class="dynasty-header reveal">
+      <div class="dynasty-era">乱 世 群 雄</div>
+      <h2 class="dynasty-name">五代十国</h2>
+      <div class="dynasty-years">公元907年 — 960年</div>
+      <p class="dynasty-desc">五代皇帝不是传统意义上的"皇子"，而是从藩镇军事集团里杀出来的将领。这就是为什么五代更替全是军事政变/篡夺，没有一次是正常的父死子继。</p>
+    </div>
+
+    <div class="sub-dynasty reveal">
+      <h3 class="sub-dynasty-title">五代皇帝出身</h3>
+      <div class="emperor-table-wrap">
+        <table class="power-table">
+          <thead><tr><th>朝代</th><th>皇帝</th><th>出身</th></tr></thead>
+          <tbody>
+            <tr><td>后梁</td><td class="emp-name">朱温</td><td>农民起义军 → 藩镇</td></tr>
+            <tr><td>后唐</td><td class="emp-name">李存勖</td><td>沙陀军事集团 → 藩镇</td></tr>
+            <tr><td>后晋</td><td class="emp-name">石敬瑭</td><td>沙陀军事集团 → 藩镇</td></tr>
+            <tr><td>后汉</td><td class="emp-name">刘知远</td><td>沙陀军事集团 → 藩镇</td></tr>
+            <tr><td>后周</td><td class="emp-name">郭威</td><td>底层平民 → 藩镇</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  藩镇制度                                  ║
+     ╚═══════════════════════════════════════════╝ -->
+<section class="dynasty-section theme-system" id="sec-system">
+  <div class="section-inner">
+    <div class="section-divider reveal"><span class="num">拾</span></div>
+    <div class="dynasty-header reveal">
+      <div class="dynasty-era">制 度 根 源</div>
+      <h2 class="dynasty-name">藩镇割据</h2>
+      <div class="dynasty-years">节度使制度与牙兵</div>
+    </div>
+
+    <div class="sub-dynasty reveal">
+      <h3 class="sub-dynasty-title">节度使掌握三种大权</h3>
+      <div class="emperor-table-wrap">
+        <table class="power-table">
+          <thead><tr><th>权力</th><th>内容</th></tr></thead>
+          <tbody>
+            <tr><td style="color:var(--vermillion-bright); font-weight:500;">军权</td><td>指挥辖区内所有军队</td></tr>
+            <tr><td style="color:var(--gold-bright); font-weight:500;">财权</td><td>辖区内税收不上缴中央</td></tr>
+            <tr><td style="color:var(--jade-bright); font-weight:500;">人事权</td><td>官员任命不需中央批准</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="insight-box gold-insight reveal">
+      <div class="insight-title">牙兵制度</div>
+      <div class="insight-text">藩帅为了对抗中央，会豢养私人精锐部队——<strong>牙兵</strong>。但牙兵逐渐坐大，能废立藩帅。藩帅只好再养私人兵力来压制牙兵。如此循环，藩镇内部也不稳定。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  十一、宋                                   ║
+     ╚═══════════════════════════════════════════╝ -->
+<section class="dynasty-section theme-song" id="sec-song">
+  <div class="section-inner">
+    <div class="section-divider reveal"><span class="num">拾壹</span></div>
+    <div class="dynasty-header reveal">
+      <div class="dynasty-era">文 治 巅 峰</div>
+      <h2 class="dynasty-name">宋</h2>
+      <div class="dynasty-years">公元960年 — 1279年</div>
+      <p class="dynasty-desc">赵匡胤汲取五代武人乱政的教训，确立「崇文抑武」国策。宋朝经济文化达到封建社会巅峰，但军事积弱，始终未能收复燕云十六州。</p>
+    </div>
+
+    <!-- 北宋 -->
+    <div class="sub-dynasty reveal">
+      <h3 class="sub-dynasty-title">北宋</h3>
+      <div class="sub-dynasty-years">960—1127年</div>
+      <div class="founder-block">
+        <div class="founder-label">开 国 皇 帝</div>
+        <div class="founder-name">宋太祖 赵匡胤</div>
+        <div class="founder-detail">
+          <strong>登基：</strong>后周殿前都点检（禁军最高统帅），960年陈桥兵变、黄袍加身。<br>
+          <strong>治国：</strong>杯酒释兵权——「稍夺其权、制其钱谷、收其精兵」三大国策奠定文治格局。<br>
+          <strong>结局：</strong>976年「烛影斧声」暴毙，弟赵光义继位，死因成千古之谜。
+        </div>
+      </div>
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">
+          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <tbody>
+            <tr><td class="emp-name">太祖 赵匡胤</td><td class="emp-years">960—976</td><td>陈桥兵变，黄袍加身</td><td>暴毙（烛影斧声） <span class="emp-tag murdered">猝死</span></td></tr>
+            <tr><td class="emp-name">太宗 赵光义</td><td class="emp-years">976—997</td><td>兄终弟及（争议）</td><td>箭伤复发病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">真宗 赵恒</td><td class="emp-years">997—1022</td><td>太宗第三子</td><td>病死 <span class="emp-tag good">澶渊之盟</span></td></tr>
+            <tr><td class="emp-name">仁宗 赵祯</td><td class="emp-years">1022—1063</td><td>真宗第六子</td><td>病死 <span class="emp-tag good">仁宗盛治</span></td></tr>
+            <tr><td class="emp-name">神宗 赵顼</td><td class="emp-years">1067—1085</td><td>英宗长子</td><td>忧愤病死 <span class="emp-tag usurp">王安石变法</span></td></tr>
+            <tr><td class="emp-name">哲宗 赵煦</td><td class="emp-years">1085—1100</td><td>神宗第六子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">徽宗 赵佶</td><td class="emp-years">1100—1126</td><td>哲宗弟</td><td>靖康之变被金掳走 <span class="emp-tag murdered">亡国</span></td></tr>
+            <tr><td class="emp-name">钦宗 赵桓</td><td class="emp-years">1126—1127</td><td>徽宗禅让</td><td>被掳至金国 <span class="emp-tag murdered">亡国</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="insight-box gold-insight">
+        <div class="insight-title">制度转折：崇文抑武 + 分权制衡</div>
+        <div class="insight-text">参知政事分行政权、枢密使分军权、三司使分财权——宰相不再独揽大权。<strong>科举大扩招</strong>（糊名、誊录确保公平），「朝为田舍郎，暮登天子堂」。<strong>交子</strong>——世界最早纸币。经济上打破坊市制，出现夜市，开封人口超百万。</div>
+      </div>
+    </div>
+
+    <!-- 南宋 -->
+    <div class="sub-dynasty reveal">
+      <h3 class="sub-dynasty-title">南宋</h3>
+      <div class="sub-dynasty-years">1127—1279年</div>
+      <div class="founder-block">
+        <div class="founder-label">开 国 皇 帝</div>
+        <div class="founder-name">宋高宗 赵构</div>
+        <div class="founder-detail">
+          <strong>登基：</strong>徽宗第九子，靖康之变时出使金营得以幸免。1127年南京应天府即位，重建宋室，定都临安（杭州）。<br>
+          <strong>争议：</strong>以「莫须有」罪名杀害岳飞，与金签订绍兴和议（称臣纳贡）。<br>
+          <strong>退位：</strong>1162年禅位给养子赵昚（孝宗），自为太上皇，1187年病亡。
+        </div>
+      </div>
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">
+          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <tbody>
+            <tr><td class="emp-name">高宗 赵构</td><td class="emp-years">1127—1162</td><td>靖康之变后即位</td><td>禅位太上皇 <span class="emp-tag abdicate">禅让</span></td></tr>
+            <tr><td class="emp-name">孝宗 赵昚</td><td class="emp-years">1162—1189</td><td>高宗养子，受禅</td><td>禅位后病亡 <span class="emp-tag good">隆兴北伐</span></td></tr>
+            <tr><td class="emp-name">理宗 赵昀</td><td class="emp-years">1224—1264</td><td>权臣史弥远拥立</td><td>病死 <span class="emp-tag death">联蒙灭金</span></td></tr>
+            <tr><td class="emp-name">恭帝 赵㬎</td><td class="emp-years">1274—1276</td><td>度宗次子，5岁即位</td><td>降元 <span class="emp-tag abdicate">投降</span></td></tr>
+            <tr><td class="emp-name">末帝 赵昺</td><td class="emp-years">1278—1279</td><td>度宗幼子</td><td>崖山蹈海 <span class="emp-tag murdered">亡国</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="insight-box">
+        <div class="insight-title">制度转折：程朱理学成为正统</div>
+        <div class="insight-text">朱熹集大成的理学体系被定为科举标准答案——「存天理、灭人欲」深刻塑造此后七百年中国社会的道德观念。经济重心南移至此完成，泉州成为世界第一大港。1279年崖山海战，陆秀夫背幼帝投海，十万军民蹈海殉国。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  十二、元                                   ║
+     ╚═══════════════════════════════════════════╝ -->
+<section class="dynasty-section theme-yuan" id="sec-yuan">
+  <div class="section-inner">
+    <div class="section-divider reveal"><span class="num">拾贰</span></div>
+    <div class="dynasty-header reveal">
+      <div class="dynasty-era">大 元 帝 国</div>
+      <h2 class="dynasty-name">元</h2>
+      <div class="dynasty-years">公元1271年 — 1368年</div>
+      <p class="dynasty-desc">忽必烈取《易经》「大哉乾元」定国号，建立空前辽阔的多民族帝国。开创行省制——中国「省」级行政区划由此而来。</p>
+    </div>
+
+    <div class="sub-dynasty reveal">
+      <div class="founder-block">
+        <div class="founder-label">开 国 皇 帝</div>
+        <div class="founder-name">元世祖 忽必烈</div>
+        <div class="founder-detail">
+          <strong>登基：</strong>成吉思汗之孙、托雷之子。1260年自立为大汗（与弟阿里不哥争位），1271年改国号为「大元」，1279年灭南宋统一全国。<br>
+          <strong>治国：</strong>推行行省制，重用汉族儒臣，定大都（北京）为都城。<br>
+          <strong>结局：</strong>1294年病亡于大都，在位三十五年。
+        </div>
+      </div>
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">
+          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <tbody>
+            <tr><td class="emp-name">世祖 忽必烈</td><td class="emp-years">1260—1294</td><td>自立为汗，武力统一</td><td>病亡 <span class="emp-tag good">统一全国</span></td></tr>
+            <tr><td class="emp-name">成宗 铁穆耳</td><td class="emp-years">1294—1307</td><td>世祖嫡孙</td><td>病亡 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">武宗 海山</td><td class="emp-years">1307—1311</td><td>宫廷政变拥立</td><td>纵酒病亡 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">仁宗 爱育黎拔力八达</td><td class="emp-years">1311—1320</td><td>武宗弟</td><td>病亡 <span class="emp-tag good">恢复科举</span></td></tr>
+            <tr><td class="emp-name">顺帝 妥懽帖睦尔</td><td class="emp-years">1333—1368</td><td>权臣拥立</td><td>北逃蒙古 <span class="emp-tag abdicate">亡国</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="insight-box gold-insight">
+        <div class="insight-title">制度转折：行省制度</div>
+        <div class="insight-text">全国设十个行中书省，由中央派遣官员管辖。「省」作为一级行政区划延续至今。中央以中书省总揽政务（一省制），不设三省分权。<strong>四等人制</strong>（蒙古人→色目人→汉人→南人）是其核心矛盾，最终引发红巾军起义，元朝灭亡。</div>
+      </div>
+      <p style="font-size:14px; color:var(--text-secondary); line-height:2; margin-top:16px;">共传十一帝，中后期政变频繁——四十年间换了九帝。马可·波罗来华，郭守敬《授时历》精确度领先世界三百年。元曲兴盛：关汉卿《窦娥冤》。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  十三、明                                   ║
+     ╚═══════════════════════════════════════════╝ -->
+<section class="dynasty-section theme-ming" id="sec-ming">
+  <div class="section-inner">
+    <div class="section-divider reveal"><span class="num">拾叁</span></div>
+    <div class="dynasty-header reveal">
+      <div class="dynasty-era">日 月 昭 昭</div>
+      <h2 class="dynasty-name">明</h2>
+      <div class="dynasty-years">公元1368年 — 1644年</div>
+      <p class="dynasty-desc">朱元璋从乞丐到皇帝，将皇权专制推向顶峰——永久废除丞相、设厂卫特务、八股取士。嘉靖帝25年不上朝、万历帝28年不上朝——内阁制度竟能维持国家运转。</p>
+    </div>
+
+    <div class="sub-dynasty reveal">
+      <div class="founder-block">
+        <div class="founder-label">开 国 皇 帝</div>
+        <div class="founder-name">明太祖 朱元璋</div>
+        <div class="founder-detail">
+          <strong>出身：</strong>安徽凤阳贫农家庭，幼年父母双亡，当过乞丐、做过和尚。中国历史上出身最低的开国皇帝。<br>
+          <strong>登基：</strong>投红巾军，逐步击败陈友谅、张士诚，1368年南京称帝，北伐灭元。<br>
+          <strong>治国：</strong>废丞相、设锦衣卫、大兴文字狱，「胡蓝之狱」诛杀功臣数万人。<br>
+          <strong>结局：</strong>1398年病亡于南京，在位三十一年。
+        </div>
+      </div>
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">
+          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <tbody>
+            <tr><td class="emp-name">太祖 朱元璋</td><td class="emp-years">1368—1398</td><td>农民起义，驱元建国</td><td>病亡 <span class="emp-tag good">洪武之治</span></td></tr>
+            <tr><td class="emp-name">建文帝 朱允炆</td><td class="emp-years">1398—1402</td><td>太祖嫡孙</td><td>靖难之役中失踪 <span class="emp-tag murdered">下落不明</span></td></tr>
+            <tr><td class="emp-name">成祖 朱棣</td><td class="emp-years">1402—1424</td><td>太祖四子，靖难夺位</td><td>北征途中病亡 <span class="emp-tag good">永乐盛世</span></td></tr>
+            <tr><td class="emp-name">宣宗 朱瞻基</td><td class="emp-years">1425—1435</td><td>仁宗长子</td><td>病亡 <span class="emp-tag good">仁宣之治</span></td></tr>
+            <tr><td class="emp-name">英宗 朱祁镇</td><td class="emp-years">1435—1449<br>1457—1464</td><td>宣宗长子</td><td>两度登基 <span class="emp-tag usurp">土木堡之变</span></td></tr>
+            <tr><td class="emp-name">代宗 朱祁钰</td><td class="emp-years">1449—1457</td><td>英宗弟，于谦拥立</td><td>夺门之变后病亡 <span class="emp-tag abdicate">被废</span></td></tr>
+            <tr><td class="emp-name">世宗 朱厚熜</td><td class="emp-years">1521—1567</td><td>外藩入继</td><td>服丹药病亡 <span class="emp-tag death">嘉靖</span></td></tr>
+            <tr><td class="emp-name">神宗 朱翊钧</td><td class="emp-years">1572—1620</td><td>穆宗第三子</td><td>病亡 <span class="emp-tag death">万历怠政</span></td></tr>
+            <tr><td class="emp-name">思宗 朱由检</td><td class="emp-years">1627—1644</td><td>熹宗弟</td><td>李自成破京，煤山自缢 <span class="emp-tag murdered">亡国</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="insight-box gold-insight">
+        <div class="insight-title">制度转折：废丞相、设内阁</div>
+        <div class="insight-text">朱元璋以「胡惟庸案」永久废除延续1500年的丞相制度，皇帝直管六部。成祖设内阁，大学士「票拟」辅政，但本质上是秘书班子。<strong>一条鞭法</strong>（1581年张居正）——田赋徭役杂税合一折银征收，标志赋税货币化。王阳明「心学」——「知行合一」。</div>
+      </div>
+      <p style="font-size:14px; color:var(--text-secondary); line-height:2; margin-top:16px;">明共传十六帝，276年。郑和七下西洋（1405—1433年）。晚期党争（东林党 vs 阉党）、辽东后金崛起。1644年李自成攻入北京，崇祯帝自缢。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  十四、清                                   ║
+     ╚═══════════════════════════════════════════╝ -->
+<section class="dynasty-section theme-qingdyn" id="sec-qingdyn">
+  <div class="section-inner">
+    <div class="section-divider reveal"><span class="num">拾肆</span></div>
+    <div class="dynasty-header reveal">
+      <div class="dynasty-era">末 代 皇 朝</div>
+      <h2 class="dynasty-name">清</h2>
+      <div class="dynasty-years">公元1636年 — 1912年</div>
+      <p class="dynasty-desc">满洲崛起于白山黑水，入关定鼎中原。从康乾盛世到鸦片战争后的百年屈辱——中国从古代帝制走向现代国家的痛苦转型期。统一多民族国家的现代版图在清代奠定。</p>
+    </div>
+
+    <div class="sub-dynasty reveal">
+      <div class="founder-block">
+        <div class="founder-label">开 国 皇 帝</div>
+        <div class="founder-name">清太祖 努尔哈赤</div>
+        <div class="founder-detail">
+          <strong>崛起：</strong>建州女真首领，以十三副铠甲起兵，统一女真各部，创建八旗制度。<br>
+          <strong>建国：</strong>1616年建后金，1618年发布「七大恨」讨明。<br>
+          <strong>结局：</strong>1626年宁远之战败于袁崇焕，同年病亡。子皇太极继位，1636年改国号为清。
+        </div>
+      </div>
+      <div class="founder-block" style="margin-top:20px;">
+        <div class="founder-label">入 关 皇 帝</div>
+        <div class="founder-name">清世祖 顺治帝</div>
+        <div class="founder-detail">
+          <strong>登基：</strong>皇太极幼子，6岁即位，多尔衮摄政。1644年清军入关，定都北京。<br>
+          <strong>结局：</strong>1661年病亡（一说出家），年仅24岁。
+        </div>
+      </div>
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">
+          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <tbody>
+            <tr><td class="emp-name">太祖 努尔哈赤</td><td class="emp-years">1616—1626</td><td>统一女真，建后金</td><td>宁远战后病亡 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">太宗 皇太极</td><td class="emp-years">1626—1643</td><td>贵族推举</td><td>猝死于沈阳 <span class="emp-tag death">猝死</span></td></tr>
+            <tr><td class="emp-name">世祖 顺治</td><td class="emp-years">1643—1661</td><td>6岁即位，多尔衮摄政</td><td>病亡 <span class="emp-tag good">入关定鼎</span></td></tr>
+            <tr><td class="emp-name">圣祖 康熙</td><td class="emp-years">1661—1722</td><td>顺治第三子，8岁即位</td><td>病亡 <span class="emp-tag good">康熙盛世</span></td></tr>
+            <tr><td class="emp-name">世宗 雍正</td><td class="emp-years">1722—1735</td><td>康熙第四子（争议）</td><td>猝死 <span class="emp-tag good">军机处·摊丁入亩</span></td></tr>
+            <tr><td class="emp-name">高宗 乾隆</td><td class="emp-years">1735—1795</td><td>雍正第四子</td><td>禅位后病亡 <span class="emp-tag abdicate">禅让</span></td></tr>
+            <tr><td class="emp-name">宣宗 道光</td><td class="emp-years">1820—1850</td><td>嘉庆次子</td><td>病亡 <span class="emp-tag murdered">鸦片战争</span></td></tr>
+            <tr><td class="emp-name">文宗 咸丰</td><td class="emp-years">1850—1861</td><td>道光第四子</td><td>热河病亡 <span class="emp-tag death">太平天国</span></td></tr>
+            <tr><td class="emp-name">穆宗 同治</td><td class="emp-years">1861—1875</td><td>咸丰独子，慈禧垂帘</td><td>病亡 <span class="emp-tag death">洋务运动</span></td></tr>
+            <tr><td class="emp-name">德宗 光绪</td><td class="emp-years">1875—1908</td><td>慈禧侄子，4岁即位</td><td>疑被毒杀 <span class="emp-tag murdered">戊戌变法</span></td></tr>
+            <tr><td class="emp-name">溥仪</td><td class="emp-years">1908—1912</td><td>3岁即位</td><td>辛亥革命后退位 <span class="emp-tag abdicate">末代皇帝</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="insight-box gold-insight">
+        <div class="insight-title">制度转折：军机处 + 摊丁入亩</div>
+        <div class="insight-text"><strong>军机处</strong>（1729年）——雍正帝创设，皇帝面授机宜、军机大臣跪受笔录。皇权专制至此登峰造极。<strong>摊丁入亩</strong>——彻底废除沿袭两千年的人头税，人口从1.5亿爆增至4亿。<strong>闭关锁国</strong>（1757年仅留广州一口通商），错失工业革命。</div>
+      </div>
+      <div class="insight-box reveal">
+        <div class="insight-title">清朝的规律</div>
+        <div class="insight-text">康雍乾盛世130余年——中国封建社会最后的辉煌。但1840年鸦片战争后，面对「三千年未有之大变局」，制度改良屡屡失败（洋务、戊戌、新政），最终辛亥革命推翻帝制。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  十五、中华民国                              ║
+     ╚═══════════════════════════════════════════╝ -->
+<section class="dynasty-section theme-republic" id="sec-republic">
+  <div class="section-inner">
+    <div class="section-divider reveal"><span class="num">拾伍</span></div>
+    <div class="dynasty-header reveal">
+      <div class="dynasty-era">共 和 新 生</div>
+      <h2 class="dynasty-name">中华民国</h2>
+      <div class="dynasty-years">公元1912年 — 1949年</div>
+      <p class="dynasty-desc">辛亥革命推翻帝制，建立亚洲第一个共和国。从帝制到共和的转型充满坎坷——袁世凯称帝、军阀混战、北伐统一、抗日战争、国共内战。</p>
+    </div>
+
+    <div class="sub-dynasty reveal">
+      <div class="founder-block">
+        <div class="founder-label">开 国 元 勋</div>
+        <div class="founder-name">临时大总统 孙中山</div>
+        <div class="founder-detail">
+          <strong>革命：</strong>广东香山人，创建兴中会、同盟会，提出「三民主义」（民族、民权、民生），发动十次起义屡败屡战。<br>
+          <strong>建国：</strong>1912年1月1日就任中华民国临时大总统，颁布《临时约法》。为实现共和，让位于袁世凯。<br>
+          <strong>结局：</strong>1925年病逝于北京，遗言「革命尚未成功，同志仍须努力」。
+        </div>
+      </div>
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">
+          <thead><tr><th>领导人</th><th>时期</th><th>身份</th><th>关键事件</th></tr></thead>
+          <tbody>
+            <tr><td class="emp-name">孙中山</td><td class="emp-years">1912</td><td>临时大总统</td><td>建立民国 <span class="emp-tag good">共和</span></td></tr>
+            <tr><td class="emp-name">袁世凯</td><td class="emp-years">1912—1916</td><td>大总统→皇帝</td><td>称帝失败，忧惧而亡 <span class="emp-tag murdered">复辟</span></td></tr>
+            <tr><td class="emp-name">北洋军阀</td><td class="emp-years">1916—1928</td><td>各派轮替</td><td>军阀混战 <span class="emp-tag death">混战</span></td></tr>
+            <tr><td class="emp-name">蒋介石</td><td class="emp-years">1928—1949</td><td>国民政府主席/总统</td><td>领导抗战，败退台湾 <span class="emp-tag good">抗日战争</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="insight-box gold-insight">
+        <div class="insight-title">制度转折：从帝制到共和</div>
+        <div class="insight-text">中国历史上最深刻的政治转型。《临时约法》确立<strong>主权在民、三权分立</strong>，两千年帝制终结。1905年废科举（延续1300年的选官制度画上句号）。新文化运动推动「德先生」与「赛先生」。五四运动传播马克思主义。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  十六、中华人民共和国                         ║
+     ╚═══════════════════════════════════════════╝ -->
+<section class="dynasty-section theme-prc" id="sec-prc">
+  <div class="section-inner">
+    <div class="section-divider reveal"><span class="num">拾陆</span></div>
+    <div class="dynasty-header reveal">
+      <div class="dynasty-era">复 兴 之 路</div>
+      <h2 class="dynasty-name">中华人民共和国</h2>
+      <div class="dynasty-years">公元1949年 — 至今</div>
+      <p class="dynasty-desc">从百废待兴到世界第二大经济体，从计划经济到社会主义市场经济——改革开放是这一时期最深远的制度变革。</p>
+    </div>
+
+    <div class="sub-dynasty reveal">
+      <div class="founder-block">
+        <div class="founder-label">开 国 领 袖</div>
+        <div class="founder-name">中央人民政府主席 毛泽东</div>
+        <div class="founder-detail">
+          <strong>革命：</strong>湖南湘潭人，领导中国共产党经历二十八年革命斗争——从井冈山到延安，从长征到解放战争。<br>
+          <strong>建国：</strong>1949年10月1日在天安门城楼宣告中华人民共和国成立。<br>
+          <strong>结局：</strong>1976年9月9日在北京逝世，享年83岁。
+        </div>
+      </div>
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">
+          <thead><tr><th>时期</th><th>核心领导人</th><th>执政理念</th><th>关键成就</th></tr></thead>
+          <tbody>
+            <tr><td class="emp-years">1949—1976</td><td class="emp-name">毛泽东</td><td>社会主义革命与建设</td><td>建国、抗美援朝、两弹一星 <span class="emp-tag good">开国</span></td></tr>
+            <tr><td class="emp-years">1978—1992</td><td class="emp-name">邓小平</td><td>改革开放</td><td>经济特区、包产到户 <span class="emp-tag good">改革开放</span></td></tr>
+            <tr><td class="emp-years">2012—至今</td><td class="emp-name">习近平</td><td>新时代中国特色社会主义</td><td>脱贫攻坚、一带一路 <span class="emp-tag good">新时代</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="insight-box gold-insight">
+        <div class="insight-title">制度转折：改革开放</div>
+        <div class="insight-text">1978年十一届三中全会开启改革开放。<strong>家庭联产承包制</strong>打破人民公社体制，<strong>经济特区</strong>引入市场机制，1992年确立<strong>社会主义市场经济</strong>。2001年加入WTO深度融入全球经济，2010年GDP超日本成为世界第二，2020年全面消除绝对贫困。</div>
+      </div>
+      <div class="emperor-table-wrap">
+        <table class="power-table">
+          <thead><tr><th>里程碑</th><th>时间</th><th>意义</th></tr></thead>
+          <tbody>
+            <tr><td style="color:var(--gold); font-weight:500;">土地改革</td><td>1950—1953</td><td>废除封建土地所有制，三亿农民分得土地</td></tr>
+            <tr><td style="color:var(--gold); font-weight:500;">两弹一星</td><td>1964/67/70</td><td>原子弹、氢弹、东方红一号卫星</td></tr>
+            <tr><td style="color:var(--gold); font-weight:500;">改革开放</td><td>1978</td><td>十一届三中全会，从计划经济转向市场经济</td></tr>
+            <tr><td style="color:var(--gold); font-weight:500;">一国两制</td><td>1997/1999</td><td>香港、澳门回归</td></tr>
+            <tr><td style="color:var(--gold); font-weight:500;">脱贫攻坚</td><td>2020</td><td>全面消除绝对贫困，建成小康社会</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  全局总览                                  ║
+     ╚═══════════════════════════════════════════╝ -->
+<section class="summary-section" id="sec-summary">
+  <div class="section-inner">
+    <div class="section-divider reveal"><span class="num">总 览</span></div>
+    <div class="dynasty-header reveal">
+      <div class="dynasty-era">五 千 年 规 律</div>
+      <h2 class="dynasty-name" style="color:var(--gold);">权力的游戏规则</h2>
+    </div>
+
+    <div class="summary-grid">
+      <div class="summary-card reveal">
+        <div class="card-rule">权力结构的四次大转折</div>
+        <div class="card-detail">禅让→世袭（夏）→分封→郡县（秦）→科举文官（隋唐）→共和（民国）</div>
+      </div>
+      <div class="summary-card reveal reveal-delay-1">
+        <div class="card-rule">选官制度的演进</div>
+        <div class="card-detail">世卿世禄→察举制（汉）→九品中正（魏晋）→科举（隋唐至清）→现代选拔</div>
+      </div>
+      <div class="summary-card reveal reveal-delay-2">
+        <div class="card-rule">赋税制度的进化</div>
+        <div class="card-detail">贡赋（夏商）→井田（周）→租庸调（唐）→两税法→一条鞭法（明）→摊丁入亩（清）</div>
+      </div>
+      <div class="summary-card reveal reveal-delay-3">
+        <div class="card-rule">接班人制度决定帝国寿命</div>
+        <div class="card-detail">强人死后没有稳固接班机制就崩溃（秦、西晋、隋、五代）</div>
+      </div>
+      <div class="summary-card reveal">
+        <div class="card-rule">外戚/宦官/藩镇/权臣是四大威胁</div>
+        <div class="card-detail">东汉亡于宦官，唐亡于藩镇，宋弱于抑武，明亡于内忧外患</div>
+      </div>
+      <div class="summary-card reveal reveal-delay-1">
+        <div class="card-rule">军事实力是夺权的根本</div>
+        <div class="card-detail">没有例外：每一个开国者都是军事强人或军事集团首领</div>
+      </div>
+      <div class="summary-card reveal reveal-delay-2">
+        <div class="card-rule">最改革的朝代往往最短命</div>
+        <div class="card-detail">秦、隋——改革力度过大超出社会极限，但制度遗产深远</div>
+      </div>
+      <div class="summary-card reveal reveal-delay-3">
+        <div class="card-rule">「禅让」是篡夺的遮羞布</div>
+        <div class="card-detail">从曹丕到赵匡胤，所有「禅让」都是被逼的。唯一例外：乾隆主动禅让</div>
+      </div>
+      <div class="summary-card reveal">
+        <div class="card-rule">皇权专制的演进</div>
+        <div class="card-detail">分封（周）→郡县（秦）→三省分权（唐）→废相设阁（明）→军机处（清）——两千年越收越紧</div>
+      </div>
+      <div class="summary-card reveal reveal-delay-1">
+        <div class="card-rule">经济重心的南移</div>
+        <div class="card-detail">西晋永嘉南渡→安史之乱加速→南宋最终完成。从此江南成为中国经济重心</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  FOOTER                                  ║
+     ╚═══════════════════════════════════════════╝ -->
+<footer class="page-footer">
+  <div class="footer-ornament"></div>
+  <p>鼎革千年 · 中国历代权力更迭脉络</p>
+  <p style="margin-top:8px;">从夏商周到共和国 · 上下五千年完整覆盖</p>
+  <p style="margin-top:4px; color:var(--gold-dim);">整理依据：公开历史资料</p>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+     ═══════════════════════════════════════════ -->
+<script>
+(function() {
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  const navLinks = document.querySelectorAll('.side-nav a');
+  const sections = [];
+  navLinks.forEach(link => {
+    const id = link.getAttribute('href').slice(1);
+    const sec = document.getElementById(id);
+    if (sec) sections.push({ el: sec, link: link });
+  });
+
+  function updateNav() {
+    const scrollY = window.scrollY + window.innerHeight / 3;
+    let current = sections[0];
+    sections.forEach(s => {
+      if (s.el.offsetTop <= scrollY) current = s;
+    });
+    navLinks.forEach(l => l.classList.remove('active'));
+    if (current) current.link.classList.add('active');
+  }
+
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+})();
+</script>
+</body>
+</html>

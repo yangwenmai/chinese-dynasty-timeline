@@ -415,12 +415,18 @@ body::before {
 }
 
 .timeline-bar-dates {
-  display: flex;
-  justify-content: space-between;
+  position: relative;
+  height: 20px;
   font-size: 11px;
   color: var(--text-dim);
   letter-spacing: 1px;
   margin-top: 8px;
+}
+.timeline-bar-dates span {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  white-space: nowrap;
 }
 
 /* ═══════════════════════════════════════════════
@@ -1260,16 +1266,16 @@ body::before {
       </div>
     </div>
     <div class="timeline-bar-dates">
-      <span>前2070</span>
-      <span>前221</span>
-      <span>220</span>
-      <span>581</span>
-      <span>907</span>
-      <span>960</span>
-      <span>1279</span>
-      <span>1644</span>
-      <span>1912</span>
-      <span>1949</span>
+      <span style="left:0%;transform:translateX(0)">前2070</span>
+      <span style="left:42.96%">前221</span>
+      <span style="left:54.18%">220</span>
+      <span style="left:63.01%">581</span>
+      <span style="left:70.88%;transform:translateX(-100%)">907</span>
+      <span style="left:72.08%;transform:translateX(0)">960</span>
+      <span style="left:79.71%">1279</span>
+      <span style="left:88.78%">1644</span>
+      <span style="left:95.47%;transform:translateX(-100%)">1912</span>
+      <span style="left:96.42%;transform:translateX(0)">1949</span>
     </div>
   </div>
 </section>

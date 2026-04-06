@@ -9,12 +9,12 @@ alwaysApply: true
 
 ## 项目概述
 
-「鼎革千年」是一个纯静态单页网站，以长卷轴形式展现中国上下五千年的朝代更迭、权力结构与制度变迁。
+「鼎革千年」是一个纯静态单页网站（~2900 行 `index.html`），以长卷轴形式展现中国上下五千年的朝代更迭、权力结构与制度变迁。从先秦（夏商周）到中华人民共和国，覆盖 17 个朝代章节 + 2 个专题 + 总览 + 参考文献。
 
 ## 技术栈
 
 - 纯 HTML + CSS + JS，零依赖，零构建工具
-- 单文件架构：所有内容在 `index.html` 中
+- 单文件架构：所有内容在 `index.html` 中（结构依次为：CSS → 侧边导航 → Hero → 纵览时间轴 → 朝代章节 ×17 → 全局总结 → 参考文献 → 页脚 → 卷轴装饰元素 → JS）
 - 字体依赖 Google Fonts：Ma Shan Zheng（书法）、ZCOOL XiaoWei（标题）、Noto Serif SC（正文）
 
 ## 编码规范
@@ -22,8 +22,55 @@ alwaysApply: true
 - 所有文案使用简体中文
 - 中文引号统一使用「」（直角引号），不使用 "" 或 ""
 - JS 字符串中包含中文引号时，外层用反引号（模板字符串）或单引号，避免 ASCII 双引号冲突
-- CSS 变量定义在 `:root` 中，新增颜色必须遵循现有命名体系（ink-、gold-、vermillion- 等）
-- 新增朝代章节必须遵循现有 HTML 结构模式（section > section-inner > section-divider + dynasty-header + sub-dynasty）
+- CSS 变量定义在 `:root` 中，新增颜色必须遵循现有命名体系（ink-、gold-、vermillion-、jade-、cyan-ink-、purple-ink- 等）
+- 新增朝代章节必须遵循现有 HTML 结构模式（见下方「页面结构」）
+- 禁止引入外部 JS/CSS 库或外部图片资源
+- 保持单文件架构，不拆分文件
+
+## 页面结构（从上到下）
+
+```
+index.html
+├── <style>              所有 CSS（~1160 行）
+├── <nav class="side-nav">  右侧悬浮导航（圆点+标签）
+├── <section class="hero">  首屏（卷轴展开动画 + 视差背景大字）
+├── <section class="overview-bar">  五千年朝代纵览时间轴条
+├── <section class="dynasty-section"> ×17  各朝代章节
+├── <section class="summary-section">  全局总结（权力的游戏规则）
+├── <section class="references-section">  参考文献
+├── <footer>             页脚
+├── scroll-roller / scroll-fade / scroll-curl / scroll-thread  卷轴装饰元素
+└── <script>             所有 JS（~55 行）
+```
+
+## 朝代章节 HTML 模式（必须遵循）
+
+```html
+<section class="dynasty-section theme-xxx" id="sec-xxx">
+  <div class="section-inner">
+    <div class="section-divider reveal"><span class="num">壹</span></div>
+    <div class="dynasty-header reveal">
+      <div class="dynasty-era">时 代 标 签</div>
+      <h2 class="dynasty-name">朝代名</h2>
+      <div class="dynasty-years">年份区间（国祚年数）</div>
+      <p class="dynasty-desc">简介</p>
+    </div>
+    <section class="sub-dynasty reveal">
+      <h3 class="sub-dynasty-title">子朝代名</h3>
+      <div class="sub-dynasty-years">年份区间</div>
+      <div class="founder-block">...</div>
+      <div class="emperor-table-wrap">
+        <table class="emperor-table">...</table>
+      </div>
+      <div class="insight-box">...</div>
+    </section>
+  </div>
+</section>
+```
+
+- 每个朝代需定义专属 `theme-xxx` class 并在 CSS 中添加对应主题色
+- `id` 命名格式：`sec-xxx`（用于侧边导航锚点定位）
+- 新增朝代后须同步更新侧边导航 `<nav class="side-nav">`
 
 ## 内容规范
 
@@ -31,6 +78,16 @@ alwaysApply: true
 - 皇帝表格标签使用统一 class：`death`（病亡）、`murdered`（被杀）、`abdicate`（禅让/被废/投降）、`usurp`（篡位/称帝）、`good`（治世/盛世/中兴）
 - 历史内容力求准确，有争议之处须标注「存疑」
 - 年份格式：公元前用「前XXX」，公元后直接写年份
+- 朝代时长标注格式：「公元前XXX年 — 公元前XXX年（XXX年）」或「公元XXX年 — XXX年（XXX年）」
+- 皇帝表格列标准：皇帝、生卒、在位、登基方式、结局
+
+## JS 功能说明
+
+- `IntersectionObserver`：驱动 `.reveal` 元素的淡入动画
+- 侧边导航高亮：根据滚动位置更新 `.side-nav a.active`
+- Hero 卷轴展开：页面加载 600ms 后添加 `.scroll-opened` class
+- 视差效果：`[data-parallax]` 元素根据滚动偏移量做 Y 轴位移（移动端禁用）
+- 进度丝线：`.thread-fill` 的 `scaleY` 跟随滚动百分比
 
 ## 设计约束
 

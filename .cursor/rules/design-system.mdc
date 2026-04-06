@@ -206,10 +206,127 @@ alwaysApply: false
 
 ---
 
-## 八、设计原则总结
+## 八、卷轴效果体系
+
+### 8.1 Hero 卷轴展开
+
+- Hero 区域模拟竹简/卷轴从中间向两侧展开
+- `.hero-opening-top` / `.hero-opening-bottom`：上下两半遮罩，展开时向上下退出
+- `.hero-opening-seam`：中间接缝线，展开后消失
+- 触发时机：页面加载 600ms 后添加 `.scroll-opened` class
+- 展开动画时长 `1.2s`，使用 `--ease-out-expo` 缓动
+
+### 8.2 卷轴滚轴与装饰
+
+| 元素 | 作用 |
+| --- | --- |
+| `.scroll-roller--top/bottom` | 页面顶底的木轴装饰条 |
+| `.scroll-fade--top/bottom` | 顶底内容渐隐遮罩 |
+| `.scroll-curl--top/bottom` | 卷轴卷曲阴影 |
+| `.scroll-thread` + `.thread-fill` | 右侧金色丝线进度条 |
+
+- 滚轴使用渐变模拟木质纹理，`position: fixed`
+- 丝线 `.thread-fill` 通过 JS `scaleY(scrollPercent)` 实时更新
+
+### 8.3 约束
+
+- 卷轴装饰元素全部 `position: fixed`，`z-index` 高于内容层
+- 丝线颜色使用 `var(--gold-dim)`
+- 移动端（≤768px）可简化或隐藏卷轴装饰
+
+---
+
+## 九、朝代纵览时间轴条
+
+### 9.1 结构
+
+```
+<section class="overview-bar">
+  <div class="overview-title">五千年朝代纵览</div>
+  <div class="timeline-bar-container">
+    <div class="timeline-bar-segments">
+      <div class="timeline-segment" style="flex:N; background:...">
+        <span class="seg-label">朝代名</span>
+      </div>
+      ...
+    </div>
+    <div class="timeline-bar-dates">
+      <span style="left:X%">年份</span>
+      ...
+    </div>
+  </div>
+</section>
+```
+
+### 9.2 约束
+
+- 每个 segment 的 `flex` 值按朝代存续年数比例计算
+- segment 背景使用 `linear-gradient(135deg, ...)` 与对应朝代主题色一致
+- 点击 segment 平滑滚动到对应章节（`scrollIntoView({behavior:'smooth'})`）
+- 日期标签使用绝对定位 `left: X%`，按年份在总时间跨度中的百分比计算
+- 移动端文字缩小、日期标签可省略部分
+
+---
+
+## 十、参考文献区域
+
+### 10.1 结构
+
+```
+<section class="references-section" id="sec-references">
+  <div class="ref-category">
+    <div class="ref-category-title">分类名</div>
+    <div class="ref-list">
+      <div class="ref-item">
+        <div class="ref-book">书名</div>
+        <div class="ref-author">朝代 · 作者</div>
+        <div class="ref-desc">简介</div>
+        <div class="ref-links">
+          <a href="...">维基百科</a>
+          <a href="...">微信读书</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+```
+
+### 10.2 约束
+
+- 分类包括：正史、编年体与纪事本末体、典制体与通史、其他重要典籍
+- 链接统一使用 `target="_blank" rel="noopener"`
+- 文献简介控制在一行以内
+
+---
+
+## 十一、全局总结区域
+
+### 11.1 结构
+
+```
+<section class="summary-section" id="sec-summary">
+  <div class="summary-grid">
+    <div class="summary-card reveal">
+      <div class="card-rule">规律标题</div>
+      <div class="card-detail">详细说明</div>
+    </div>
+  </div>
+</section>
+```
+
+### 11.2 约束
+
+- 卡片使用 grid 布局（桌面端 2 列，移动端 1 列）
+- 卡片背景与 sub-dynasty 一致：`rgba(255,255,255,0.02)`
+- 规律标题使用 `var(--gold)` 着色
+
+---
+
+## 十二、设计原则总结
 
 1. **克制**：深色为主、点缀为辅，避免大面积亮色；装饰低透明度
 2. **层次**：通过 ink 色阶 + 微透明背景营造纵深，而非阴影
 3. **书卷气**：书法体做标题、宋体做正文、加宽字距增加庄重感
 4. **一致**：所有模块遵循相同的 HTML 结构与 CSS 类名规范
 5. **纯净**：零依赖、零图片、零构建，纯代码实现所有视觉效果
+6. **沉浸**：卷轴展开 + 进度丝线 + 视差滚动，营造「展阅长卷」的沉浸式体验

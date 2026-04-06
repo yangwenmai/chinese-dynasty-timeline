@@ -247,8 +247,14 @@ body::before {
   color: var(--text-dim);
   letter-spacing: 2px;
 }
-.hero-meta span {
+.hero-meta span,
+.hero-meta a {
   color: var(--gold-dim);
+  text-decoration: none;
+}
+.hero-meta a:hover {
+  color: var(--gold);
+  text-decoration: underline;
 }
 
 .hero-scroll-hint {
@@ -1085,7 +1091,7 @@ body::before {
   </h1>
   <p class="hero-title-sub reveal reveal-delay-2">从夏商周到共和国 · 上下五千年</p>
   <p class="hero-meta reveal reveal-delay-3">
-    整理：<span>夜游神 🌘</span> &nbsp;·&nbsp; 鼎革千年 · 制度沿革全览
+    整理：<a href="https://x.com/MaiYangAI" target="_blank" rel="noopener noreferrer">MaiYangAI</a> &nbsp;·&nbsp; 鼎革千年 · 制度沿革全览
   </p>
 
   <div class="hero-scroll-hint">

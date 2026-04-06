@@ -777,6 +777,109 @@ body::before {
 }
 
 /* ═══════════════════════════════════════════════
+   REFERENCES / BIBLIOGRAPHY
+   ═══════════════════════════════════════════════ */
+.references-section {
+  padding: 100px 20px 80px;
+  background: var(--ink-black);
+}
+.references-section .section-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.ref-intro {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 2;
+  margin-bottom: 48px;
+  text-align: center;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ref-category {
+  margin-bottom: 48px;
+}
+.ref-category-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  color: var(--gold);
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(200, 164, 92, 0.15);
+}
+.ref-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.ref-item {
+  padding: 20px 24px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-left: 3px solid rgba(200, 164, 92, 0.25);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.ref-item:hover {
+  background: rgba(200, 164, 92, 0.04);
+  border-color: rgba(200, 164, 92, 0.15);
+  border-left-color: var(--gold);
+}
+.ref-book {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  color: var(--text-primary);
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.ref-author {
+  font-size: 12.5px;
+  color: var(--gold-dim);
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.ref-desc {
+  font-size: 12.5px;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+.ref-links {
+  margin-top: 10px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.ref-links a {
+  font-size: 11px;
+  color: var(--text-dim);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 2px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.ref-links a:hover {
+  color: var(--gold);
+  border-color: rgba(200, 164, 92, 0.3);
+  background: rgba(200, 164, 92, 0.06);
+}
+.ref-note {
+  margin-top: 48px;
+  padding: 24px 28px;
+  background: rgba(200, 164, 92, 0.03);
+  border: 1px solid rgba(200, 164, 92, 0.08);
+  border-radius: 4px;
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 2;
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════════
    FOOTER
    ═══════════════════════════════════════════════ */
 .page-footer {
@@ -1031,6 +1134,9 @@ body::before {
   .overview-bar { padding: 40px 16px 60px; }
   .timeline-segment .seg-label { font-size: 9px; }
   .summary-grid { grid-template-columns: 1fr; }
+  .references-section { padding: 60px 16px 60px; }
+  .ref-list { grid-template-columns: 1fr; }
+  .ref-item { padding: 16px 18px; }
   .emperor-table { font-size: 12.5px; }
   .emperor-table thead th,
   .emperor-table tbody td { padding: 8px 10px; }
@@ -1069,6 +1175,7 @@ body::before {
   <a href="#sec-republic"><span class="label">民国</span><span class="dot"></span></a>
   <a href="#sec-prc"><span class="label">共和国</span><span class="dot"></span></a>
   <a href="#sec-summary"><span class="label">总览</span><span class="dot"></span></a>
+  <a href="#sec-references"><span class="label">典籍</span><span class="dot"></span></a>
 </nav>
 
 <!-- ╔═══════════════════════════════════════════╗
@@ -2353,13 +2460,311 @@ body::before {
 </section>
 
 <!-- ╔═══════════════════════════════════════════╗
+     ║  参考文献                                  ║
+     ╚═══════════════════════════════════════════╝ -->
+<section class="references-section" id="sec-references">
+  <div class="section-inner">
+    <div class="section-divider reveal"><span class="num">典 籍</span></div>
+    <div class="dynasty-header reveal">
+      <div class="dynasty-era">史 料 溯 源</div>
+      <h2 class="dynasty-name" style="color:var(--gold);">参考文献与编纂者</h2>
+    </div>
+
+    <p class="ref-intro reveal">
+      华夏五千年之信史，赖历代史家秉笔直书、薪火相传。本卷所述朝代更迭、帝王世系、制度沿革，主要取材于以下典籍。
+    </p>
+
+    <!-- 纪传体正史 -->
+    <div class="ref-category reveal">
+      <div class="ref-category-title">纪传体正史 · 二十四史</div>
+      <div class="ref-list">
+        <div class="ref-item">
+          <div class="ref-book">《史记》</div>
+          <div class="ref-author">西汉 · 司马迁</div>
+          <div class="ref-desc">上起黄帝、下至汉武，中国第一部纪传体通史，「史家之绝唱，无韵之离骚」</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/史记" target="_blank" rel="noopener">维基百科</a>
+            <a href="https://weread.qq.com/web/bookDetail/6c0327c0813ab6ecag0188d2" target="_blank" rel="noopener">微信读书</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《汉书》</div>
+          <div class="ref-author">东汉 · 班固</div>
+          <div class="ref-desc">中国第一部纪传体断代史，记西汉一朝二百余年事</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/汉书" target="_blank" rel="noopener">维基百科</a>
+            <a href="https://weread.qq.com/web/bookDetail/ddf32b90811e57ba6g01302e" target="_blank" rel="noopener">微信读书</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《后汉书》</div>
+          <div class="ref-author">南朝宋 · 范晔</div>
+          <div class="ref-desc">记东汉光武帝至献帝近两百年史事</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/后汉书" target="_blank" rel="noopener">维基百科</a>
+            <a href="https://weread.qq.com/web/bookDetail/80b326f0811e7f751g010879" target="_blank" rel="noopener">微信读书</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《三国志》</div>
+          <div class="ref-author">西晋 · 陈寿</div>
+          <div class="ref-desc">记魏蜀吴三国鼎立时期，以曹魏为正统</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/三国志" target="_blank" rel="noopener">维基百科</a>
+            <a href="https://weread.qq.com/web/bookDetail/eb132910811e74f31g0106cc" target="_blank" rel="noopener">微信读书</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《晋书》</div>
+          <div class="ref-author">唐 · 房玄龄等</div>
+          <div class="ref-desc">记两晋一百五十余年史事，含十六国载记</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/晋书" target="_blank" rel="noopener">维基百科</a>
+            <a href="https://weread.qq.com/web/bookDetail/9e63215072a6d2c49e6b400" target="_blank" rel="noopener">微信读书</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《宋书》《南齐书》《梁书》《陈书》</div>
+          <div class="ref-author">沈约 / 萧子显 / 姚思廉</div>
+          <div class="ref-desc">南朝宋齐梁陈四代正史</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/宋书" target="_blank" rel="noopener">宋书·维基</a>
+            <a href="https://zh.wikipedia.org/wiki/南齐书" target="_blank" rel="noopener">南齐书·维基</a>
+            <a href="https://zh.wikipedia.org/wiki/梁书" target="_blank" rel="noopener">梁书·维基</a>
+            <a href="https://zh.wikipedia.org/wiki/陈书" target="_blank" rel="noopener">陈书·维基</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《魏书》《北齐书》《周书》</div>
+          <div class="ref-author">魏收 / 李百药 / 令狐德棻</div>
+          <div class="ref-desc">北朝北魏、北齐、北周三代正史</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/魏书" target="_blank" rel="noopener">魏书·维基</a>
+            <a href="https://zh.wikipedia.org/wiki/北齐书" target="_blank" rel="noopener">北齐书·维基</a>
+            <a href="https://zh.wikipedia.org/wiki/周书" target="_blank" rel="noopener">周书·维基</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《南史》《北史》</div>
+          <div class="ref-author">唐 · 李延寿</div>
+          <div class="ref-desc">合南朝四代、北朝四代为通史，叙事连贯</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/南史" target="_blank" rel="noopener">南史·维基</a>
+            <a href="https://zh.wikipedia.org/wiki/北史" target="_blank" rel="noopener">北史·维基</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《隋书》</div>
+          <div class="ref-author">唐 · 魏征等</div>
+          <div class="ref-desc">记隋朝三十八年史事，十志兼及南北朝制度</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/隋书" target="_blank" rel="noopener">维基百科</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《旧唐书》《新唐书》</div>
+          <div class="ref-author">刘昫等 / 欧阳修、宋祁</div>
+          <div class="ref-desc">两部唐代正史，旧书详于史料，新书长于论断</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/旧唐书" target="_blank" rel="noopener">旧唐书·维基</a>
+            <a href="https://zh.wikipedia.org/wiki/新唐书" target="_blank" rel="noopener">新唐书·维基</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《旧五代史》《新五代史》</div>
+          <div class="ref-author">薛居正等 / 欧阳修</div>
+          <div class="ref-desc">记后梁至后周五代乱世，新书以春秋笔法著称</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/旧五代史" target="_blank" rel="noopener">旧五代史·维基</a>
+            <a href="https://zh.wikipedia.org/wiki/新五代史" target="_blank" rel="noopener">新五代史·维基</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《宋史》《辽史》《金史》</div>
+          <div class="ref-author">元 · 脱脱等</div>
+          <div class="ref-desc">宋辽金三朝正史，《宋史》为二十四史中篇幅最大者</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/宋史" target="_blank" rel="noopener">宋史·维基</a>
+            <a href="https://zh.wikipedia.org/wiki/辽史" target="_blank" rel="noopener">辽史·维基</a>
+            <a href="https://zh.wikipedia.org/wiki/金史" target="_blank" rel="noopener">金史·维基</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《元史》</div>
+          <div class="ref-author">明 · 宋濂等</div>
+          <div class="ref-desc">记蒙元帝国史事，修纂仓促，然保存大量原始资料</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/元史" target="_blank" rel="noopener">维基百科</a>
+            <a href="https://weread.qq.com/web/bookDetail/18a320f0813ab8482g010f14" target="_blank" rel="noopener">微信读书</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《明史》</div>
+          <div class="ref-author">清 · 张廷玉等</div>
+          <div class="ref-desc">历时近百年修成，为二十四史中编纂最精审之作</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/明史" target="_blank" rel="noopener">维基百科</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 编年体与通史 -->
+    <div class="ref-category reveal">
+      <div class="ref-category-title">编年体与通史</div>
+      <div class="ref-list">
+        <div class="ref-item">
+          <div class="ref-book">《资治通鉴》</div>
+          <div class="ref-author">北宋 · 司马光</div>
+          <div class="ref-desc">上起周威烈王、下至后周世宗，编年体通史巨著，编年一千三百六十二年</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/资治通鉴" target="_blank" rel="noopener">维基百科</a>
+            <a href="https://weread.qq.com/web/bookDetail/55432120811e81ab3g0121d4" target="_blank" rel="noopener">微信读书</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《续资治通鉴》</div>
+          <div class="ref-author">清 · 毕沅</div>
+          <div class="ref-desc">续司马光之作，记宋辽金元四朝史事</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/续资治通鉴" target="_blank" rel="noopener">维基百科</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《竹书纪年》</div>
+          <div class="ref-author">战国 · 魏国史官</div>
+          <div class="ref-desc">西晋太康年间出土，为先秦编年史之珍贵孤本</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/竹书纪年" target="_blank" rel="noopener">维基百科</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《春秋左氏传》</div>
+          <div class="ref-author">春秋 · 左丘明</div>
+          <div class="ref-desc">解释《春秋》之编年体史书，记春秋列国二百五十余年事</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/左传" target="_blank" rel="noopener">维基百科</a>
+            <a href="https://weread.qq.com/web/bookDetail/90e32900811e1bfd5g019627" target="_blank" rel="noopener">微信读书</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《战国策》</div>
+          <div class="ref-author">西汉 · 刘向 编</div>
+          <div class="ref-desc">国别体史书，记战国纵横捭阖之策士言行</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/战国策" target="_blank" rel="noopener">维基百科</a>
+            <a href="https://weread.qq.com/web/bookDetail/6c332d405c3a426c3447afa" target="_blank" rel="noopener">微信读书</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 典制体与政书 -->
+    <div class="ref-category reveal">
+      <div class="ref-category-title">典制体与政书</div>
+      <div class="ref-list">
+        <div class="ref-item">
+          <div class="ref-book">《通典》</div>
+          <div class="ref-author">唐 · 杜佑</div>
+          <div class="ref-desc">中国第一部典制体通史，详述历代食货、选举、职官等制度</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/通典" target="_blank" rel="noopener">维基百科</a>
+            <a href="https://weread.qq.com/web/bookDetail/bf432a105c1d71bf4c454ab" target="_blank" rel="noopener">微信读书</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《通志》</div>
+          <div class="ref-author">南宋 · 郑樵</div>
+          <div class="ref-desc">纪传体通史兼典制体，「二十略」为其精华所在</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/通志" target="_blank" rel="noopener">维基百科</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《文献通考》</div>
+          <div class="ref-author">元 · 马端临</div>
+          <div class="ref-desc">上承《通典》，详考历代典章制度，为政书之集大成者</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/文献通考" target="_blank" rel="noopener">维基百科</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 其他重要典籍 -->
+    <div class="ref-category reveal">
+      <div class="ref-category-title">其他重要典籍</div>
+      <div class="ref-list">
+        <div class="ref-item">
+          <div class="ref-book">《尚书》</div>
+          <div class="ref-author">传为孔子编定</div>
+          <div class="ref-desc">上古政治文献汇编，记尧舜禹至东周之诰命训辞</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/尚书_(书)" target="_blank" rel="noopener">维基百科</a>
+            <a href="https://weread.qq.com/web/bookDetail/91232510813ab6df0g0135c6" target="_blank" rel="noopener">微信读书</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《清史稿》</div>
+          <div class="ref-author">民国 · 赵尔巽等</div>
+          <div class="ref-desc">记清朝二百六十八年史事之未定稿，为清史研究基础文献</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/清史稿" target="_blank" rel="noopener">维基百科</a>
+            <a href="https://weread.qq.com/web/bookDetail/d8c32420813ab9114g01349e" target="_blank" rel="noopener">微信读书</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《国语》</div>
+          <div class="ref-author">相传左丘明</div>
+          <div class="ref-desc">中国最早的国别体史书，记西周末至春秋时期八国史事</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/國語_(書)" target="_blank" rel="noopener">维基百科</a>
+            <a href="https://weread.qq.com/web/bookDetail/2b332da0813ab8668g01362e" target="_blank" rel="noopener">微信读书</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《中国历代政治得失》</div>
+          <div class="ref-author">钱穆</div>
+          <div class="ref-desc">论汉唐宋明清五代政治制度之得失，精辟入理</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/中国历代政治得失" target="_blank" rel="noopener">维基百科</a>
+            <a href="https://weread.qq.com/web/reader/ffa323707166ef00ffa7080" target="_blank" rel="noopener">微信读书</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《中国通史》</div>
+          <div class="ref-author">吕思勉 / 白寿彝 主编</div>
+          <div class="ref-desc">近现代学者以新史学方法编写的中国通史巨著</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/吕思勉" target="_blank" rel="noopener">维基百科</a>
+            <a href="https://weread.qq.com/web/bookDetail/7dc32b30813ab8b69g019d02" target="_blank" rel="noopener">微信读书</a>
+          </div>
+        </div>
+        <div class="ref-item">
+          <div class="ref-book">《剑桥中国史》</div>
+          <div class="ref-author">费正清、崔瑞德 主编</div>
+          <div class="ref-desc">西方学界编纂的中国通史，多卷本，视角独到</div>
+          <div class="ref-links">
+            <a href="https://zh.wikipedia.org/wiki/剑桥中国史" target="_blank" rel="noopener">维基百科</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ref-note reveal">
+      本站内容系综合上述文献及当代学术研究成果整理而成，力求准确严谨。历史记载因时代与立场而异，有争议之处已尽量标注。如有疏漏，敬请方家指正。
+    </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════╗
      ║  FOOTER                                  ║
      ╚═══════════════════════════════════════════╝ -->
 <footer class="page-footer">
   <div class="footer-ornament"></div>
   <p>鼎革千年 · 中国历代权力更迭脉络</p>
   <p style="margin-top:8px;">从夏商周到共和国 · 上下五千年完整覆盖</p>
-  <p style="margin-top:4px; color:var(--gold-dim);">整理依据：公开历史资料</p>
+  <p style="margin-top:4px; color:var(--gold-dim);">整理依据：二十四史及历代典籍</p>
 </footer>
 
 <!-- Scroll Rollers & Effects -->

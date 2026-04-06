@@ -1711,7 +1711,14 @@ window.I18N.en = {
         "fate": "Abdicated after the Xinhai Revolution <span class=\"emp-tag abdicate\">Last Emperor</span>"
       },
       "it": "Institutional Turning Point: The Grand Council + Ding-into-Mu Tax Reform",
-      "ix": "<strong>The Grand Council</strong> (1729) — Created by the Yongzheng Emperor, where the emperor personally issued directives and Grand Councillors knelt to take dictation. Imperial autocracy reached its zenith. <strong>Ding-into-Mu Tax Reform (Tanding Rumu)</strong> — Completely abolished the poll tax that had persisted for two thousand years; population surged from 150 million to 400 million. <strong>Maritime Seclusion Policy</strong> (from 1757, only Guangzhou was open for foreign trade), causing China to miss the Industrial Revolution."
+      "ix": "<strong>The Grand Council</strong> (1729) — Created by the Yongzheng Emperor, where the emperor personally issued directives and Grand Councillors knelt to take dictation. Imperial autocracy reached its zenith. <strong>Ding-into-Mu Tax Reform (Tanding Rumu)</strong> — Completely abolished the poll tax that had persisted for two thousand years; population surged from 150 million to 400 million. <strong>Maritime Seclusion Policy</strong> (from 1757, only Guangzhou was open for foreign trade), causing China to miss the Industrial Revolution.",
+      "it2": "Patterns of the Qing",
+      "ix2": "The Kangxi-Qianlong Golden Age lasted over 130 years — the last great flourish of China's feudal society. But after the Opium War in 1840, facing a \"great transformation unseen in three millennia,\" institutional reforms repeatedly failed (Self-Strengthening, Hundred Days' Reform, Late Qing New Policies), until the Xinhai Revolution finally overthrew the monarchy."
+    },
+    "s1": {
+      "fl": "EMPEROR  WHO  ENTERED  THE  PASS",
+      "fn": "Shunzhi Emperor (Emperor Shizu)",
+      "fd": "<strong>Accession:</strong> Youngest son of Hong Taiji, enthroned at age 6 with Dorgon as regent. In 1644 Qing forces crossed the Great Wall and made Beijing the capital.<br>\n          <strong>Fate:</strong> Died of illness in 1661 (some traditions say he became a monk), aged 24."
     }
   },
   "republic": {

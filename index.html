@@ -615,6 +615,11 @@ body::before {
   color: var(--text-dim);
   font-size: 12.5px;
 }
+.emperor-table .emp-life {
+  white-space: nowrap;
+  color: var(--text-dim);
+  font-size: 12.5px;
+}
 .emperor-table .emp-ascend {
   font-size: 13px;
 }
@@ -1278,7 +1283,7 @@ body::before {
     <div class="dynasty-header reveal">
       <div class="dynasty-era">文 明 之 始</div>
       <h2 class="dynasty-name">先秦</h2>
-      <div class="dynasty-years">约前2070年 — 前221年</div>
+      <div class="dynasty-years">约前2070年 — 前221年（约1849年）</div>
       <p class="dynasty-desc">从夏朝「家天下」的开端，到商朝甲骨文与青铜文明，到西周分封礼乐，再到春秋战国百家争鸣与变法图强。一千八百年间，中华文明的基因在此奠定。</p>
     </div>
 
@@ -1378,29 +1383,32 @@ body::before {
     <div class="dynasty-header reveal">
       <div class="dynasty-era">第 一 帝 国</div>
       <h2 class="dynasty-name">秦</h2>
-      <div class="dynasty-years">公元前221年 — 公元前206年</div>
+      <div class="dynasty-years">公元前221年 — 公元前206年（15年）</div>
       <p class="dynasty-desc">秦始皇嬴政统一六国，建立中国历史上第一个中央集权帝制。郡县制替代分封制，书同文、车同轨、统一度量衡。</p>
     </div>
 
     <div class="sub-dynasty reveal">
       <div class="emperor-table-wrap">
         <table class="emperor-table">
-          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <thead><tr><th>皇帝</th><th>生卒</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
           <tbody>
             <tr>
               <td class="emp-name">始皇帝 嬴政</td>
+              <td class="emp-life">前259—前210（49岁）</td>
               <td class="emp-years">前221—前210</td>
               <td class="emp-ascend">灭六国，自立为皇帝</td>
               <td class="emp-end">病死于巡游途中沙丘 <span class="emp-tag death">病亡</span></td>
             </tr>
             <tr>
               <td class="emp-name">二世 胡亥</td>
+              <td class="emp-life">前230—前207（23岁）</td>
               <td class="emp-years">前210—前207</td>
               <td class="emp-ascend">赵高、李斯矫诏立之（逼死扶苏）</td>
               <td class="emp-end">赵高逼胡亥自杀 <span class="emp-tag murdered">被杀</span></td>
             </tr>
             <tr>
               <td class="emp-name">秦王 子婴</td>
+              <td class="emp-life">？—前206</td>
               <td class="emp-years">前207</td>
               <td class="emp-ascend">杀死赵高后被立为秦王</td>
               <td class="emp-end">项羽入咸阳，投降后被杀 <span class="emp-tag murdered">被杀</span></td>
@@ -1426,14 +1434,14 @@ body::before {
     <div class="dynasty-header reveal">
       <div class="dynasty-era">楚 汉 相 争 与 大 汉 帝 国</div>
       <h2 class="dynasty-name">汉</h2>
-      <div class="dynasty-years">公元前206年 — 公元220年</div>
+      <div class="dynasty-years">公元前206年 — 公元220年（约426年）</div>
       <p class="dynasty-desc">项羽灭秦后分封十八诸侯，自立为西楚霸王。刘邦不满，双方争战四年。垓下之战后刘邦统一天下，建立汉朝。</p>
     </div>
 
     <!-- 西汉 -->
     <div class="sub-dynasty reveal">
       <h3 class="sub-dynasty-title">西汉</h3>
-      <div class="sub-dynasty-years">公元前202年 — 公元8年</div>
+      <div class="sub-dynasty-years">公元前202年 — 公元8年（约210年）</div>
 
       <div class="founder-block">
         <div class="founder-label">开 国 皇 帝</div>
@@ -1446,21 +1454,21 @@ body::before {
 
       <div class="emperor-table-wrap">
         <table class="emperor-table">
-          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <thead><tr><th>皇帝</th><th>生卒</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
           <tbody>
-            <tr><td class="emp-name">高祖 刘邦</td><td class="emp-years">前202—前195</td><td>农民起义，灭项羽统一天下</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">惠帝 刘盈</td><td class="emp-years">前195—前188</td><td>刘邦嫡长子</td><td>忧郁而死（吕后专权） <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">高后 吕雉</td><td class="emp-years">前188—前180</td><td>临朝称制，实际掌权</td><td>病死，诸吕被周勃、陈平剿灭 <span class="emp-tag usurp">临朝称制</span></td></tr>
-            <tr><td class="emp-name">文帝 刘恒</td><td class="emp-years">前180—前157</td><td>周勃、陈平平定诸吕，迎立代王</td><td>病死，开创文景之治 <span class="emp-tag good">治世</span></td></tr>
-            <tr><td class="emp-name">景帝 刘启</td><td class="emp-years">前157—前141</td><td>文帝嫡长子</td><td>病死，七国之乱平定 <span class="emp-tag good">治世</span></td></tr>
-            <tr><td class="emp-name">武帝 刘彻</td><td class="emp-years">前141—前87</td><td>景帝嫡子</td><td>病死，北击匈奴，独尊儒术 <span class="emp-tag good">盛世</span></td></tr>
-            <tr><td class="emp-name">昭帝 刘弗陵</td><td class="emp-years">前87—前74</td><td>武帝幼子</td><td>病死，霍光辅政 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">宣帝 刘询</td><td class="emp-years">前74—前49</td><td>巫蛊之祸后被霍光迎立</td><td>病死，中兴之主 <span class="emp-tag good">中兴</span></td></tr>
-            <tr><td class="emp-name">元帝 刘奭</td><td class="emp-years">前49—前33</td><td>宣帝嫡子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">成帝 刘骜</td><td class="emp-years">前33—前7</td><td>元帝嫡子</td><td>病死，赵飞燕姐妹专权 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">哀帝 刘欣</td><td class="emp-years">前7—前1</td><td>成帝养子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">平帝 刘衎</td><td class="emp-years">前1—6</td><td>王莽拥立（外戚）</td><td>被王莽毒死 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">孺子婴</td><td class="emp-years">6—9</td><td>王莽立为太子</td><td>王莽篡位，囚禁而死 <span class="emp-tag abdicate">篡位</span></td></tr>
+            <tr><td class="emp-name">高祖 刘邦</td><td class="emp-life">前256—前195（61岁）</td><td class="emp-years">前202—前195</td><td>农民起义，灭项羽统一天下</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">惠帝 刘盈</td><td class="emp-life">前210—前188（22岁）</td><td class="emp-years">前195—前188</td><td>刘邦嫡长子</td><td>忧郁而死（吕后专权） <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">高后 吕雉</td><td class="emp-life">前241—前180（61岁）</td><td class="emp-years">前188—前180</td><td>临朝称制，实际掌权</td><td>病死，诸吕被周勃、陈平剿灭 <span class="emp-tag usurp">临朝称制</span></td></tr>
+            <tr><td class="emp-name">文帝 刘恒</td><td class="emp-life">前203—前157（46岁）</td><td class="emp-years">前180—前157</td><td>周勃、陈平平定诸吕，迎立代王</td><td>病死，开创文景之治 <span class="emp-tag good">治世</span></td></tr>
+            <tr><td class="emp-name">景帝 刘启</td><td class="emp-life">前188—前141（47岁）</td><td class="emp-years">前157—前141</td><td>文帝嫡长子</td><td>病死，七国之乱平定 <span class="emp-tag good">治世</span></td></tr>
+            <tr><td class="emp-name">武帝 刘彻</td><td class="emp-life">前156—前87（69岁）</td><td class="emp-years">前141—前87</td><td>景帝嫡子</td><td>病死，北击匈奴，独尊儒术 <span class="emp-tag good">盛世</span></td></tr>
+            <tr><td class="emp-name">昭帝 刘弗陵</td><td class="emp-life">前94—前74（20岁）</td><td class="emp-years">前87—前74</td><td>武帝幼子</td><td>病死，霍光辅政 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">宣帝 刘询</td><td class="emp-life">前91—前49（42岁）</td><td class="emp-years">前74—前49</td><td>巫蛊之祸后被霍光迎立</td><td>病死，中兴之主 <span class="emp-tag good">中兴</span></td></tr>
+            <tr><td class="emp-name">元帝 刘奭</td><td class="emp-life">前75—前33（42岁）</td><td class="emp-years">前49—前33</td><td>宣帝嫡子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">成帝 刘骜</td><td class="emp-life">前51—前7（44岁）</td><td class="emp-years">前33—前7</td><td>元帝嫡子</td><td>病死，赵飞燕姐妹专权 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">哀帝 刘欣</td><td class="emp-life">前27—前1（26岁）</td><td class="emp-years">前7—前1</td><td>成帝养子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">平帝 刘衎</td><td class="emp-life">前9—6（14岁）</td><td class="emp-years">前1—6</td><td>王莽拥立（外戚）</td><td>被王莽毒死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">孺子婴</td><td class="emp-life">5—25（20岁）</td><td class="emp-years">6—9</td><td>王莽立为太子</td><td>王莽篡位，囚禁而死 <span class="emp-tag abdicate">篡位</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -1469,7 +1477,7 @@ body::before {
     <!-- 新朝 -->
     <div class="sub-dynasty reveal">
       <h3 class="sub-dynasty-title">新朝</h3>
-      <div class="sub-dynasty-years">公元9年 — 23年</div>
+      <div class="sub-dynasty-years">公元9年 — 23年（14年）</div>
       <div class="founder-block">
         <div class="founder-label">篡 位 者</div>
         <div class="founder-name">王莽</div>
@@ -1483,7 +1491,7 @@ body::before {
     <!-- 东汉 -->
     <div class="sub-dynasty reveal">
       <h3 class="sub-dynasty-title">东汉</h3>
-      <div class="sub-dynasty-years">公元25年 — 220年</div>
+      <div class="sub-dynasty-years">公元25年 — 220年（195年）</div>
 
       <div class="founder-block">
         <div class="founder-label">开 国 皇 帝</div>
@@ -1496,21 +1504,21 @@ body::before {
 
       <div class="emperor-table-wrap">
         <table class="emperor-table">
-          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <thead><tr><th>皇帝</th><th>生卒</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
           <tbody>
-            <tr><td class="emp-name">光武帝 刘秀</td><td class="emp-years">25—57</td><td>起义统一天下，建立东汉</td><td>病死，开创光武中兴 <span class="emp-tag good">中兴</span></td></tr>
-            <tr><td class="emp-name">明帝 刘庄</td><td class="emp-years">57—75</td><td>光武帝嫡子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">章帝 刘炟</td><td class="emp-years">75—88</td><td>明帝嫡子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">和帝 刘肇</td><td class="emp-years">88—106</td><td>章帝嫡子</td><td>病死，外戚窦宪专权 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">殇帝 刘隆</td><td class="emp-years">106</td><td>和帝幼子（不满周岁即位）</td><td>即位208天后死亡 <span class="emp-tag death">夭折</span></td></tr>
-            <tr><td class="emp-name">安帝 刘祜</td><td class="emp-years">106—125</td><td>旁支入继</td><td>病死，外戚阎氏专权 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">顺帝 刘保</td><td class="emp-years">125—144</td><td>宦官政变拥立</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">冲帝 刘炳</td><td class="emp-years">144—145</td><td>顺帝之子（3岁即位）</td><td>病死 <span class="emp-tag death">夭折</span></td></tr>
-            <tr><td class="emp-name">质帝 刘缵</td><td class="emp-years">145—146</td><td>章帝玄孙，被梁冀拥立</td><td>被梁冀毒死 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">桓帝 刘志</td><td class="emp-years">146—168</td><td>梁冀拥立</td><td>病死，宦官五侯专权 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">灵帝 刘宏</td><td class="emp-years">168—189</td><td>窦武拥立</td><td>病死，引发黄巾起义 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">少帝 刘辩</td><td class="emp-years">189</td><td>何进拥立（外戚）</td><td>被董卓废为弘农王，后被杀 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">献帝 刘协</td><td class="emp-years">189—220</td><td>董卓拥立</td><td>禅让给曹丕，东汉灭亡，封山阳公，善终 <span class="emp-tag abdicate">禅让</span></td></tr>
+            <tr><td class="emp-name">光武帝 刘秀</td><td class="emp-life">前5—57（62岁）</td><td class="emp-years">25—57</td><td>起义统一天下，建立东汉</td><td>病死，开创光武中兴 <span class="emp-tag good">中兴</span></td></tr>
+            <tr><td class="emp-name">明帝 刘庄</td><td class="emp-life">28—75（47岁）</td><td class="emp-years">57—75</td><td>光武帝嫡子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">章帝 刘炟</td><td class="emp-life">57—88（31岁）</td><td class="emp-years">75—88</td><td>明帝嫡子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">和帝 刘肇</td><td class="emp-life">79—106（27岁）</td><td class="emp-years">88—106</td><td>章帝嫡子</td><td>病死，外戚窦宪专权 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">殇帝 刘隆</td><td class="emp-life">105—106（1岁）</td><td class="emp-years">106</td><td>和帝幼子（不满周岁即位）</td><td>即位208天后死亡 <span class="emp-tag death">夭折</span></td></tr>
+            <tr><td class="emp-name">安帝 刘祜</td><td class="emp-life">94—125（31岁）</td><td class="emp-years">106—125</td><td>旁支入继</td><td>病死，外戚阎氏专权 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">顺帝 刘保</td><td class="emp-life">115—144（29岁）</td><td class="emp-years">125—144</td><td>宦官政变拥立</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">冲帝 刘炳</td><td class="emp-life">143—145（2岁）</td><td class="emp-years">144—145</td><td>顺帝之子（3岁即位）</td><td>病死 <span class="emp-tag death">夭折</span></td></tr>
+            <tr><td class="emp-name">质帝 刘缵</td><td class="emp-life">138—146（8岁）</td><td class="emp-years">145—146</td><td>章帝玄孙，被梁冀拥立</td><td>被梁冀毒死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">桓帝 刘志</td><td class="emp-life">132—168（36岁）</td><td class="emp-years">146—168</td><td>梁冀拥立</td><td>病死，宦官五侯专权 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">灵帝 刘宏</td><td class="emp-life">156—189（33岁）</td><td class="emp-years">168—189</td><td>窦武拥立</td><td>病死，引发黄巾起义 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">少帝 刘辩</td><td class="emp-life">176—190（14岁）</td><td class="emp-years">189</td><td>何进拥立（外戚）</td><td>被董卓废为弘农王，后被杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">献帝 刘协</td><td class="emp-life">181—234（53岁）</td><td class="emp-years">189—220</td><td>董卓拥立</td><td>禅让给曹丕，东汉灭亡，封山阳公，善终 <span class="emp-tag abdicate">禅让</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -1532,13 +1540,13 @@ body::before {
     <div class="dynasty-header reveal">
       <div class="dynasty-era">天 下 三 分</div>
       <h2 class="dynasty-name">三国</h2>
-      <div class="dynasty-years">公元220年 — 280年</div>
+      <div class="dynasty-years">公元220年 — 280年（60年）</div>
     </div>
 
     <!-- 曹魏 -->
     <div class="sub-dynasty wei reveal">
       <h3 class="sub-dynasty-title">曹魏</h3>
-      <div class="sub-dynasty-years">220—266年</div>
+      <div class="sub-dynasty-years">220—265年（45年）</div>
       <div class="founder-block">
         <div class="founder-label">开 国 皇 帝</div>
         <div class="founder-name">魏文帝 曹丕</div>
@@ -1549,13 +1557,13 @@ body::before {
       </div>
       <div class="emperor-table-wrap">
         <table class="emperor-table">
-          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <thead><tr><th>皇帝</th><th>生卒</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
           <tbody>
-            <tr><td class="emp-name">文帝 曹丕</td><td class="emp-years">220—226</td><td>逼迫汉献帝禅让</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">明帝 曹叡</td><td class="emp-years">226—239</td><td>曹丕嫡子</td><td>病死，托孤于司马懿 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">齐王 曹芳</td><td class="emp-years">239—254</td><td>明帝养子，司马懿、曹爽辅政</td><td>司马昭废为齐王 <span class="emp-tag abdicate">被废</span></td></tr>
-            <tr><td class="emp-name">高贵乡公 曹髦</td><td class="emp-years">254—260</td><td>司马昭拥立</td><td>亲自讨伐司马昭，被成济弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">元帝 曹奂</td><td class="emp-years">260—266</td><td>司马昭拥立</td><td>禅让给司马炎，曹魏灭亡 <span class="emp-tag abdicate">禅让</span></td></tr>
+            <tr><td class="emp-name">文帝 曹丕</td><td class="emp-life">187—226（39岁）</td><td class="emp-years">220—226</td><td>逼迫汉献帝禅让</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">明帝 曹叡</td><td class="emp-life">204—239（35岁）</td><td class="emp-years">226—239</td><td>曹丕嫡子</td><td>病死，托孤于司马懿 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">齐王 曹芳</td><td class="emp-life">232—274（42岁）</td><td class="emp-years">239—254</td><td>明帝养子，司马懿、曹爽辅政</td><td>司马昭废为齐王 <span class="emp-tag abdicate">被废</span></td></tr>
+            <tr><td class="emp-name">高贵乡公 曹髦</td><td class="emp-life">241—260（19岁）</td><td class="emp-years">254—260</td><td>司马昭拥立</td><td>亲自讨伐司马昭，被成济弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">元帝 曹奂</td><td class="emp-life">246—302（56岁）</td><td class="emp-years">260—265</td><td>司马昭拥立</td><td>禅让给司马炎，曹魏灭亡 <span class="emp-tag abdicate">禅让</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -1568,7 +1576,7 @@ body::before {
     <!-- 蜀汉 -->
     <div class="sub-dynasty shu reveal">
       <h3 class="sub-dynasty-title">蜀汉</h3>
-      <div class="sub-dynasty-years">221—263年</div>
+      <div class="sub-dynasty-years">221—263年（42年）</div>
       <div class="founder-block">
         <div class="founder-label">开 国 皇 帝</div>
         <div class="founder-name">汉昭烈帝 刘备</div>
@@ -1579,10 +1587,10 @@ body::before {
       </div>
       <div class="emperor-table-wrap">
         <table class="emperor-table">
-          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <thead><tr><th>皇帝</th><th>生卒</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
           <tbody>
-            <tr><td class="emp-name">昭烈帝 刘备</td><td class="emp-years">221—223</td><td>起义建立蜀汉</td><td>病死，托孤诸葛亮 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">后主 刘禅</td><td class="emp-years">223—263</td><td>刘备嫡子</td><td>邓艾偷渡阴平，刘禅投降，封安乐公 <span class="emp-tag abdicate">投降</span></td></tr>
+            <tr><td class="emp-name">昭烈帝 刘备</td><td class="emp-life">161—223（62岁）</td><td class="emp-years">221—223</td><td>起义建立蜀汉</td><td>病死，托孤诸葛亮 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">后主 刘禅</td><td class="emp-life">207—271（64岁）</td><td class="emp-years">223—263</td><td>刘备嫡子</td><td>邓艾偷渡阴平，刘禅投降，封安乐公 <span class="emp-tag abdicate">投降</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -1595,7 +1603,7 @@ body::before {
     <!-- 孙吴 -->
     <div class="sub-dynasty wu reveal">
       <h3 class="sub-dynasty-title">孙吴</h3>
-      <div class="sub-dynasty-years">229—280年</div>
+      <div class="sub-dynasty-years">229—280年（51年）</div>
       <div class="founder-block">
         <div class="founder-label">开 国 皇 帝</div>
         <div class="founder-name">吴大帝 孙权</div>
@@ -1606,12 +1614,12 @@ body::before {
       </div>
       <div class="emperor-table-wrap">
         <table class="emperor-table">
-          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <thead><tr><th>皇帝</th><th>生卒</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
           <tbody>
-            <tr><td class="emp-name">大帝 孙权</td><td class="emp-years">229—252</td><td>继承父兄基业</td><td>病死，晚年后宫争位 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">废帝 孙亮</td><td class="emp-years">252—258</td><td>孙权嫡子</td><td>被孙綝废为会稽王 <span class="emp-tag abdicate">被废</span></td></tr>
-            <tr><td class="emp-name">景帝 孙休</td><td class="emp-years">258—264</td><td>孙綝废孙亮后拥立</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">末帝 孙皓</td><td class="emp-years">264—280</td><td>孙休死后，大臣拥立</td><td>降晋，封归命侯，善终 <span class="emp-tag abdicate">投降</span></td></tr>
+            <tr><td class="emp-name">大帝 孙权</td><td class="emp-life">182—252（70岁）</td><td class="emp-years">229—252</td><td>继承父兄基业</td><td>病死，晚年后宫争位 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">废帝 孙亮</td><td class="emp-life">243—260（17岁）</td><td class="emp-years">252—258</td><td>孙权嫡子</td><td>被孙綝废为会稽王 <span class="emp-tag abdicate">被废</span></td></tr>
+            <tr><td class="emp-name">景帝 孙休</td><td class="emp-life">235—264（29岁）</td><td class="emp-years">258—264</td><td>孙綝废孙亮后拥立</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">末帝 孙皓</td><td class="emp-life">242—284（42岁）</td><td class="emp-years">264—280</td><td>孙休死后，大臣拥立</td><td>降晋，封归命侯，善终 <span class="emp-tag abdicate">投降</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -1628,13 +1636,13 @@ body::before {
     <div class="dynasty-header reveal">
       <div class="dynasty-era">司 马 天 下</div>
       <h2 class="dynasty-name">两晋</h2>
-      <div class="dynasty-years">公元265年 — 420年</div>
+      <div class="dynasty-years">公元265年 — 420年（155年）</div>
     </div>
 
     <!-- 西晋 -->
     <div class="sub-dynasty reveal">
       <h3 class="sub-dynasty-title">西晋</h3>
-      <div class="sub-dynasty-years">265—316年</div>
+      <div class="sub-dynasty-years">265—316年（51年）</div>
       <div class="founder-block">
         <div class="founder-label">开 国 皇 帝</div>
         <div class="founder-name">晋武帝 司马炎</div>
@@ -1645,12 +1653,12 @@ body::before {
       </div>
       <div class="emperor-table-wrap">
         <table class="emperor-table">
-          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <thead><tr><th>皇帝</th><th>生卒</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
           <tbody>
-            <tr><td class="emp-name">武帝 司马炎</td><td class="emp-years">266—290</td><td>司马氏代魏</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">惠帝 司马衷</td><td class="emp-years">290—306</td><td>司马炎嫡子（"何不食肉糜"）</td><td>被东海王越毒死 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">怀帝 司马炽</td><td class="emp-years">307—311</td><td>惠帝弟</td><td>被刘聪俘虏并被杀 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">愍帝 司马邺</td><td class="emp-years">313—316</td><td>长安被围时立</td><td>出降刘聪，西晋亡 <span class="emp-tag abdicate">投降</span></td></tr>
+            <tr><td class="emp-name">武帝 司马炎</td><td class="emp-life">236—290（54岁）</td><td class="emp-years">265—290</td><td>司马氏代魏</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">惠帝 司马衷</td><td class="emp-life">259—307（48岁）</td><td class="emp-years">290—306</td><td>司马炎嫡子（"何不食肉糜"）</td><td>被东海王越毒死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">怀帝 司马炽</td><td class="emp-life">284—313（29岁）</td><td class="emp-years">307—311</td><td>惠帝弟</td><td>被刘聪俘虏并被杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">愍帝 司马邺</td><td class="emp-life">300—318（18岁）</td><td class="emp-years">313—316</td><td>长安被围时立</td><td>出降刘聪，西晋亡 <span class="emp-tag abdicate">投降</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -1659,7 +1667,7 @@ body::before {
     <!-- 东晋 -->
     <div class="sub-dynasty reveal">
       <h3 class="sub-dynasty-title">东晋</h3>
-      <div class="sub-dynasty-years">317—420年</div>
+      <div class="sub-dynasty-years">317—420年（103年）</div>
       <div class="founder-block">
         <div class="founder-label">开 国 皇 帝</div>
         <div class="founder-name">晋元帝 司马睿</div>
@@ -1670,19 +1678,19 @@ body::before {
       </div>
       <div class="emperor-table-wrap">
         <table class="emperor-table">
-          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <thead><tr><th>皇帝</th><th>生卒</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
           <tbody>
-            <tr><td class="emp-name">元帝 司马睿</td><td class="emp-years">317—322</td><td>被王导、王敦拥立</td><td>忧愤而死，为王敦所制 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">明帝 司马绍</td><td class="emp-years">322—325</td><td>元帝子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">成帝 司马衍</td><td class="emp-years">325—342</td><td>明帝子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">康帝 司马岳</td><td class="emp-years">342—344</td><td>成帝弟</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">穆帝 司马聃</td><td class="emp-years">344—361</td><td>康帝子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">哀帝 司马丕</td><td class="emp-years">361—365</td><td>哀帝弟，桓温辅政</td><td>服食丹药中毒死 <span class="emp-tag death">中毒</span></td></tr>
-            <tr><td class="emp-name">废帝 司马奕</td><td class="emp-years">365—371</td><td>哀帝弟</td><td>被桓温废为海西公 <span class="emp-tag abdicate">被废</span></td></tr>
-            <tr><td class="emp-name">简文帝 司马昱</td><td class="emp-years">371—372</td><td>桓温拥立</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">孝武帝 司马曜</td><td class="emp-years">372—396</td><td>简文帝子</td><td>被宠妃张贵人用被子闷死 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">安帝 司马德宗</td><td class="emp-years">396—418</td><td>孝武帝子</td><td>被刘裕派人缢死 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">恭帝 司马德文</td><td class="emp-years">418—420</td><td>刘裕拥立</td><td>禅让给刘裕，东晋亡，被杀 <span class="emp-tag abdicate">禅让</span></td></tr>
+            <tr><td class="emp-name">元帝 司马睿</td><td class="emp-life">276—323（47岁）</td><td class="emp-years">317—322</td><td>被王导、王敦拥立</td><td>忧愤而死，为王敦所制 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">明帝 司马绍</td><td class="emp-life">299—325（26岁）</td><td class="emp-years">322—325</td><td>元帝子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">成帝 司马衍</td><td class="emp-life">321—342（21岁）</td><td class="emp-years">325—342</td><td>明帝子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">康帝 司马岳</td><td class="emp-life">322—344（22岁）</td><td class="emp-years">342—344</td><td>成帝弟</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">穆帝 司马聃</td><td class="emp-life">343—361（18岁）</td><td class="emp-years">344—361</td><td>康帝子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">哀帝 司马丕</td><td class="emp-life">341—365（24岁）</td><td class="emp-years">361—365</td><td>成帝子，桓温辅政</td><td>服食丹药中毒死 <span class="emp-tag death">中毒</span></td></tr>
+            <tr><td class="emp-name">废帝 司马奕</td><td class="emp-life">342—386（44岁）</td><td class="emp-years">365—371</td><td>哀帝弟</td><td>被桓温废为海西公 <span class="emp-tag abdicate">被废</span></td></tr>
+            <tr><td class="emp-name">简文帝 司马昱</td><td class="emp-life">320—372（52岁）</td><td class="emp-years">371—372</td><td>桓温拥立</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">孝武帝 司马曜</td><td class="emp-life">362—396（34岁）</td><td class="emp-years">372—396</td><td>简文帝子</td><td>被宠妃张贵人用被子闷死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">安帝 司马德宗</td><td class="emp-life">382—419（37岁）</td><td class="emp-years">396—418</td><td>孝武帝子</td><td>被刘裕派人缢死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">恭帝 司马德文</td><td class="emp-life">386—421（35岁）</td><td class="emp-years">418—420</td><td>刘裕拥立</td><td>禅让给刘裕，东晋亡，被杀 <span class="emp-tag abdicate">禅让</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -1704,13 +1712,13 @@ body::before {
     <div class="dynasty-header reveal">
       <div class="dynasty-era">南 北 对 峙</div>
       <h2 class="dynasty-name">南北朝</h2>
-      <div class="dynasty-years">公元420年 — 589年</div>
+      <div class="dynasty-years">公元420年 — 589年（169年）</div>
     </div>
 
     <!-- 南朝宋 -->
     <div class="sub-dynasty reveal">
       <h3 class="sub-dynasty-title">南朝·宋</h3>
-      <div class="sub-dynasty-years">420—479年</div>
+      <div class="sub-dynasty-years">420—479年（59年）</div>
       <div class="founder-block">
         <div class="founder-label">开 国 皇 帝</div>
         <div class="founder-name">宋武帝 刘裕</div>
@@ -1721,16 +1729,16 @@ body::before {
       </div>
       <div class="emperor-table-wrap">
         <table class="emperor-table">
-          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <thead><tr><th>皇帝</th><th>生卒</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
           <tbody>
-            <tr><td class="emp-name">武帝 刘裕</td><td class="emp-years">420—422</td><td>北府兵将领，篡晋</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">少帝 刘义符</td><td class="emp-years">422—424</td><td>刘裕嫡子</td><td>被徐羡之、傅亮废杀 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">文帝 刘义隆</td><td class="emp-years">424—453</td><td>徐羡之等拥立</td><td>被太子刘劭弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">孝武帝 刘骏</td><td class="emp-years">453—464</td><td>起兵讨伐刘劭，自立</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">前废帝 刘子业</td><td class="emp-years">464—466</td><td>孝武帝子</td><td>被戴法兴等杀死 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">明帝 刘彧</td><td class="emp-years">466—472</td><td>刘子业叔父，起兵自立</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">后废帝 刘昱</td><td class="emp-years">472—477</td><td>明帝子</td><td>被萧道成派人杀死 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">顺帝 刘准</td><td class="emp-years">477—479</td><td>萧道成拥立</td><td>禅让给萧道成，被杀 <span class="emp-tag abdicate">禅让</span></td></tr>
+            <tr><td class="emp-name">武帝 刘裕</td><td class="emp-life">363—422（59岁）</td><td class="emp-years">420—422</td><td>北府兵将领，篡晋</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">少帝 刘义符</td><td class="emp-life">406—424（18岁）</td><td class="emp-years">422—424</td><td>刘裕嫡子</td><td>被徐羡之、傅亮废杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">文帝 刘义隆</td><td class="emp-life">407—453（46岁）</td><td class="emp-years">424—453</td><td>徐羡之等拥立</td><td>被太子刘劭弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">孝武帝 刘骏</td><td class="emp-life">430—464（34岁）</td><td class="emp-years">453—464</td><td>起兵讨伐刘劭，自立</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">前废帝 刘子业</td><td class="emp-life">449—466（17岁）</td><td class="emp-years">464—466</td><td>孝武帝子</td><td>被戴法兴等杀死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">明帝 刘彧</td><td class="emp-life">439—472（33岁）</td><td class="emp-years">466—472</td><td>刘子业叔父，起兵自立</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">后废帝 刘昱</td><td class="emp-life">463—477（14岁）</td><td class="emp-years">472—477</td><td>明帝子</td><td>被萧道成派人杀死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">顺帝 刘准</td><td class="emp-life">467—479（12岁）</td><td class="emp-years">477—479</td><td>萧道成拥立</td><td>禅让给萧道成，被杀 <span class="emp-tag abdicate">禅让</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -1754,15 +1762,15 @@ body::before {
       </div>
       <div class="emperor-table-wrap">
         <table class="emperor-table">
-          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <thead><tr><th>皇帝</th><th>生卒</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
           <tbody>
-            <tr><td class="emp-name">高帝 萧道成</td><td class="emp-years">479—482</td><td>禁军将领，篡宋</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">武帝 萧赜</td><td class="emp-years">482—493</td><td>萧道成嫡子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">郁林王 萧昭业</td><td class="emp-years">493—494</td><td>武帝嫡孙</td><td>被萧鸾杀死 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">海陵王 萧昭文</td><td class="emp-years">494</td><td>萧鸾拥立（仅数月）</td><td>被萧鸾废杀 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">明帝 萧鸾</td><td class="emp-years">494—498</td><td>萧道成侄，夺取帝位</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">东昏侯 萧宝卷</td><td class="emp-years">498—501</td><td>明帝子</td><td>被萧衍起兵杀死 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">和帝 萧宝融</td><td class="emp-years">501—502</td><td>萧衍拥立</td><td>禅让给萧衍，被杀 <span class="emp-tag abdicate">禅让</span></td></tr>
+            <tr><td class="emp-name">高帝 萧道成</td><td class="emp-life">427—482（55岁）</td><td class="emp-years">479—482</td><td>禁军将领，篡宋</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">武帝 萧赜</td><td class="emp-life">440—493（53岁）</td><td class="emp-years">482—493</td><td>萧道成嫡子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">郁林王 萧昭业</td><td class="emp-life">473—494（21岁）</td><td class="emp-years">493—494</td><td>武帝嫡孙</td><td>被萧鸾杀死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">海陵王 萧昭文</td><td class="emp-life">480—494（14岁）</td><td class="emp-years">494</td><td>萧鸾拥立（仅数月）</td><td>被萧鸾废杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">明帝 萧鸾</td><td class="emp-life">452—498（46岁）</td><td class="emp-years">494—498</td><td>萧道成侄，夺取帝位</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">东昏侯 萧宝卷</td><td class="emp-life">483—501（18岁）</td><td class="emp-years">498—501</td><td>明帝子</td><td>被萧衍起兵杀死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">和帝 萧宝融</td><td class="emp-life">488—502（14岁）</td><td class="emp-years">501—502</td><td>萧衍拥立</td><td>禅让给萧衍，被杀 <span class="emp-tag abdicate">禅让</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -1771,7 +1779,7 @@ body::before {
     <!-- 南朝梁 -->
     <div class="sub-dynasty reveal">
       <h3 class="sub-dynasty-title">南朝·梁</h3>
-      <div class="sub-dynasty-years">502—557年</div>
+      <div class="sub-dynasty-years">502—557年（55年）</div>
       <div class="founder-block">
         <div class="founder-label">开 国 皇 帝</div>
         <div class="founder-name">梁武帝 萧衍</div>
@@ -1782,12 +1790,12 @@ body::before {
       </div>
       <div class="emperor-table-wrap">
         <table class="emperor-table">
-          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <thead><tr><th>皇帝</th><th>生卒</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
           <tbody>
-            <tr><td class="emp-name">武帝 萧衍</td><td class="emp-years">502—549</td><td>南齐宗室，篡齐</td><td>被侯景围城饿死 <span class="emp-tag murdered">饿死</span></td></tr>
-            <tr><td class="emp-name">简文帝 萧纲</td><td class="emp-years">549—551</td><td>侯景拥立</td><td>被侯景弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">孝元帝 萧绎</td><td class="emp-years">552—554</td><td>侯景死后自立</td><td>被萧詧（西梁）杀死 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">敬帝 萧方智</td><td class="emp-years">555—557</td><td>陈霸先拥立</td><td>禅让给陈霸先，被杀 <span class="emp-tag abdicate">禅让</span></td></tr>
+            <tr><td class="emp-name">武帝 萧衍</td><td class="emp-life">464—549（85岁）</td><td class="emp-years">502—549</td><td>南齐宗室，篡齐</td><td>被侯景围城饿死 <span class="emp-tag murdered">饿死</span></td></tr>
+            <tr><td class="emp-name">简文帝 萧纲</td><td class="emp-life">503—551（48岁）</td><td class="emp-years">549—551</td><td>侯景拥立</td><td>被侯景弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">孝元帝 萧绎</td><td class="emp-life">508—555（47岁）</td><td class="emp-years">552—554</td><td>侯景死后自立</td><td>被萧詧（西梁）杀死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">敬帝 萧方智</td><td class="emp-life">543—558（15岁）</td><td class="emp-years">555—557</td><td>陈霸先拥立</td><td>禅让给陈霸先，被杀 <span class="emp-tag abdicate">禅让</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -1796,7 +1804,7 @@ body::before {
     <!-- 南朝陈 -->
     <div class="sub-dynasty reveal">
       <h3 class="sub-dynasty-title">南朝·陈</h3>
-      <div class="sub-dynasty-years">557—589年</div>
+      <div class="sub-dynasty-years">557—589年（32年）</div>
       <div class="founder-block">
         <div class="founder-label">开 国 皇 帝</div>
         <div class="founder-name">陈武帝 陈霸先</div>
@@ -1807,13 +1815,13 @@ body::before {
       </div>
       <div class="emperor-table-wrap">
         <table class="emperor-table">
-          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <thead><tr><th>皇帝</th><th>生卒</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
           <tbody>
-            <tr><td class="emp-name">武帝 陈霸先</td><td class="emp-years">557—559</td><td>军人集团，篡梁</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">文帝 陈蒨</td><td class="emp-years">559—566</td><td>陈霸先侄</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">废帝 陈伯宗</td><td class="emp-years">566—568</td><td>文帝嫡子</td><td>被陈顼废为临海王 <span class="emp-tag abdicate">被废</span></td></tr>
-            <tr><td class="emp-name">宣帝 陈顼</td><td class="emp-years">569—582</td><td>陈蒨弟，夺取帝位</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">后主 陈叔宝</td><td class="emp-years">583—589</td><td>宣帝子</td><td>隋军攻入建康，投降，封长城公，善终 <span class="emp-tag abdicate">投降</span></td></tr>
+            <tr><td class="emp-name">武帝 陈霸先</td><td class="emp-life">503—559（56岁）</td><td class="emp-years">557—559</td><td>军人集团，篡梁</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">文帝 陈蒨</td><td class="emp-life">522—566（44岁）</td><td class="emp-years">559—566</td><td>陈霸先侄</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">废帝 陈伯宗</td><td class="emp-life">554—570（16岁）</td><td class="emp-years">566—568</td><td>文帝嫡子</td><td>被陈顼废为临海王 <span class="emp-tag abdicate">被废</span></td></tr>
+            <tr><td class="emp-name">宣帝 陈顼</td><td class="emp-life">530—582（52岁）</td><td class="emp-years">569—582</td><td>陈蒨弟，夺取帝位</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">后主 陈叔宝</td><td class="emp-life">553—604（51岁）</td><td class="emp-years">583—589</td><td>宣帝子</td><td>隋军攻入建康，投降，封长城公，善终 <span class="emp-tag abdicate">投降</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -1826,7 +1834,7 @@ body::before {
     <!-- 北魏 -->
     <div class="sub-dynasty north reveal">
       <h3 class="sub-dynasty-title">北朝·北魏</h3>
-      <div class="sub-dynasty-years">386—534年</div>
+      <div class="sub-dynasty-years">386—534年（148年）</div>
       <div class="founder-block">
         <div class="founder-label">开 国 皇 帝</div>
         <div class="founder-name">魏道武帝 拓跋珪</div>
@@ -1841,22 +1849,22 @@ body::before {
       </div>
       <div class="emperor-table-wrap">
         <table class="emperor-table">
-          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <thead><tr><th>皇帝</th><th>生卒</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
           <tbody>
-            <tr><td class="emp-name">道武帝 拓跋珪</td><td class="emp-years">386—409</td><td>鲜卑首领，统一北方</td><td>被子拓跋绍弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">明元帝 拓跋嗣</td><td class="emp-years">409—423</td><td>道武帝子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">太武帝 拓跋焘</td><td class="emp-years">423—452</td><td>明元帝子</td><td>被宦官宗爱弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">南安王 拓跋余</td><td class="emp-years">452</td><td>宗爱拥立</td><td>被宗爱弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">文成帝 拓跋濬</td><td class="emp-years">452—465</td><td>宗爱弑君后被诛，复位</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">献文帝 拓跋弘</td><td class="emp-years">465—471</td><td>文成帝子</td><td>禅让给孝文帝，被文明太后毒死 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">孝文帝 元宏</td><td class="emp-years">471—499</td><td>献文帝子（文明太后掌权）</td><td>北伐途中病死 <span class="emp-tag good">汉化改革</span></td></tr>
-            <tr><td class="emp-name">宣武帝 元恪</td><td class="emp-years">499—515</td><td>孝文帝次子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">孝明帝 元诩</td><td class="emp-years">515—528</td><td>宣武帝嫡子（胡太后专权）</td><td>被胡太后毒死 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">幼帝 元钊</td><td class="emp-years">528</td><td>胡太后立（不满月）</td><td>被尔朱荣沉入黄河 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">孝庄帝 元子攸</td><td class="emp-years">528—530</td><td>尔朱荣拥立</td><td>被尔朱兆俘获后缢死 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">长广王 元晔</td><td class="emp-years">530—531</td><td>尔朱兆拥立</td><td>被尔朱兆废杀 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">节闵帝 元恭</td><td class="emp-years">531—532</td><td>尔朱世隆拥立</td><td>被高欢废杀 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">孝武帝 元修</td><td class="emp-years">532—534</td><td>高欢拥立</td><td>投奔宇文泰，被杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">道武帝 拓跋珪</td><td class="emp-life">371—409（38岁）</td><td class="emp-years">386—409</td><td>鲜卑首领，统一北方</td><td>被子拓跋绍弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">明元帝 拓跋嗣</td><td class="emp-life">392—423（31岁）</td><td class="emp-years">409—423</td><td>道武帝子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">太武帝 拓跋焘</td><td class="emp-life">408—452（44岁）</td><td class="emp-years">423—452</td><td>明元帝子</td><td>被宦官宗爱弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">南安王 拓跋余</td><td class="emp-life">？—452</td><td class="emp-years">452</td><td>宗爱拥立</td><td>被宗爱弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">文成帝 拓跋濬</td><td class="emp-life">440—465（25岁）</td><td class="emp-years">452—465</td><td>宗爱弑君后被诛，复位</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">献文帝 拓跋弘</td><td class="emp-life">454—476（22岁）</td><td class="emp-years">465—471</td><td>文成帝子</td><td>禅让给孝文帝，被文明太后毒死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">孝文帝 元宏</td><td class="emp-life">467—499（32岁）</td><td class="emp-years">471—499</td><td>献文帝子（文明太后掌权）</td><td>北伐途中病死 <span class="emp-tag good">汉化改革</span></td></tr>
+            <tr><td class="emp-name">宣武帝 元恪</td><td class="emp-life">483—515（32岁）</td><td class="emp-years">499—515</td><td>孝文帝次子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">孝明帝 元诩</td><td class="emp-life">510—528（18岁）</td><td class="emp-years">515—528</td><td>宣武帝嫡子（胡太后专权）</td><td>被胡太后毒死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">幼帝 元钊</td><td class="emp-life">526—528（2岁）</td><td class="emp-years">528</td><td>胡太后立（不满月）</td><td>被尔朱荣沉入黄河 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">孝庄帝 元子攸</td><td class="emp-life">507—531（24岁）</td><td class="emp-years">528—530</td><td>尔朱荣拥立</td><td>被尔朱兆俘获后缢死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">长广王 元晔</td><td class="emp-life">？—532</td><td class="emp-years">530—531</td><td>尔朱兆拥立</td><td>被尔朱兆废杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">节闵帝 元恭</td><td class="emp-life">498—532（34岁）</td><td class="emp-years">531—532</td><td>尔朱世隆拥立</td><td>被高欢废杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">孝武帝 元修</td><td class="emp-life">510—535（25岁）</td><td class="emp-years">532—534</td><td>高欢拥立</td><td>投奔宇文泰，被杀 <span class="emp-tag murdered">被杀</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -1869,7 +1877,7 @@ body::before {
     <!-- 北魏分裂 -->
     <div class="sub-dynasty north reveal">
       <h3 class="sub-dynasty-title">北魏分裂后</h3>
-      <div class="sub-dynasty-years">534—581年</div>
+      <div class="sub-dynasty-years">534—581年（47年）</div>
       <div class="founder-detail" style="padding:16px 0; color: var(--text-secondary); line-height:2;">
         <strong style="color:var(--gold)">东魏（534—550）→ 北齐（550—577）：</strong>高欢之子高洋建立，577年被北周灭。<br>
         <strong style="color:var(--gold)">西魏（535—557）→ 北周（557—581）：</strong>宇文泰侄子宇文觉建立，581年被隋朝（杨坚）取代。
@@ -1887,7 +1895,7 @@ body::before {
     <div class="dynasty-header reveal">
       <div class="dynasty-era">短 命 的 统 一</div>
       <h2 class="dynasty-name">隋</h2>
-      <div class="dynasty-years">公元581年 — 618年</div>
+      <div class="dynasty-years">公元581年 — 618年（37年）</div>
     </div>
 
     <div class="sub-dynasty reveal">
@@ -1895,16 +1903,16 @@ body::before {
         <div class="founder-label">开 国 皇 帝</div>
         <div class="founder-name">隋文帝 杨坚</div>
         <div class="founder-detail">
-          <strong>登基：</strong>北周外戚（杨坚是北周静帝的外祖父），581年逼迫北周静帝禅让。<br>
+          <strong>登基：</strong>北周外戚（其女杨丽华为北周宣帝皇后），581年逼迫北周静帝禅让。<br>
           <strong>退位：</strong>604年，据传被次子杨广逼迫退位后死亡（一说病逝）。
         </div>
       </div>
       <div class="emperor-table-wrap">
         <table class="emperor-table">
-          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <thead><tr><th>皇帝</th><th>生卒</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
           <tbody>
-            <tr><td class="emp-name">文帝 杨坚</td><td class="emp-years">581—604</td><td>北周外戚，篡周</td><td>被杨广逼迫死亡（存疑） <span class="emp-tag murdered">存疑</span></td></tr>
-            <tr><td class="emp-name">炀帝 杨广</td><td class="emp-years">604—618</td><td>文帝次子（弑父存疑）</td><td>江都兵变，被宇文化及缢杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">文帝 杨坚</td><td class="emp-life">541—604（63岁）</td><td class="emp-years">581—604</td><td>北周外戚，篡周</td><td>被杨广逼迫死亡（存疑） <span class="emp-tag murdered">存疑</span></td></tr>
+            <tr><td class="emp-name">炀帝 杨广</td><td class="emp-life">569—618（49岁）</td><td class="emp-years">604—618</td><td>文帝次子（弑父存疑）</td><td>江都兵变，被宇文化及缢杀 <span class="emp-tag murdered">被杀</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -1926,7 +1934,7 @@ body::before {
     <div class="dynasty-header reveal">
       <div class="dynasty-era">盛 世 大 唐</div>
       <h2 class="dynasty-name">唐</h2>
-      <div class="dynasty-years">公元618年 — 907年</div>
+      <div class="dynasty-years">公元618年 — 907年（289年）</div>
     </div>
 
     <div class="sub-dynasty reveal">
@@ -1940,29 +1948,29 @@ body::before {
       </div>
       <div class="emperor-table-wrap">
         <table class="emperor-table">
-          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <thead><tr><th>皇帝</th><th>生卒</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
           <tbody>
-            <tr><td class="emp-name">高祖 李渊</td><td class="emp-years">618—626</td><td>隋太原留守，起义建唐</td><td>玄武门之变后禅让给李世民 <span class="emp-tag abdicate">禅让</span></td></tr>
-            <tr><td class="emp-name">太宗 李世民</td><td class="emp-years">626—649</td><td>秦王，杀兄逼父（玄武门之变）</td><td>病死于翠微宫 <span class="emp-tag good">贞观之治</span></td></tr>
-            <tr><td class="emp-name">高宗 李治</td><td class="emp-years">649—683</td><td>太宗嫡子</td><td>病死于洛阳 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">武则天</td><td class="emp-years">684—705</td><td>唐高宗皇后，临朝称制后称帝</td><td>神龙政变后退位，同年病死 <span class="emp-tag usurp">称帝</span></td></tr>
-            <tr><td class="emp-name">中宗 李显</td><td class="emp-years">705—710</td><td>武则天病后复位</td><td>被韦后和安乐公主毒死 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">睿宗 李旦</td><td class="emp-years">710—712</td><td>唐隆政变拥立</td><td>禅让给李隆基 <span class="emp-tag abdicate">禅让</span></td></tr>
-            <tr><td class="emp-name">玄宗 李隆基</td><td class="emp-years">712—756</td><td>先天政变杀太平公主后登基</td><td>安史之乱中禅让给李亨 <span class="emp-tag good">开元盛世</span></td></tr>
-            <tr><td class="emp-name">肃宗 李亨</td><td class="emp-years">756—762</td><td>玄宗逃蜀时自立为帝</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">代宗 李豫</td><td class="emp-years">762—779</td><td>肃宗嫡子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">德宗 李适</td><td class="emp-years">779—805</td><td>代宗嫡子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">顺宗 李诵</td><td class="emp-years">805</td><td>德宗嫡子（仅在位8个月）</td><td>宦官逼迫退位 <span class="emp-tag abdicate">被废</span></td></tr>
-            <tr><td class="emp-name">宪宗 李纯</td><td class="emp-years">805—820</td><td>顺宗子，元和中兴</td><td>被宦官陈弘志弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">穆宗 李恒</td><td class="emp-years">820—824</td><td>宪宗嫡子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">敬宗 李湛</td><td class="emp-years">824—826</td><td>穆宗嫡子</td><td>被宦官刘克明弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">文宗 李昂</td><td class="emp-years">826—840</td><td>敬宗弟，宦官拥立</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">武宗 李炎</td><td class="emp-years">840—846</td><td>宦官仇士良拥立</td><td>病死（服食丹药） <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">宣宗 李忱</td><td class="emp-years">846—859</td><td>装傻多年被宦官拥立</td><td>病死 <span class="emp-tag good">大中中兴</span></td></tr>
-            <tr><td class="emp-name">懿宗 李漼</td><td class="emp-years">859—873</td><td>宣宗子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">僖宗 李儇</td><td class="emp-years">873—888</td><td>懿宗子，宦官拥立</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">昭宗 李晔</td><td class="emp-years">888—904</td><td>宦官杨复恭拥立</td><td>被朱温弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
-            <tr><td class="emp-name">哀帝 李柷</td><td class="emp-years">904—907</td><td>朱温拥立</td><td>禅让给朱温，唐朝灭亡，被杀 <span class="emp-tag abdicate">禅让</span></td></tr>
+            <tr><td class="emp-name">高祖 李渊</td><td class="emp-life">566—635（69岁）</td><td class="emp-years">618—626</td><td>隋太原留守，起义建唐</td><td>玄武门之变后禅让给李世民 <span class="emp-tag abdicate">禅让</span></td></tr>
+            <tr><td class="emp-name">太宗 李世民</td><td class="emp-life">598—649（51岁）</td><td class="emp-years">626—649</td><td>秦王，杀兄逼父（玄武门之变）</td><td>病死于翠微宫 <span class="emp-tag good">贞观之治</span></td></tr>
+            <tr><td class="emp-name">高宗 李治</td><td class="emp-life">628—683（55岁）</td><td class="emp-years">649—683</td><td>太宗嫡子</td><td>病死于洛阳 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">武则天</td><td class="emp-life">624—705（81岁）</td><td class="emp-years">690—705</td><td>唐高宗皇后，684年临朝称制，690年称帝改国号周</td><td>神龙政变后退位，同年病死 <span class="emp-tag usurp">称帝</span></td></tr>
+            <tr><td class="emp-name">中宗 李显</td><td class="emp-life">656—710（54岁）</td><td class="emp-years">705—710</td><td>武则天病后复位</td><td>被韦后和安乐公主毒死 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">睿宗 李旦</td><td class="emp-life">662—716（54岁）</td><td class="emp-years">710—712</td><td>唐隆政变拥立</td><td>禅让给李隆基 <span class="emp-tag abdicate">禅让</span></td></tr>
+            <tr><td class="emp-name">玄宗 李隆基</td><td class="emp-life">685—762（77岁）</td><td class="emp-years">712—756</td><td>先天政变杀太平公主后登基</td><td>安史之乱中禅让给李亨 <span class="emp-tag good">开元盛世</span></td></tr>
+            <tr><td class="emp-name">肃宗 李亨</td><td class="emp-life">711—762（51岁）</td><td class="emp-years">756—762</td><td>玄宗逃蜀时自立为帝</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">代宗 李豫</td><td class="emp-life">727—779（52岁）</td><td class="emp-years">762—779</td><td>肃宗嫡子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">德宗 李适</td><td class="emp-life">742—805（63岁）</td><td class="emp-years">779—805</td><td>代宗嫡子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">顺宗 李诵</td><td class="emp-life">761—806（45岁）</td><td class="emp-years">805</td><td>德宗嫡子（仅在位8个月）</td><td>宦官逼迫退位 <span class="emp-tag abdicate">被废</span></td></tr>
+            <tr><td class="emp-name">宪宗 李纯</td><td class="emp-life">778—820（42岁）</td><td class="emp-years">805—820</td><td>顺宗子，元和中兴</td><td>被宦官陈弘志弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">穆宗 李恒</td><td class="emp-life">795—824（29岁）</td><td class="emp-years">820—824</td><td>宪宗嫡子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">敬宗 李湛</td><td class="emp-life">809—826（17岁）</td><td class="emp-years">824—826</td><td>穆宗嫡子</td><td>被宦官刘克明弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">文宗 李昂</td><td class="emp-life">809—840（31岁）</td><td class="emp-years">826—840</td><td>敬宗弟，宦官拥立</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">武宗 李炎</td><td class="emp-life">814—846（32岁）</td><td class="emp-years">840—846</td><td>宦官仇士良拥立</td><td>病死（服食丹药） <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">宣宗 李忱</td><td class="emp-life">810—859（49岁）</td><td class="emp-years">846—859</td><td>装傻多年被宦官拥立</td><td>病死 <span class="emp-tag good">大中中兴</span></td></tr>
+            <tr><td class="emp-name">懿宗 李漼</td><td class="emp-life">833—873（40岁）</td><td class="emp-years">859—873</td><td>宣宗子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">僖宗 李儇</td><td class="emp-life">862—888（26岁）</td><td class="emp-years">873—888</td><td>懿宗子，宦官拥立</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">昭宗 李晔</td><td class="emp-life">867—904（37岁）</td><td class="emp-years">888—904</td><td>宦官杨复恭拥立</td><td>被朱温弑杀 <span class="emp-tag murdered">被杀</span></td></tr>
+            <tr><td class="emp-name">哀帝 李柷</td><td class="emp-life">892—908（16岁）</td><td class="emp-years">904—907</td><td>朱温拥立</td><td>禅让给朱温，唐朝灭亡，被杀 <span class="emp-tag abdicate">禅让</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -1988,7 +1996,7 @@ body::before {
     <div class="dynasty-header reveal">
       <div class="dynasty-era">藩 镇 割 据 的 起 点</div>
       <h2 class="dynasty-name">安史之乱</h2>
-      <div class="dynasty-years">公元755年 — 763年</div>
+      <div class="dynasty-years">公元755年 — 763年（8年）</div>
       <p class="dynasty-desc">唐朝平定安史之乱用了8年，但为了尽快结束战争，做了两个关键妥协：允许藩镇世袭化；河北三镇（魏博、成德、卢龙）保持半独立状态。这种状态持续了140多年。</p>
     </div>
 
@@ -2019,7 +2027,7 @@ body::before {
     <div class="dynasty-header reveal">
       <div class="dynasty-era">乱 世 群 雄</div>
       <h2 class="dynasty-name">五代十国</h2>
-      <div class="dynasty-years">公元907年 — 960年</div>
+      <div class="dynasty-years">公元907年 — 960年（53年）</div>
       <p class="dynasty-desc">五代皇帝不是传统意义上的"皇子"，而是从藩镇军事集团里杀出来的将领。这就是为什么五代更替全是军事政变/篡夺，没有一次是正常的父死子继。</p>
     </div>
 
@@ -2083,14 +2091,14 @@ body::before {
     <div class="dynasty-header reveal">
       <div class="dynasty-era">文 治 巅 峰</div>
       <h2 class="dynasty-name">宋</h2>
-      <div class="dynasty-years">公元960年 — 1279年</div>
+      <div class="dynasty-years">公元960年 — 1279年（319年）</div>
       <p class="dynasty-desc">赵匡胤汲取五代武人乱政的教训，确立「崇文抑武」国策。宋朝经济文化达到封建社会巅峰，但军事积弱，始终未能收复燕云十六州。</p>
     </div>
 
     <!-- 北宋 -->
     <div class="sub-dynasty reveal">
       <h3 class="sub-dynasty-title">北宋</h3>
-      <div class="sub-dynasty-years">960—1127年</div>
+      <div class="sub-dynasty-years">960—1127年（167年）</div>
       <div class="founder-block">
         <div class="founder-label">开 国 皇 帝</div>
         <div class="founder-name">宋太祖 赵匡胤</div>
@@ -2102,16 +2110,17 @@ body::before {
       </div>
       <div class="emperor-table-wrap">
         <table class="emperor-table">
-          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <thead><tr><th>皇帝</th><th>生卒</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
           <tbody>
-            <tr><td class="emp-name">太祖 赵匡胤</td><td class="emp-years">960—976</td><td>陈桥兵变，黄袍加身</td><td>暴毙（烛影斧声） <span class="emp-tag murdered">猝死</span></td></tr>
-            <tr><td class="emp-name">太宗 赵光义</td><td class="emp-years">976—997</td><td>兄终弟及（争议）</td><td>箭伤复发病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">真宗 赵恒</td><td class="emp-years">997—1022</td><td>太宗第三子</td><td>病死 <span class="emp-tag good">澶渊之盟</span></td></tr>
-            <tr><td class="emp-name">仁宗 赵祯</td><td class="emp-years">1022—1063</td><td>真宗第六子</td><td>病死 <span class="emp-tag good">仁宗盛治</span></td></tr>
-            <tr><td class="emp-name">神宗 赵顼</td><td class="emp-years">1067—1085</td><td>英宗长子</td><td>忧愤病死 <span class="emp-tag usurp">王安石变法</span></td></tr>
-            <tr><td class="emp-name">哲宗 赵煦</td><td class="emp-years">1085—1100</td><td>神宗第六子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">徽宗 赵佶</td><td class="emp-years">1100—1126</td><td>哲宗弟</td><td>靖康之变被金掳走 <span class="emp-tag murdered">亡国</span></td></tr>
-            <tr><td class="emp-name">钦宗 赵桓</td><td class="emp-years">1126—1127</td><td>徽宗禅让</td><td>被掳至金国 <span class="emp-tag murdered">亡国</span></td></tr>
+            <tr><td class="emp-name">太祖 赵匡胤</td><td class="emp-life">927—976（49岁）</td><td class="emp-years">960—976</td><td>陈桥兵变，黄袍加身</td><td>暴毙（烛影斧声） <span class="emp-tag murdered">猝死</span></td></tr>
+            <tr><td class="emp-name">太宗 赵光义</td><td class="emp-life">939—997（58岁）</td><td class="emp-years">976—997</td><td>兄终弟及（争议）</td><td>箭伤复发病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">真宗 赵恒</td><td class="emp-life">968—1022（54岁）</td><td class="emp-years">997—1022</td><td>太宗第三子</td><td>病死 <span class="emp-tag good">澶渊之盟</span></td></tr>
+            <tr><td class="emp-name">仁宗 赵祯</td><td class="emp-life">1010—1063（53岁）</td><td class="emp-years">1022—1063</td><td>真宗第六子</td><td>病死 <span class="emp-tag good">仁宗盛治</span></td></tr>
+            <tr><td class="emp-name">英宗 赵曙</td><td class="emp-life">1032—1067（35岁）</td><td class="emp-years">1063—1067</td><td>仁宗养子（濮王之子）</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">神宗 赵顼</td><td class="emp-life">1048—1085（37岁）</td><td class="emp-years">1067—1085</td><td>英宗长子</td><td>忧愤病死 <span class="emp-tag usurp">王安石变法</span></td></tr>
+            <tr><td class="emp-name">哲宗 赵煦</td><td class="emp-life">1077—1100（23岁）</td><td class="emp-years">1085—1100</td><td>神宗第六子</td><td>病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">徽宗 赵佶</td><td class="emp-life">1082—1135（53岁）</td><td class="emp-years">1100—1126</td><td>哲宗弟</td><td>靖康之变被金掳走 <span class="emp-tag murdered">亡国</span></td></tr>
+            <tr><td class="emp-name">钦宗 赵桓</td><td class="emp-life">1100—1161（61岁）</td><td class="emp-years">1126—1127</td><td>徽宗禅让</td><td>被掳至金国 <span class="emp-tag murdered">亡国</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -2124,7 +2133,7 @@ body::before {
     <!-- 南宋 -->
     <div class="sub-dynasty reveal">
       <h3 class="sub-dynasty-title">南宋</h3>
-      <div class="sub-dynasty-years">1127—1279年</div>
+      <div class="sub-dynasty-years">1127—1279年（152年）</div>
       <div class="founder-block">
         <div class="founder-label">开 国 皇 帝</div>
         <div class="founder-name">宋高宗 赵构</div>
@@ -2136,13 +2145,17 @@ body::before {
       </div>
       <div class="emperor-table-wrap">
         <table class="emperor-table">
-          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <thead><tr><th>皇帝</th><th>生卒</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
           <tbody>
-            <tr><td class="emp-name">高宗 赵构</td><td class="emp-years">1127—1162</td><td>靖康之变后即位</td><td>禅位太上皇 <span class="emp-tag abdicate">禅让</span></td></tr>
-            <tr><td class="emp-name">孝宗 赵昚</td><td class="emp-years">1162—1189</td><td>高宗养子，受禅</td><td>禅位后病亡 <span class="emp-tag good">隆兴北伐</span></td></tr>
-            <tr><td class="emp-name">理宗 赵昀</td><td class="emp-years">1224—1264</td><td>权臣史弥远拥立</td><td>病死 <span class="emp-tag death">联蒙灭金</span></td></tr>
-            <tr><td class="emp-name">恭帝 赵㬎</td><td class="emp-years">1274—1276</td><td>度宗次子，5岁即位</td><td>降元 <span class="emp-tag abdicate">投降</span></td></tr>
-            <tr><td class="emp-name">末帝 赵昺</td><td class="emp-years">1278—1279</td><td>度宗幼子</td><td>崖山蹈海 <span class="emp-tag murdered">亡国</span></td></tr>
+            <tr><td class="emp-name">高宗 赵构</td><td class="emp-life">1107—1187（80岁）</td><td class="emp-years">1127—1162</td><td>靖康之变后即位</td><td>禅位太上皇 <span class="emp-tag abdicate">禅让</span></td></tr>
+            <tr><td class="emp-name">孝宗 赵昚</td><td class="emp-life">1127—1194（67岁）</td><td class="emp-years">1162—1189</td><td>高宗养子，受禅</td><td>禅位后病亡 <span class="emp-tag good">隆兴北伐</span></td></tr>
+            <tr><td class="emp-name">光宗 赵惇</td><td class="emp-life">1147—1200（53岁）</td><td class="emp-years">1189—1194</td><td>孝宗第三子</td><td>被迫禅位，抑郁而终 <span class="emp-tag abdicate">禅让</span></td></tr>
+            <tr><td class="emp-name">宁宗 赵扩</td><td class="emp-life">1168—1224（56岁）</td><td class="emp-years">1194—1224</td><td>光宗次子，赵汝愚拥立</td><td>病死，权臣史弥远专权 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">理宗 赵昀</td><td class="emp-life">1205—1264（59岁）</td><td class="emp-years">1224—1264</td><td>权臣史弥远拥立</td><td>病死 <span class="emp-tag death">联蒙灭金</span></td></tr>
+            <tr><td class="emp-name">度宗 赵禥</td><td class="emp-life">1240—1274（34岁）</td><td class="emp-years">1264—1274</td><td>理宗养子</td><td>病死，贾似道专权 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">恭帝 赵㬎</td><td class="emp-life">1271—1323（52岁）</td><td class="emp-years">1274—1276</td><td>度宗次子，4岁即位</td><td>降元 <span class="emp-tag abdicate">投降</span></td></tr>
+            <tr><td class="emp-name">端宗 赵昰</td><td class="emp-life">1269—1278（9岁）</td><td class="emp-years">1276—1278</td><td>度宗长子</td><td>逃亡途中病死 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">末帝 赵昺</td><td class="emp-life">1272—1279（7岁）</td><td class="emp-years">1278—1279</td><td>度宗幼子</td><td>崖山蹈海 <span class="emp-tag murdered">亡国</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -2163,7 +2176,7 @@ body::before {
     <div class="dynasty-header reveal">
       <div class="dynasty-era">大 元 帝 国</div>
       <h2 class="dynasty-name">元</h2>
-      <div class="dynasty-years">公元1271年 — 1368年</div>
+      <div class="dynasty-years">公元1271年 — 1368年（97年）</div>
       <p class="dynasty-desc">忽必烈取《易经》「大哉乾元」定国号，建立空前辽阔的多民族帝国。开创行省制——中国「省」级行政区划由此而来。</p>
     </div>
 
@@ -2179,13 +2192,13 @@ body::before {
       </div>
       <div class="emperor-table-wrap">
         <table class="emperor-table">
-          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <thead><tr><th>皇帝</th><th>生卒</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
           <tbody>
-            <tr><td class="emp-name">世祖 忽必烈</td><td class="emp-years">1260—1294</td><td>自立为汗，武力统一</td><td>病亡 <span class="emp-tag good">统一全国</span></td></tr>
-            <tr><td class="emp-name">成宗 铁穆耳</td><td class="emp-years">1294—1307</td><td>世祖嫡孙</td><td>病亡 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">武宗 海山</td><td class="emp-years">1307—1311</td><td>宫廷政变拥立</td><td>纵酒病亡 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">仁宗 爱育黎拔力八达</td><td class="emp-years">1311—1320</td><td>武宗弟</td><td>病亡 <span class="emp-tag good">恢复科举</span></td></tr>
-            <tr><td class="emp-name">顺帝 妥懽帖睦尔</td><td class="emp-years">1333—1368</td><td>权臣拥立</td><td>北逃蒙古 <span class="emp-tag abdicate">亡国</span></td></tr>
+            <tr><td class="emp-name">世祖 忽必烈</td><td class="emp-life">1215—1294（79岁）</td><td class="emp-years">1260—1294</td><td>自立为汗，武力统一</td><td>病亡 <span class="emp-tag good">统一全国</span></td></tr>
+            <tr><td class="emp-name">成宗 铁穆耳</td><td class="emp-life">1265—1307（42岁）</td><td class="emp-years">1294—1307</td><td>世祖嫡孙</td><td>病亡 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">武宗 海山</td><td class="emp-life">1281—1311（30岁）</td><td class="emp-years">1307—1311</td><td>宫廷政变拥立</td><td>纵酒病亡 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">仁宗 爱育黎拔力八达</td><td class="emp-life">1285—1320（35岁）</td><td class="emp-years">1311—1320</td><td>武宗弟</td><td>病亡 <span class="emp-tag good">恢复科举</span></td></tr>
+            <tr><td class="emp-name">顺帝 妥懽帖睦尔</td><td class="emp-life">1320—1370（50岁）</td><td class="emp-years">1333—1368</td><td>权臣拥立</td><td>北逃蒙古 <span class="emp-tag abdicate">亡国</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -2207,7 +2220,7 @@ body::before {
     <div class="dynasty-header reveal">
       <div class="dynasty-era">日 月 昭 昭</div>
       <h2 class="dynasty-name">明</h2>
-      <div class="dynasty-years">公元1368年 — 1644年</div>
+      <div class="dynasty-years">公元1368年 — 1644年（276年）</div>
       <p class="dynasty-desc">朱元璋从乞丐到皇帝，将皇权专制推向顶峰——永久废除丞相、设厂卫特务、八股取士。嘉靖帝25年不上朝、万历帝28年不上朝——内阁制度竟能维持国家运转。</p>
     </div>
 
@@ -2224,17 +2237,24 @@ body::before {
       </div>
       <div class="emperor-table-wrap">
         <table class="emperor-table">
-          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <thead><tr><th>皇帝</th><th>生卒</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
           <tbody>
-            <tr><td class="emp-name">太祖 朱元璋</td><td class="emp-years">1368—1398</td><td>农民起义，驱元建国</td><td>病亡 <span class="emp-tag good">洪武之治</span></td></tr>
-            <tr><td class="emp-name">建文帝 朱允炆</td><td class="emp-years">1398—1402</td><td>太祖嫡孙</td><td>靖难之役中失踪 <span class="emp-tag murdered">下落不明</span></td></tr>
-            <tr><td class="emp-name">成祖 朱棣</td><td class="emp-years">1402—1424</td><td>太祖四子，靖难夺位</td><td>北征途中病亡 <span class="emp-tag good">永乐盛世</span></td></tr>
-            <tr><td class="emp-name">宣宗 朱瞻基</td><td class="emp-years">1425—1435</td><td>仁宗长子</td><td>病亡 <span class="emp-tag good">仁宣之治</span></td></tr>
-            <tr><td class="emp-name">英宗 朱祁镇</td><td class="emp-years">1435—1449<br>1457—1464</td><td>宣宗长子</td><td>两度登基 <span class="emp-tag usurp">土木堡之变</span></td></tr>
-            <tr><td class="emp-name">代宗 朱祁钰</td><td class="emp-years">1449—1457</td><td>英宗弟，于谦拥立</td><td>夺门之变后病亡 <span class="emp-tag abdicate">被废</span></td></tr>
-            <tr><td class="emp-name">世宗 朱厚熜</td><td class="emp-years">1521—1567</td><td>外藩入继</td><td>服丹药病亡 <span class="emp-tag death">嘉靖</span></td></tr>
-            <tr><td class="emp-name">神宗 朱翊钧</td><td class="emp-years">1572—1620</td><td>穆宗第三子</td><td>病亡 <span class="emp-tag death">万历怠政</span></td></tr>
-            <tr><td class="emp-name">思宗 朱由检</td><td class="emp-years">1627—1644</td><td>熹宗弟</td><td>李自成破京，煤山自缢 <span class="emp-tag murdered">亡国</span></td></tr>
+            <tr><td class="emp-name">太祖 朱元璋</td><td class="emp-life">1328—1398（70岁）</td><td class="emp-years">1368—1398</td><td>农民起义，驱元建国</td><td>病亡 <span class="emp-tag good">洪武之治</span></td></tr>
+            <tr><td class="emp-name">建文帝 朱允炆</td><td class="emp-life">1377—？</td><td class="emp-years">1398—1402</td><td>太祖嫡孙</td><td>靖难之役中失踪 <span class="emp-tag murdered">下落不明</span></td></tr>
+            <tr><td class="emp-name">成祖 朱棣</td><td class="emp-life">1360—1424（64岁）</td><td class="emp-years">1402—1424</td><td>太祖四子，靖难夺位</td><td>北征途中病亡 <span class="emp-tag good">永乐盛世</span></td></tr>
+            <tr><td class="emp-name">仁宗 朱高炽</td><td class="emp-life">1378—1425（47岁）</td><td class="emp-years">1424—1425</td><td>成祖长子</td><td>在位仅十月病亡 <span class="emp-tag good">仁宣之治</span></td></tr>
+            <tr><td class="emp-name">宣宗 朱瞻基</td><td class="emp-life">1399—1435（36岁）</td><td class="emp-years">1425—1435</td><td>仁宗长子</td><td>病亡 <span class="emp-tag good">仁宣之治</span></td></tr>
+            <tr><td class="emp-name">英宗 朱祁镇</td><td class="emp-life">1427—1464（37岁）</td><td class="emp-years">1435—1449<br>1457—1464</td><td>宣宗长子</td><td>两度登基 <span class="emp-tag usurp">土木堡之变</span></td></tr>
+            <tr><td class="emp-name">代宗 朱祁钰</td><td class="emp-life">1428—1457（29岁）</td><td class="emp-years">1449—1457</td><td>英宗弟，于谦拥立</td><td>夺门之变后病亡 <span class="emp-tag abdicate">被废</span></td></tr>
+            <tr><td class="emp-name">宪宗 朱见深</td><td class="emp-life">1447—1487（40岁）</td><td class="emp-years">1464—1487</td><td>英宗长子</td><td>病亡 <span class="emp-tag death">成化</span></td></tr>
+            <tr><td class="emp-name">孝宗 朱祐樘</td><td class="emp-life">1470—1505（35岁）</td><td class="emp-years">1487—1505</td><td>宪宗第三子</td><td>病亡 <span class="emp-tag good">弘治中兴</span></td></tr>
+            <tr><td class="emp-name">武宗 朱厚照</td><td class="emp-life">1491—1521（30岁）</td><td class="emp-years">1505—1521</td><td>孝宗长子</td><td>落水后病亡 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">世宗 朱厚熜</td><td class="emp-life">1507—1567（60岁）</td><td class="emp-years">1521—1567</td><td>外藩入继</td><td>服丹药病亡 <span class="emp-tag death">嘉靖</span></td></tr>
+            <tr><td class="emp-name">穆宗 朱载坖</td><td class="emp-life">1537—1572（35岁）</td><td class="emp-years">1567—1572</td><td>世宗第三子</td><td>病亡 <span class="emp-tag good">隆庆开关</span></td></tr>
+            <tr><td class="emp-name">神宗 朱翊钧</td><td class="emp-life">1563—1620（57岁）</td><td class="emp-years">1572—1620</td><td>穆宗第三子</td><td>病亡 <span class="emp-tag death">万历怠政</span></td></tr>
+            <tr><td class="emp-name">光宗 朱常洛</td><td class="emp-life">1582—1620（38岁）</td><td class="emp-years">1620</td><td>神宗长子</td><td>在位仅一月，红丸案暴毙 <span class="emp-tag murdered">红丸案</span></td></tr>
+            <tr><td class="emp-name">熹宗 朱由校</td><td class="emp-life">1605—1627（22岁）</td><td class="emp-years">1620—1627</td><td>光宗长子</td><td>落水后病亡，魏忠贤专权 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">思宗 朱由检</td><td class="emp-life">1611—1644（33岁）</td><td class="emp-years">1627—1644</td><td>熹宗弟</td><td>李自成破京，煤山自缢 <span class="emp-tag murdered">亡国</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -2256,7 +2276,7 @@ body::before {
     <div class="dynasty-header reveal">
       <div class="dynasty-era">末 代 皇 朝</div>
       <h2 class="dynasty-name">清</h2>
-      <div class="dynasty-years">公元1636年 — 1912年</div>
+      <div class="dynasty-years">公元1636年 — 1912年（276年）</div>
       <p class="dynasty-desc">满洲崛起于白山黑水，入关定鼎中原。从康乾盛世到鸦片战争后的百年屈辱——中国从古代帝制走向现代国家的痛苦转型期。统一多民族国家的现代版图在清代奠定。</p>
     </div>
 
@@ -2280,19 +2300,20 @@ body::before {
       </div>
       <div class="emperor-table-wrap">
         <table class="emperor-table">
-          <thead><tr><th>皇帝</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
+          <thead><tr><th>皇帝</th><th>生卒</th><th>在位</th><th>登基方式</th><th>结局</th></tr></thead>
           <tbody>
-            <tr><td class="emp-name">太祖 努尔哈赤</td><td class="emp-years">1616—1626</td><td>统一女真，建后金</td><td>宁远战后病亡 <span class="emp-tag death">病亡</span></td></tr>
-            <tr><td class="emp-name">太宗 皇太极</td><td class="emp-years">1626—1643</td><td>贵族推举</td><td>猝死于沈阳 <span class="emp-tag death">猝死</span></td></tr>
-            <tr><td class="emp-name">世祖 顺治</td><td class="emp-years">1643—1661</td><td>6岁即位，多尔衮摄政</td><td>病亡 <span class="emp-tag good">入关定鼎</span></td></tr>
-            <tr><td class="emp-name">圣祖 康熙</td><td class="emp-years">1661—1722</td><td>顺治第三子，8岁即位</td><td>病亡 <span class="emp-tag good">康熙盛世</span></td></tr>
-            <tr><td class="emp-name">世宗 雍正</td><td class="emp-years">1722—1735</td><td>康熙第四子（争议）</td><td>猝死 <span class="emp-tag good">军机处·摊丁入亩</span></td></tr>
-            <tr><td class="emp-name">高宗 乾隆</td><td class="emp-years">1735—1795</td><td>雍正第四子</td><td>禅位后病亡 <span class="emp-tag abdicate">禅让</span></td></tr>
-            <tr><td class="emp-name">宣宗 道光</td><td class="emp-years">1820—1850</td><td>嘉庆次子</td><td>病亡 <span class="emp-tag murdered">鸦片战争</span></td></tr>
-            <tr><td class="emp-name">文宗 咸丰</td><td class="emp-years">1850—1861</td><td>道光第四子</td><td>热河病亡 <span class="emp-tag death">太平天国</span></td></tr>
-            <tr><td class="emp-name">穆宗 同治</td><td class="emp-years">1861—1875</td><td>咸丰独子，慈禧垂帘</td><td>病亡 <span class="emp-tag death">洋务运动</span></td></tr>
-            <tr><td class="emp-name">德宗 光绪</td><td class="emp-years">1875—1908</td><td>慈禧侄子，4岁即位</td><td>疑被毒杀 <span class="emp-tag murdered">戊戌变法</span></td></tr>
-            <tr><td class="emp-name">溥仪</td><td class="emp-years">1908—1912</td><td>3岁即位</td><td>辛亥革命后退位 <span class="emp-tag abdicate">末代皇帝</span></td></tr>
+            <tr><td class="emp-name">太祖 努尔哈赤</td><td class="emp-life">1559—1626（67岁）</td><td class="emp-years">1616—1626</td><td>统一女真，建后金</td><td>宁远战后病亡 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">太宗 皇太极</td><td class="emp-life">1592—1643（51岁）</td><td class="emp-years">1626—1643</td><td>贵族推举</td><td>猝死于沈阳 <span class="emp-tag death">猝死</span></td></tr>
+            <tr><td class="emp-name">世祖 顺治</td><td class="emp-life">1638—1661（23岁）</td><td class="emp-years">1643—1661</td><td>6岁即位，多尔衮摄政</td><td>病亡 <span class="emp-tag good">入关定鼎</span></td></tr>
+            <tr><td class="emp-name">圣祖 康熙</td><td class="emp-life">1654—1722（68岁）</td><td class="emp-years">1661—1722</td><td>顺治第三子，8岁即位</td><td>病亡 <span class="emp-tag good">康熙盛世</span></td></tr>
+            <tr><td class="emp-name">世宗 雍正</td><td class="emp-life">1678—1735（57岁）</td><td class="emp-years">1722—1735</td><td>康熙第四子（争议）</td><td>猝死 <span class="emp-tag good">军机处·摊丁入亩</span></td></tr>
+            <tr><td class="emp-name">高宗 乾隆</td><td class="emp-life">1711—1799（88岁）</td><td class="emp-years">1735—1795</td><td>雍正第四子</td><td>禅位后病亡 <span class="emp-tag abdicate">禅让</span></td></tr>
+            <tr><td class="emp-name">仁宗 嘉庆</td><td class="emp-life">1760—1820（60岁）</td><td class="emp-years">1796—1820</td><td>乾隆十五子，受禅</td><td>病亡，白莲教起义 <span class="emp-tag death">病亡</span></td></tr>
+            <tr><td class="emp-name">宣宗 道光</td><td class="emp-life">1782—1850（68岁）</td><td class="emp-years">1820—1850</td><td>嘉庆次子</td><td>病亡 <span class="emp-tag murdered">鸦片战争</span></td></tr>
+            <tr><td class="emp-name">文宗 咸丰</td><td class="emp-life">1831—1861（30岁）</td><td class="emp-years">1850—1861</td><td>道光第四子</td><td>热河病亡 <span class="emp-tag death">太平天国</span></td></tr>
+            <tr><td class="emp-name">穆宗 同治</td><td class="emp-life">1856—1875（19岁）</td><td class="emp-years">1861—1875</td><td>咸丰独子，慈禧垂帘</td><td>病亡 <span class="emp-tag death">洋务运动</span></td></tr>
+            <tr><td class="emp-name">德宗 光绪</td><td class="emp-life">1871—1908（37岁）</td><td class="emp-years">1875—1908</td><td>慈禧侄子，4岁即位</td><td>疑被毒杀 <span class="emp-tag murdered">戊戌变法</span></td></tr>
+            <tr><td class="emp-name">溥仪</td><td class="emp-life">1906—1967（61岁）</td><td class="emp-years">1908—1912</td><td>3岁即位</td><td>辛亥革命后退位 <span class="emp-tag abdicate">末代皇帝</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -2317,7 +2338,7 @@ body::before {
     <div class="dynasty-header reveal">
       <div class="dynasty-era">共 和 新 生</div>
       <h2 class="dynasty-name">中华民国</h2>
-      <div class="dynasty-years">公元1912年 — 1949年</div>
+      <div class="dynasty-years">公元1912年 — 1949年（37年）</div>
       <p class="dynasty-desc">辛亥革命推翻帝制，建立亚洲第一个共和国。从帝制到共和的转型充满坎坷——袁世凯称帝、军阀混战、北伐统一、抗日战争、国共内战。</p>
     </div>
 
@@ -2333,12 +2354,12 @@ body::before {
       </div>
       <div class="emperor-table-wrap">
         <table class="emperor-table">
-          <thead><tr><th>领导人</th><th>时期</th><th>身份</th><th>关键事件</th></tr></thead>
+          <thead><tr><th>领导人</th><th>生卒</th><th>时期</th><th>身份</th><th>关键事件</th></tr></thead>
           <tbody>
-            <tr><td class="emp-name">孙中山</td><td class="emp-years">1912</td><td>临时大总统</td><td>建立民国 <span class="emp-tag good">共和</span></td></tr>
-            <tr><td class="emp-name">袁世凯</td><td class="emp-years">1912—1916</td><td>大总统→皇帝</td><td>称帝失败，忧惧而亡 <span class="emp-tag murdered">复辟</span></td></tr>
-            <tr><td class="emp-name">北洋军阀</td><td class="emp-years">1916—1928</td><td>各派轮替</td><td>军阀混战 <span class="emp-tag death">混战</span></td></tr>
-            <tr><td class="emp-name">蒋介石</td><td class="emp-years">1928—1949</td><td>国民政府主席/总统</td><td>领导抗战，败退台湾 <span class="emp-tag good">抗日战争</span></td></tr>
+            <tr><td class="emp-name">孙中山</td><td class="emp-life">1866—1925（58岁）</td><td class="emp-years">1912</td><td>临时大总统</td><td>建立民国 <span class="emp-tag good">共和</span></td></tr>
+            <tr><td class="emp-name">袁世凯</td><td class="emp-life">1859—1916（56岁）</td><td class="emp-years">1912—1916</td><td>大总统→皇帝</td><td>称帝失败，忧惧而亡 <span class="emp-tag murdered">复辟</span></td></tr>
+            <tr><td class="emp-name">北洋军阀</td><td class="emp-life">—</td><td class="emp-years">1916—1928</td><td>各派轮替</td><td>军阀混战 <span class="emp-tag death">混战</span></td></tr>
+            <tr><td class="emp-name">蒋介石</td><td class="emp-life">1887—1975（87岁）</td><td class="emp-years">1928—1949</td><td>国民政府主席/总统</td><td>领导抗战，败退台湾 <span class="emp-tag good">抗日战争</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -2359,7 +2380,7 @@ body::before {
     <div class="dynasty-header reveal">
       <div class="dynasty-era">复 兴 之 路</div>
       <h2 class="dynasty-name">中华人民共和国</h2>
-      <div class="dynasty-years">公元1949年 — 至今</div>
+      <div class="dynasty-years">公元1949年 — 至今（76年）</div>
       <p class="dynasty-desc">从百废待兴到世界第二大经济体，从计划经济到社会主义市场经济——改革开放是这一时期最深远的制度变革。</p>
     </div>
 
@@ -2375,11 +2396,11 @@ body::before {
       </div>
       <div class="emperor-table-wrap">
         <table class="emperor-table">
-          <thead><tr><th>时期</th><th>核心领导人</th><th>执政理念</th><th>关键成就</th></tr></thead>
+          <thead><tr><th>时期</th><th>核心领导人</th><th>生卒</th><th>执政理念</th><th>关键成就</th></tr></thead>
           <tbody>
-            <tr><td class="emp-years">1949—1976</td><td class="emp-name">毛泽东</td><td>社会主义革命与建设</td><td>建国、抗美援朝、两弹一星 <span class="emp-tag good">开国</span></td></tr>
-            <tr><td class="emp-years">1978—1992</td><td class="emp-name">邓小平</td><td>改革开放</td><td>经济特区、包产到户 <span class="emp-tag good">改革开放</span></td></tr>
-            <tr><td class="emp-years">2012—至今</td><td class="emp-name">习近平</td><td>新时代中国特色社会主义</td><td>脱贫攻坚、一带一路 <span class="emp-tag good">新时代</span></td></tr>
+            <tr><td class="emp-years">1949—1976</td><td class="emp-name">毛泽东</td><td class="emp-life">1893—1976（82岁）</td><td>社会主义革命与建设</td><td>建国、抗美援朝、两弹一星 <span class="emp-tag good">开国</span></td></tr>
+            <tr><td class="emp-years">1978—1992</td><td class="emp-name">邓小平</td><td class="emp-life">1904—1997（92岁）</td><td>改革开放</td><td>经济特区、包产到户 <span class="emp-tag good">改革开放</span></td></tr>
+            <tr><td class="emp-years">2012—至今</td><td class="emp-name">习近平</td><td class="emp-life">1953年生</td><td>新时代中国特色社会主义</td><td>脱贫攻坚、一带一路 <span class="emp-tag good">新时代</span></td></tr>
           </tbody>
         </table>
       </div>

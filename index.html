@@ -430,6 +430,356 @@ body::before {
 }
 
 /* ═══════════════════════════════════════════════
+   DYNASTY FLOW CHART (succession diagram)
+   ═══════════════════════════════════════════════ */
+.dynasty-flow {
+  padding: 0 40px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.dynasty-flow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--ink-black) 0%, var(--ink-deep) 50%, var(--ink-black) 100%);
+}
+
+.flow-title {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  color: var(--gold);
+  letter-spacing: 8px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.flow-grid {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flow-tier {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.flow-node {
+  position: relative;
+  background: rgba(200, 164, 92, 0.06);
+  border: 1px solid rgba(200, 164, 92, 0.15);
+  border-radius: 4px;
+  padding: 10px 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+  margin: 4px 6px;
+}
+.flow-node:hover {
+  background: rgba(200, 164, 92, 0.12);
+  border-color: rgba(200, 164, 92, 0.35);
+  transform: scale(1.04);
+}
+.flow-node .fn-name {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  color: var(--text-primary);
+  letter-spacing: 2px;
+  line-height: 1.4;
+}
+.flow-node .fn-years {
+  font-size: 11px;
+  color: var(--text-dim);
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+.flow-node.fn-minor {
+  border-style: dashed;
+  background: rgba(200, 164, 92, 0.03);
+}
+.flow-node.fn-minor .fn-name {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.flow-node.fn-theme-prequin  { border-left: 3px solid #8a7a5a; }
+.flow-node.fn-theme-qin      { border-left: 3px solid #7a7a7a; }
+.flow-node.fn-theme-han      { border-left: 3px solid #c83c3c; }
+.flow-node.fn-theme-three    { border-left: 3px solid #6a4a7a; }
+.flow-node.fn-theme-jin      { border-left: 3px solid #6a4a7a; }
+.flow-node.fn-theme-nanbeichao { border-left: 3px solid #4a7a8a; }
+.flow-node.fn-theme-sui      { border-left: 3px solid #8a6a4a; }
+.flow-node.fn-theme-tang     { border-left: 3px solid #c8a45c; }
+.flow-node.fn-theme-fivedn   { border-left: 3px solid #c84040; }
+.flow-node.fn-theme-song     { border-left: 3px solid #5a8aaa; }
+.flow-node.fn-theme-liao     { border-left: 3px solid #7a6a4a; }
+.flow-node.fn-theme-jin2     { border-left: 3px solid #8a7a5a; }
+.flow-node.fn-theme-yuan     { border-left: 3px solid #4a8a6a; }
+.flow-node.fn-theme-ming     { border-left: 3px solid #c8a45c; }
+.flow-node.fn-theme-qingdyn  { border-left: 3px solid #8a4a4a; }
+.flow-node.fn-theme-republic { border-left: 3px solid #4a7a8a; }
+.flow-node.fn-theme-prc      { border-left: 3px solid #c83c3c; }
+
+/* Connector lines between rows */
+.flow-conn {
+  position: relative;
+  z-index: 1;
+  min-height: 28px;
+}
+
+/* Vertical line down from center of connector cell */
+.flow-conn-v {
+  min-height: 28px;
+  position: relative;
+}
+.flow-conn-v::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--gold-dim);
+}
+.flow-conn-v::after {
+  content: '▼';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 7px;
+  color: var(--gold-dim);
+  line-height: 1;
+}
+
+/* Horizontal connector: a line spanning across columns with downward branches */
+.flow-conn-h {
+  position: relative;
+  min-height: 28px;
+}
+.flow-conn-h::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gold-dim);
+}
+/* Downward branch from horizontal */
+.flow-conn-h::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--gold-dim);
+}
+
+/* Merge connector: branches from multiple columns merge into one */
+.flow-conn-merge {
+  position: relative;
+  min-height: 28px;
+}
+.flow-conn-merge::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gold-dim);
+}
+.flow-conn-merge::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--gold-dim);
+}
+
+/* A row-level horizontal bracket for split/merge */
+.flow-bracket {
+  position: relative;
+  min-height: 20px;
+}
+.flow-bracket-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: calc(50% - 0px);
+  width: 1px;
+  height: 100%;
+  background: var(--gold-dim);
+}
+.flow-bracket-h {
+  position: relative;
+  min-height: 20px;
+}
+.flow-bracket-h::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gold-dim);
+}
+.flow-bracket-h::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1px;
+  height: 50%;
+  background: var(--gold-dim);
+}
+
+/* Simple downward arrow */
+.flow-arrow-down {
+  position: relative;
+  min-height: 24px;
+}
+.flow-arrow-down::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--gold-dim);
+}
+.flow-arrow-down::after {
+  content: '▼';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 7px;
+  color: var(--gold-dim);
+  line-height: 1;
+}
+
+/* Horizontal line → arrow between siblings in same row */
+.flow-harrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-dim);
+  font-size: 12px;
+  letter-spacing: 0;
+  padding: 0;
+  min-width: 20px;
+}
+
+/* Split bar: one source fans out to N targets */
+.flow-split-bar {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  width: 60%;
+  min-height: 24px;
+}
+.flow-split-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: var(--gold-dim);
+}
+.flow-split-branch {
+  position: relative;
+  flex: 1;
+  min-height: 24px;
+}
+.flow-split-branch::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--gold-dim);
+}
+.flow-split-branch::after {
+  content: '▼';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 7px;
+  color: var(--gold-dim);
+  line-height: 1;
+}
+
+/* Merge bar: N sources converge into one */
+.flow-merge-bar {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  width: 60%;
+  min-height: 24px;
+}
+.flow-merge-bar::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: var(--gold-dim);
+}
+.flow-merge-branch {
+  position: relative;
+  flex: 1;
+  min-height: 24px;
+}
+.flow-merge-branch::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--gold-dim);
+}
+
+/* Parallel label */
+.flow-parallel-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.flow-parallel-label span {
+  font-size: 11px;
+  font-family: var(--font-body);
+  color: var(--text-dim);
+  letter-spacing: 1px;
+  writing-mode: vertical-rl;
+  background: var(--ink-deep);
+  padding: 6px 2px;
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 2px;
+}
+
+/* ═══════════════════════════════════════════════
    SECTION CONTAINERS
    ═══════════════════════════════════════════════ */
 .dynasty-section {
@@ -1151,6 +1501,18 @@ body::before {
   .emperor-table { font-size: 12.5px; }
   .emperor-table thead th,
   .emperor-table tbody td { padding: 8px 10px; }
+  .dynasty-flow { padding: 0 16px 60px; }
+  .flow-title { font-size: 17px; letter-spacing: 4px; margin-bottom: 30px; }
+  .flow-grid { max-width: 100%; }
+  .flow-node { padding: 7px 6px; margin: 3px 2px; }
+  .flow-node .fn-name { font-size: 11px; letter-spacing: 1px; }
+  .flow-node .fn-years { font-size: 8px; display: none; }
+  .flow-node.fn-minor .fn-name { font-size: 10px; }
+  .flow-harrow { font-size: 10px; min-width: 10px; }
+  .flow-parallel-label span { font-size: 9px; padding: 4px 2px; }
+  .flow-conn-v { min-height: 18px; }
+  .flow-split-bar, .flow-merge-bar { width: 80%; min-height: 18px; }
+  .flow-split-branch, .flow-merge-branch { min-height: 18px; }
 }
 
 @media (max-width: 480px) {
@@ -1249,6 +1611,7 @@ body::before {
      ╚═══════════════════════════════════════════╝ -->
 <nav class="side-nav" id="sideNav">
   <a href="#hero"><span class="label" data-i18n="nav.hero">序</span><span class="dot"></span></a>
+  <a href="#sec-flow"><span class="label" data-i18n="nav.flow">流转</span><span class="dot"></span></a>
   <a href="#sec-prequin"><span class="label" data-i18n="nav.prequin">先秦</span><span class="dot"></span></a>
   <a href="#sec-qin"><span class="label" data-i18n="nav.qin">秦</span><span class="dot"></span></a>
   <a href="#sec-han"><span class="label" data-i18n="nav.han">汉</span><span class="dot"></span></a>
@@ -1359,6 +1722,272 @@ body::before {
       <span style="left:95.47%;transform:translateX(-100%)" data-i18n="overview.date8">1912</span>
       <span style="left:96.42%;transform:translateX(0)" data-i18n="overview.date9">1949</span>
     </div>
+  </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════╗
+     ║  DYNASTY SUCCESSION FLOW CHART           ║
+     ╚═══════════════════════════════════════════╝ -->
+<section class="dynasty-flow" id="sec-flow">
+  <div class="flow-title reveal" data-i18n="flow.title">朝 代 更 迭 流 转</div>
+  <div class="flow-grid">
+
+    <!-- ① 先秦：夏 → 商 → 西周 → 东周 -->
+    <div class="flow-tier reveal">
+      <div class="flow-node fn-theme-prequin" onclick="document.getElementById('sec-prequin').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.xia">夏</div>
+        <div class="fn-years" data-i18n="flow.xia_y">前2070—前1600</div>
+      </div>
+      <div class="flow-harrow">→</div>
+      <div class="flow-node fn-theme-prequin" onclick="document.getElementById('sec-prequin').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.shang">商</div>
+        <div class="fn-years" data-i18n="flow.shang_y">前1600—前1046</div>
+      </div>
+      <div class="flow-harrow">→</div>
+      <div class="flow-node fn-theme-prequin" onclick="document.getElementById('sec-prequin').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.xzhou">西周</div>
+        <div class="fn-years" data-i18n="flow.xzhou_y">前1046—前771</div>
+      </div>
+      <div class="flow-harrow">→</div>
+      <div class="flow-node fn-theme-prequin" onclick="document.getElementById('sec-prequin').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.dzhou">东周</div>
+        <div class="fn-years" data-i18n="flow.dzhou_y">前770—前256</div>
+      </div>
+    </div>
+
+    <!-- ↓ -->
+    <div class="flow-conn-v reveal"></div>
+
+    <!-- ② 秦 -->
+    <div class="flow-tier reveal">
+      <div class="flow-node fn-theme-qin" onclick="document.getElementById('sec-qin').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.qin">秦</div>
+        <div class="fn-years" data-i18n="flow.qin_y">前221—前207</div>
+      </div>
+    </div>
+
+    <!-- ↓ -->
+    <div class="flow-conn-v reveal"></div>
+
+    <!-- ③ 西汉 → 新莽 → 东汉 -->
+    <div class="flow-tier reveal">
+      <div class="flow-node fn-theme-han" onclick="document.getElementById('sec-han').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.xhan">西汉</div>
+        <div class="fn-years" data-i18n="flow.xhan_y">前202—8</div>
+      </div>
+      <div class="flow-harrow">→</div>
+      <div class="flow-node fn-minor fn-theme-han">
+        <div class="fn-name" data-i18n="flow.xin">新莽</div>
+        <div class="fn-years" data-i18n="flow.xin_y">9—23</div>
+      </div>
+      <div class="flow-harrow">→</div>
+      <div class="flow-node fn-theme-han" onclick="document.getElementById('sec-han').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.dhan">东汉</div>
+        <div class="fn-years" data-i18n="flow.dhan_y">25—220</div>
+      </div>
+    </div>
+
+    <!-- ↓ split into 3 -->
+    <div class="flow-conn-v reveal"></div>
+    <div class="flow-split-bar reveal" style="width:50%">
+      <div class="flow-split-branch"></div>
+      <div class="flow-split-branch"></div>
+      <div class="flow-split-branch"></div>
+    </div>
+
+    <!-- ④ 三国：魏 · 蜀 · 吴 -->
+    <div class="flow-tier reveal">
+      <div class="flow-node fn-theme-three" onclick="document.getElementById('sec-three').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.wei">曹魏</div>
+        <div class="fn-years" data-i18n="flow.wei_y">220—265</div>
+      </div>
+      <div class="flow-node fn-theme-three" onclick="document.getElementById('sec-three').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.shu">蜀汉</div>
+        <div class="fn-years" data-i18n="flow.shu_y">221—263</div>
+      </div>
+      <div class="flow-node fn-theme-three" onclick="document.getElementById('sec-three').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.wu">孙吴</div>
+        <div class="fn-years" data-i18n="flow.wu_y">222—280</div>
+      </div>
+    </div>
+
+    <!-- merge 3 → 1 -->
+    <div class="flow-merge-bar reveal" style="width:50%">
+      <div class="flow-merge-branch"></div>
+      <div class="flow-merge-branch"></div>
+      <div class="flow-merge-branch"></div>
+    </div>
+    <div class="flow-conn-v reveal"></div>
+
+    <!-- ⑤ 西晋 → 东晋 -->
+    <div class="flow-tier reveal">
+      <div class="flow-node fn-theme-jin" onclick="document.getElementById('sec-jin').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.xjin">西晋</div>
+        <div class="fn-years" data-i18n="flow.xjin_y">265—316</div>
+      </div>
+      <div class="flow-harrow">→</div>
+      <div class="flow-node fn-theme-jin" onclick="document.getElementById('sec-jin').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.djin">东晋</div>
+        <div class="fn-years" data-i18n="flow.djin_y">317—420</div>
+      </div>
+    </div>
+
+    <!-- ↓ split into 2 -->
+    <div class="flow-conn-v reveal"></div>
+    <div class="flow-split-bar reveal" style="width:40%">
+      <div class="flow-split-branch"></div>
+      <div class="flow-split-branch"></div>
+    </div>
+
+    <!-- ⑥ 南北朝 -->
+    <div class="flow-tier reveal">
+      <div class="flow-node fn-theme-nanbeichao" onclick="document.getElementById('sec-nanbeichao').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.nanchao">南朝</div>
+        <div class="fn-years" data-i18n="flow.nanchao_y">420—589</div>
+      </div>
+      <div class="flow-parallel-label"><span data-i18n="flow.parallel">并立</span></div>
+      <div class="flow-node fn-theme-nanbeichao" onclick="document.getElementById('sec-nanbeichao').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.beichao">北朝</div>
+        <div class="fn-years" data-i18n="flow.beichao_y">386—581</div>
+      </div>
+    </div>
+
+    <!-- merge 2 → 1 -->
+    <div class="flow-merge-bar reveal" style="width:40%">
+      <div class="flow-merge-branch"></div>
+      <div class="flow-merge-branch"></div>
+    </div>
+    <div class="flow-conn-v reveal"></div>
+
+    <!-- ⑦ 隋 -->
+    <div class="flow-tier reveal">
+      <div class="flow-node fn-theme-sui" onclick="document.getElementById('sec-sui').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.sui">隋</div>
+        <div class="fn-years" data-i18n="flow.sui_y">581—618</div>
+      </div>
+    </div>
+
+    <!-- ↓ -->
+    <div class="flow-conn-v reveal"></div>
+
+    <!-- ⑧ 唐 -->
+    <div class="flow-tier reveal">
+      <div class="flow-node fn-theme-tang" onclick="document.getElementById('sec-tang').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.tang">唐</div>
+        <div class="fn-years" data-i18n="flow.tang_y">618—907</div>
+      </div>
+    </div>
+
+    <!-- ↓ -->
+    <div class="flow-conn-v reveal"></div>
+
+    <!-- ⑨ 五代十国 -->
+    <div class="flow-tier reveal">
+      <div class="flow-node fn-theme-fivedn" onclick="document.getElementById('sec-fivedn').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.fivedn">五代十国</div>
+        <div class="fn-years" data-i18n="flow.fivedn_y">907—979</div>
+      </div>
+    </div>
+
+    <!-- ↓ split into 2 -->
+    <div class="flow-conn-v reveal"></div>
+    <div class="flow-split-bar reveal" style="width:50%">
+      <div class="flow-split-branch"></div>
+      <div class="flow-split-branch"></div>
+    </div>
+
+    <!-- ⑩ 辽 · 北宋 -->
+    <div class="flow-tier reveal">
+      <div class="flow-node fn-theme-liao" onclick="document.getElementById('sec-song').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.liao">辽</div>
+        <div class="fn-years" data-i18n="flow.liao_y">916—1125</div>
+      </div>
+      <div class="flow-parallel-label"><span data-i18n="flow.parallel">并立</span></div>
+      <div class="flow-node fn-theme-song" onclick="document.getElementById('sec-song').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.bsong">北宋</div>
+        <div class="fn-years" data-i18n="flow.bsong_y">960—1127</div>
+      </div>
+    </div>
+
+    <!-- transition: 辽→金, 北宋→南宋 -->
+    <div class="flow-tier reveal" style="gap:0;">
+      <div class="flow-conn-v" style="min-height:20px; flex:0 0 auto;"></div>
+      <div style="flex:0 0 60px;"></div>
+      <div class="flow-conn-v" style="min-height:20px; flex:0 0 auto;"></div>
+    </div>
+
+    <!-- ⑪ 金 · 南宋 -->
+    <div class="flow-tier reveal">
+      <div class="flow-node fn-theme-jin2" onclick="document.getElementById('sec-song').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.jin2">金</div>
+        <div class="fn-years" data-i18n="flow.jin2_y">1115—1234</div>
+      </div>
+      <div class="flow-parallel-label"><span data-i18n="flow.parallel">并立</span></div>
+      <div class="flow-node fn-theme-song" onclick="document.getElementById('sec-song').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.nsong">南宋</div>
+        <div class="fn-years" data-i18n="flow.nsong_y">1127—1279</div>
+      </div>
+    </div>
+
+    <!-- merge 2 → 1 -->
+    <div class="flow-merge-bar reveal" style="width:50%">
+      <div class="flow-merge-branch"></div>
+      <div class="flow-merge-branch"></div>
+    </div>
+    <div class="flow-conn-v reveal"></div>
+
+    <!-- ⑫ 元 -->
+    <div class="flow-tier reveal">
+      <div class="flow-node fn-theme-yuan" onclick="document.getElementById('sec-yuan').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.yuan">元</div>
+        <div class="fn-years" data-i18n="flow.yuan_y">1271—1368</div>
+      </div>
+    </div>
+
+    <!-- ↓ -->
+    <div class="flow-conn-v reveal"></div>
+
+    <!-- ⑬ 明 -->
+    <div class="flow-tier reveal">
+      <div class="flow-node fn-theme-ming" onclick="document.getElementById('sec-ming').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.ming">明</div>
+        <div class="fn-years" data-i18n="flow.ming_y">1368—1644</div>
+      </div>
+    </div>
+
+    <!-- ↓ -->
+    <div class="flow-conn-v reveal"></div>
+
+    <!-- ⑭ 清 -->
+    <div class="flow-tier reveal">
+      <div class="flow-node fn-theme-qingdyn" onclick="document.getElementById('sec-qingdyn').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.qingdyn">清</div>
+        <div class="fn-years" data-i18n="flow.qingdyn_y">1636—1912</div>
+      </div>
+    </div>
+
+    <!-- ↓ -->
+    <div class="flow-conn-v reveal"></div>
+
+    <!-- ⑮ 民国 -->
+    <div class="flow-tier reveal">
+      <div class="flow-node fn-theme-republic" onclick="document.getElementById('sec-republic').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.republic">中华民国</div>
+        <div class="fn-years" data-i18n="flow.republic_y">1912—1949</div>
+      </div>
+    </div>
+
+    <!-- ↓ -->
+    <div class="flow-conn-v reveal"></div>
+
+    <!-- ⑯ 共和国 -->
+    <div class="flow-tier reveal">
+      <div class="flow-node fn-theme-prc" onclick="document.getElementById('sec-prc').scrollIntoView({behavior:'smooth'})">
+        <div class="fn-name" data-i18n="flow.prc">中华人民共和国</div>
+        <div class="fn-years" data-i18n="flow.prc_y">1949—</div>
+      </div>
+    </div>
+
   </div>
 </section>
 

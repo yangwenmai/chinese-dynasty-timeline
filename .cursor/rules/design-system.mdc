@@ -89,7 +89,7 @@ alwaysApply: false
 ### 3.1 页面结构
 
 ```
-[Hero 全屏首屏] → [总览时间轴条] → [朝代章节 ×N] → [全局总结] → [页脚]
+[Hero 全屏首屏] → [总览时间轴条] → [朝代流转图] → [朝代章节 ×N] → [全局总结] → [页脚]
 ```
 
 - 内容区最大宽度 `960px`，水平居中（`max-width: 960px; margin: 0 auto`）
@@ -125,6 +125,7 @@ alwaysApply: false
 | founder-block  | `rgba(200,164,92,0.04)`       | `1px solid rgba(200,164,92,0.1)`     |
 | insight-box    | `rgba(200,60,60,0.04)`        | `border-left: 3px solid --vermillion` |
 | summary-card   | `rgba(255,255,255,0.02)`       | `1px solid rgba(255,255,255,0.05)`   |
+| flow-node      | `rgba(200,164,92,0.06)`       | `1px solid rgba(200,164,92,0.15)` + 左侧 3px 朝代主题色 |
 
 - 所有圆角统一使用 `border-radius: 4px`，禁止大圆角（>8px）
 - sub-dynasty 左侧竖线粗 `3px`，颜色由朝代 theme 决定
@@ -268,9 +269,74 @@ alwaysApply: false
 
 ---
 
-## 十、参考文献区域
+## 十、朝代更迭流转图
 
-### 10.1 结构
+### 10.1 定位
+
+位于「总览时间轴条」之下、第一个朝代章节之前。与时间轴条互补：时间轴展示「各朝代存续多久」（时间维度），流转图展示「朝代之间的传承/分裂/并立/统一关系」（关系维度）。
+
+### 10.2 结构
+
+```
+<section class="dynasty-flow" id="sec-flow">
+  <div class="flow-title reveal">朝 代 更 迭 流 转</div>
+  <div class="flow-grid">
+    <!-- 一系列 flow-tier + 连接器，从上到下 -->
+    <div class="flow-tier reveal">
+      <div class="flow-node fn-theme-xxx" onclick="...scrollIntoView(...)">
+        <div class="fn-name">朝代名</div>
+        <div class="fn-years">年份区间</div>
+      </div>
+      <div class="flow-harrow">→</div>
+      <div class="flow-node ...">...</div>
+    </div>
+    <div class="flow-conn-v reveal"></div>         <!-- 纵向连接线 -->
+    <div class="flow-split-bar reveal">            <!-- 分裂连接器 -->
+      <div class="flow-split-branch"></div> ×N
+    </div>
+    <div class="flow-merge-bar reveal">            <!-- 合并连接器 -->
+      <div class="flow-merge-branch"></div> ×N
+    </div>
+  </div>
+</section>
+```
+
+### 10.3 核心组件
+
+| 组件 | 用途 |
+| --- | --- |
+| `.flow-grid` | 外层容器，`flex-direction: column; align-items: center` |
+| `.flow-tier` | 一行节点的 flex 容器（`justify-content: center`） |
+| `.flow-node` | 朝代节点，背景与 `chain-node` 一致，左侧 3px 彩色竖线 |
+| `.flow-node.fn-minor` | 短命/非正统朝代（如新莽），虚线边框 + 更低透明度 |
+| `.flow-harrow` | 同行节点之间的水平箭头「→」 |
+| `.flow-conn-v` | 行间的纵向连接线（金色 1px 线 + ▼ 箭头） |
+| `.flow-split-bar` / `.flow-split-branch` | 一对多分裂连接器（横线 + N 条下行竖线） |
+| `.flow-merge-bar` / `.flow-merge-branch` | 多对一合并连接器（N 条上行竖线 + 横线） |
+| `.flow-parallel-label` | 并立政权之间的竖排标签（如「并立」） |
+
+### 10.4 节点主题色
+
+每个节点通过 `.fn-theme-xxx` 设置左侧 3px 竖线颜色，与对应朝代 `.theme-xxx` 主题色一致。新增朝代节点须同步新增对应的 `fn-theme-xxx` class。
+
+### 10.5 交互
+
+- 点击节点 → `scrollIntoView({behavior:'smooth'})` 到对应朝代章节（与 timeline-segment 行为一致）
+- Hover 效果：背景色加深 + `transform: scale(1.04)`
+- 滚动进入动画：每个 `.flow-tier` 和连接器使用 `.reveal` class
+
+### 10.6 约束
+
+- 连接线颜色使用 `var(--gold-dim)`，与现有 `.chain-arrow` 一致
+- 分裂/合并连接器宽度通过 `style="width:N%"` 控制，需与上下节点对齐
+- 新增朝代/政权节点须同步更新 i18n（`flow.*` 命名空间，含 `_y` 后缀的年份键）
+- 移动端（≤768px）：节点字号缩小、年份隐藏（`display: none`）、连接器高度缩短
+
+---
+
+## 十一、参考文献区域
+
+### 11.1 结构
 
 ```
 <section class="references-section" id="sec-references">
@@ -291,7 +357,7 @@ alwaysApply: false
 </section>
 ```
 
-### 10.2 约束
+### 11.2 约束
 
 - 分类包括：正史、编年体与纪事本末体、典制体与通史、其他重要典籍
 - 链接统一使用 `target="_blank" rel="noopener"`
@@ -299,9 +365,9 @@ alwaysApply: false
 
 ---
 
-## 十一、全局总结区域
+## 十二、全局总结区域
 
-### 11.1 结构
+### 12.1 结构
 
 ```
 <section class="summary-section" id="sec-summary">
@@ -314,7 +380,7 @@ alwaysApply: false
 </section>
 ```
 
-### 11.2 约束
+### 12.2 约束
 
 - 卡片使用 grid 布局（桌面端 2 列，移动端 1 列）
 - 卡片背景与 sub-dynasty 一致：`rgba(255,255,255,0.02)`
@@ -322,7 +388,7 @@ alwaysApply: false
 
 ---
 
-## 十二、设计原则总结
+## 十三、设计原则总结
 
 1. **克制**：深色为主、点缀为辅，避免大面积亮色；装饰低透明度
 2. **层次**：通过 ink 色阶 + 微透明背景营造纵深，而非阴影

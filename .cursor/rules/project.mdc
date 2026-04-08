@@ -9,12 +9,12 @@ alwaysApply: true
 
 ## 项目概述
 
-「鼎革千年」是一个纯静态单页网站（~2900 行 `index.html`），以长卷轴形式展现中国上下五千年的朝代更迭、权力结构与制度变迁。从先秦（夏商周）到中华人民共和国，覆盖 17 个朝代章节 + 2 个专题 + 总览 + 参考文献。
+「鼎革千年」是一个纯静态单页网站（~3200 行 `index.html`），以长卷轴形式展现中国上下五千年的朝代更迭、权力结构与制度变迁。从先秦（夏商周）到中华人民共和国，覆盖 17 个朝代章节 + 2 个专题 + 朝代流转图 + 总览 + 参考文献。
 
 ## 技术栈
 
 - 纯 HTML + CSS + JS，零依赖，零构建工具
-- 单文件架构：所有内容在 `index.html` 中（结构依次为：CSS → 侧边导航 → Hero → 纵览时间轴 → 朝代章节 ×17 → 全局总结 → 参考文献 → 页脚 → 卷轴装饰元素 → JS）
+- 单文件架构：所有内容在 `index.html` 中（结构依次为：CSS → 侧边导航 → Hero → 纵览时间轴 → 朝代流转图 → 朝代章节 ×17 → 全局总结 → 参考文献 → 页脚 → 卷轴装饰元素 → JS）
 - 字体依赖 Google Fonts：Ma Shan Zheng（书法）、ZCOOL XiaoWei（标题）、Noto Serif SC（正文）
 
 ## 编码规范
@@ -31,10 +31,11 @@ alwaysApply: true
 
 ```
 index.html
-├── <style>              所有 CSS（~1160 行）
+├── <style>              所有 CSS（~1360 行）
 ├── <nav class="side-nav">  右侧悬浮导航（圆点+标签）
 ├── <section class="hero">  首屏（卷轴展开动画 + 视差背景大字）
 ├── <section class="overview-bar">  五千年朝代纵览时间轴条
+├── <section class="dynasty-flow">  朝代更迭流转图（传承/分裂/并立/统一关系）
 ├── <section class="dynasty-section"> ×17  各朝代章节
 ├── <section class="summary-section">  全局总结（权力的游戏规则）
 ├── <section class="references-section">  参考文献
@@ -81,6 +82,13 @@ index.html
 - 朝代时长标注格式：「公元前XXX年 — 公元前XXX年（XXX年）」或「公元XXX年 — XXX年（XXX年）」
 - 皇帝表格列标准：皇帝、生卒、在位、登基方式、结局
 
+## i18n 国际化
+
+- 翻译文件位于 `i18n/zh.js` 和 `i18n/en.js`，通过 `window.I18N.zh` / `window.I18N.en` 注册
+- HTML 元素通过 `data-i18n="namespace.key"` 绑定翻译键，JS 引擎在切换语言时自动替换 `innerHTML`
+- 命名空间按区块划分：`nav.*`（导航）、`hero.*`（首屏）、`overview.*`（时间轴）、`flow.*`（流转图）、`prequin.*` / `qin.*` 等（各朝代章节）、`summary.*`（总结）、`refs.*`（参考文献）、`footer.*`（页脚）
+- 新增区块/节点须同步在两个语言文件中添加对应翻译条目
+
 ## JS 功能说明
 
 - `IntersectionObserver`：驱动 `.reveal` 元素的淡入动画
@@ -88,6 +96,7 @@ index.html
 - Hero 卷轴展开：页面加载 600ms 后添加 `.scroll-opened` class
 - 视差效果：`[data-parallax]` 元素根据滚动偏移量做 Y 轴位移（移动端禁用）
 - 进度丝线：`.thread-fill` 的 `scaleY` 跟随滚动百分比
+- i18n 引擎：`I18n.init()` 初始化语言，`I18n.toggle()` 中英文切换，`I18n.apply()` 遍历 `[data-i18n]` 元素并替换文案
 
 ## 设计约束
 
